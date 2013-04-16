@@ -1,0 +1,152 @@
+{% extends "../../base.html" %} {% block head %} {% end %} {% block body %}
+<div class="titlediv">
+    <h1>
+        {{ title }}</h1>
+</div>
+<div class="inputdiv">
+    <form action="{{ request.path }}" method="get">
+    <table class="inputtable">
+        <tr>
+            <td style="width: 100px;">
+                名称：
+            </td>
+            <td style="width: 200px;">
+                <input type="text" name="name" value="{{ project['name'] }}" />
+            </td>
+            <td style="width: 100px;">
+                产品负责人姓名：
+            </td>
+            <td style="width: 200px;">
+                <input type="text" name="productUserRealName" value="{{ project['productUserRealName'] }}" />
+            </td>
+            <td style="width: 100px;">
+                研发负责人姓名：
+            </td>
+            <td>
+                <input type="text" name="devUserRealName" value="{{ project['devUserRealName'] }}" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                所属产品：
+            </td>
+            <td>
+                <select name="productID">
+                    <option value="0">全部产品</option>
+                    {% for p in products %}
+                    <option value="{{p['id']}}" {% if p['id'] == project['productID'] %} selected{% end %}>{{p['name']}}</option>
+                    {% end %}
+                </select>
+            </td>            
+            <td>
+                状态：
+            </td>
+            <td>
+                <select name="status">
+                    <option value="0">全部状态</option>
+                    {% for k in projectStatus.keys() %}
+                    <option value="{{k}}" {% if k == project['status'] %} selected{% end %}>{{projectStatus[k]}}</option>
+                    {% end %}
+                </select>
+            </td>
+            <td style="text-align: right" colspan="2">
+                <a href="{{siteDomain}}Admin/Project/Add" style="margin-right:20px;">创建项目</a>
+                <input type="submit" style="width:100px; height:26px;line-height:18px; cursor:pointer; margin-right:3px;" value="查询" />
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>
+<div class="showdiv">
+    <table class="showtable">
+        <tr class="head">
+            <td style="width:40px">
+                编号
+            </td>
+            <td style="width:240px">
+                项目名称
+            </td>
+            <td style="width:150px">
+                产品负责人
+            </td>
+            <td style="width:150px">
+                研发负责人
+            </td>
+            <td style="width:80px">
+                开始时间
+            </td>
+            <td style="width:80px">
+                结束时间
+            </td>
+            <td style="width:50px">
+                状态
+            </td>
+            <td style="width:70px">
+                最后更新人
+            </td>
+            <td style="width:110px">
+                最后更新时间
+            </td>
+            <td style="width:150px">
+                操作
+            </td>
+        </tr>
+        {% for r in pagedata['data'] %}
+        <tr>
+            <td>
+                {{ r['id'] }}
+            </td>
+            <td>
+                {{ r['name'] }}
+            </td>
+            <td>
+                {{ r['productUserRealName'] }}({{ r['productUserName'] }})
+            </td>
+            <td>
+                {{ r['devUserRealName'] }}({{ r['devUserName'] }})
+            </td>
+            <td>
+                {{ str(r['startDate'])[0:10] }}
+            </td>
+            <td>
+                {{ str(r['endDate'])[0:10] }}
+            </td>
+            <td>
+                {{ r['statusname'] }}
+            </td>
+            <td>
+                {{ r['lastUpdater'] }}
+            </td>
+            <td>
+                {{ str(r['lastUpdateTime'])[0:-3] }}
+            </td>
+            <td style="text-align: center;">
+                <a href="{{siteDomain}}Admin/Task/List?projectID={{ r['id'] }}">任务列表</a>
+                <a href="{{siteDomain}}Admin/Project/Detail?id={{ r['id'] }}">详情</a>
+                <a href="{{siteDomain}}Admin/Project/Edit?id={{ r['id'] }}">编辑</a>                
+                <a href="javascript:" onclick="Project.del('{{r['id']}}')">删除</a>
+            </td>
+        </tr>
+        {% end %}
+    </table>
+    {% raw pager %}
+</div>
+<script type="text/javascript" language="javascript">
+    <!--
+    var Project = {
+        del: function (id) {
+            if (!confirm("确定删除该记录吗？")) return false;
+
+            $.post('/Admin/Project/Del', { 'id': id , 'ajax': 'ajax'},
+                 function (data) {
+                     if (0 == data.code) {
+                         Common.alert('操作成功', window.location.href);
+                     } else {
+                         Common.alert('操作失败,'+data.msg);
+                     }
+                 }, "json");
+        }
+    };
+    //-->
+</script>
+{% end %}

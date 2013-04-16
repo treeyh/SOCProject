@@ -1,0 +1,105 @@
+{% extends "../../base.html" %} {% block head %} {% end %} {% block body %}
+<div class="titlediv">
+    <h1>
+        {{ title }}</h1>
+</div>
+<div class="inputdiv">
+    <form action="{{ request.uri }}" method="post">
+    <table class="inputtable">        
+        <tr>
+            <td style="width: 100px;">
+                编号：
+            </td>
+            <td>
+                {{ task['id'] }}
+            </td>
+        </tr>
+        
+        <tr>
+            <td style="width: 100px;">
+                名称：
+            </td>
+            <td>
+                {{ task['name'] }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                所属项目：
+            </td>
+            <td>
+                {{ task['projectName'] }}
+                <input type="hidden" value="{{ task['projectID'] }}" name="projectID" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                前置任务：
+            </td>
+            <td>
+                {{task['preName']}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                开始日期：
+            </td>
+            <td>
+                {{str(task['startDate'])[0:10]}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                结束日期：
+            </td>
+            <td>
+                {{str(task['endDate'])[0:10]}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                负责人：
+            </td>
+            <td>
+                {{task['userRealName']}}({{task['userName']}})
+            </td>
+        </tr>
+        <tr>
+            <td>
+                参与人：
+            </td>
+            <td>
+                <input type="text" name="users" value="{{ task['users'] }}" style="width:240px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                完成度：<span class="red">*</span>
+            </td>
+            <td>
+                <input type="text" name="degree" value="{{ task['degree'] }}" style="width:30px;" />&nbsp;%&nbsp;&nbsp;&nbsp;(请输入0~100的整数)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                备注：
+            </td>
+            <td>
+                <textarea rows="8" cols="40" name="remark">{{ task['remark'] }}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-left:120px; height:40px;">
+                <input type="submit" style="width:100px; height:30px;line-height:18px; cursor:pointer; margin-right:3px;" value="提交" />
+                <input type="button" style="width:100px; height:30px;line-height:18px; cursor:pointer; margin-right:3px;" onclick="window.history.go(-1);" value="返回" />
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>
+<script type="text/javascript">
+    <!--
+        
+    //-->
+</script>
+{% end %}

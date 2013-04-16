@@ -1,0 +1,210 @@
+{% extends "../../base.html" %} {% block head %} {% end %} {% block body %}
+<div class="titlediv">
+    <h1>
+        {{ title }}</h1>
+</div>
+<div class="inputdiv">
+
+    <form action="{{ request.uri }}" method="post">
+    <table class="inputtable">
+        {% if isedit %}
+        <tr>
+            <td style="width: 100px;">
+                编号：<span class="red">*</span>
+            </td>
+            <td>
+                <input type="text" name="id" style="ime-mode:Disabled" disabled value="{{ project['id'] }}" />
+                <input type="hidden" name="id" value="{{ project['id'] }}" />
+            </td>
+        </tr>
+        {% end %} 
+        <tr>
+            <td style="width: 100px;">
+                名称：<span class="red">*</span>
+            </td>
+            <td>
+                <input type="text" name="name" value="{{ project['name'] }}" style="width:200px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                产品负责人：<span class="red">*</span>
+            </td>
+            <td>
+                <select name="productUserName" id="productUserName">
+                    {% for user in productUsers %}
+                    <option value="{{user['userName']}}" {% if user['userName'] == project['productUserName'] %} selected {% end %}>{{user['userRealName']}}</option>
+                    {% end %}
+                </select>
+                <input type="hidden" name="productUserRealName" id="productUserRealName" value="{{project['productUserRealName']}}"> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                研发负责人：<span class="red">*</span>
+            </td>
+            <td>
+                <select name="devUserName" id="devUserName">
+                    {% for user in devUsers %}
+                    <option value="{{user['userName']}}" {% if user['userName'] == project['devUserName'] %} selected {% end %}>{{user['userRealName']}}</option>
+                    {% end %}
+                </select>
+                <input type="hidden" name="devUserRealName" id="devUserRealName" value="{{project['devUserRealName']}}"> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                状态：<span class="red">*</span>
+            </td>
+            <td>
+                <select name="status">
+                    {% for k in projectStatus.keys() %}
+                    <option value="{{k}}" {% if k == project['status'] %} selected{% end %}>{{projectStatus[k]}}</option>
+                    {% end %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                所属产品：<span class="red">*</span>
+            </td>
+            <td>
+                <select name="products" id="products">
+                    {% for k in products %}
+                    <option value="{{k['id']}}">{{k['name']}}</option>
+                    {% end %}
+                </select>
+                <input type="button" value="选择产品" id="addProject" style="width:80px;height:30px;cursor:pointer;" /><br />
+                <table style="width:300px;" id="selectProducts">
+                    <tr>
+                        <td>选择产品</td>
+                        <td style="width:40px;">删除</td>
+                    </tr>
+                    {% set pids = ',' %}
+                    {% for p in project['projects'] %}
+                    {% set pids = pids + str(p['id']) + ',' %}
+                    <tr id="product_{{p['id']}}">
+                        <td>{{p['name']}}</td>
+                        <td><a href="javascript:;" onclick="Project.delProduct({{p['id']}});">删除</a></td>
+                    </tr>
+                    {% end %}
+                </table>
+                <input type="hidden" name="productIDs" id="productIDs" value="{{pids}}" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                研发团队：<span class="red">*</span>
+            </td>
+            <td>
+                {{ devUsers }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                开始时间：<span class="red">*</span>
+            </td>
+            <td>
+                <input type="text" name="startDate" id="startDate" value="{{ str(project['startDate'])[0:10] }}" class="Wdate" onfocus="WdatePicker()" /><!-- {maxDate:'#F{$dp.$D(\'endDate\')}'} -->
+            </td>
+        </tr>
+        <tr>
+            <td>
+                结束时间：<span class="red">*</span>
+            </td>
+            <td>
+                <input type="text" name="endDate" id="endDate" value="{{ str(project['endDate'])[0:10] }}" class="Wdate" onfocus="WdatePicker()" /><!-- {minDate:'#F{$dp.$D(\'startDate\')}'} -->
+            </td>
+        </tr>
+        <tr>
+            <td>
+                团队协作目录：
+            </td>
+            <td>
+                <input type="text" name="teamPath" value="{{ project['teamPath'] }}" style="width:320px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                备注：
+            </td>
+            <td>
+                <textarea rows="8" cols="40" name="remark">{{ project['remark'] }}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-left:120px; height:40px;">
+                <input type="submit" style="width:100px; height:30px;line-height:18px; cursor:pointer; margin-right:3px;" value="提交" />
+                <input type="button" style="width:100px; height:30px;line-height:18px; cursor:pointer; margin-right:3px;" onclick="window.history.go(-1);" value="返回" />
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>
+<script type="text/javascript">
+        <!--
+        var Project = {
+            initSelectProduct : function(){
+                var ids = $("#productIDs").val();
+                var iidds = ids.split(',');
+                for(var i = 0 ; i< iidds.length; i++){
+                    if(iidds[i] == ''){
+                        continue;
+                    }
+                    $('#products option').each(function(){
+                        if( $(this).val() == iidds[i]){
+                            $(this).remove();
+                        }
+                    });
+                }
+            },
+            addProduct : function(){
+                $('#products option:selected').each(function(){
+                    var name = $(this).text();
+                    var id = $(this).val();
+                    if($('#product_'+id).length > 0){
+                        Common.alert('您已选择改产品.');
+                        return;
+                    }
+                    $(this).remove();
+                    var ids = $('#productIDs').val();
+                    $('#productIDs').val(ids + id + ',');
+                    $('#selectProducts').append('<tr id="product_'+id+'"><td>'+name+'</td><td><a href="javascript:;" onclick="Project.delProduct('+id+');">删除</a></td></tr>');
+                });
+            },
+            delProduct : function(id){
+                var name = $('#product_'+id+' td:first-child').html();
+                $('#product_'+id).remove();
+                $('#products').append('<option value="'+id+'">'+name+'</option>');
+                var ids = $('#productIDs').val();
+                $('#productIDs').val(ids.replace(','+id+',', ','));
+            },
+            selectProducter : function(){
+                $('#productUserName option:selected').each(function(){
+                    $('#productUserRealName').val($(this).text());
+                });
+            },
+            selectDever : function(){
+                $('#devUserName option:selected').each(function(){
+                    $('#devUserRealName').val($(this).text());
+                });
+            }
+        };
+
+    $(document).ready(function () {
+        $('#productUserName').bind('change', function () {
+            Project.selectProducter();
+        });
+        $('#devUserName').bind('change', function () {
+            Project.selectDever();
+        });
+        Project.selectProducter();
+        Project.selectDever();
+        $('#addProject').bind('click', function(){
+            Project.addProduct();
+        });
+        Project.initSelectProduct();
+    });
+    //-->
+</script>
+{% end %}
