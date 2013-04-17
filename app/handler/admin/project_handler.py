@@ -35,10 +35,10 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
     _right = 0
 
     def _init_template_info(self, ps):
-        ps['productUsers'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['productUserGroupID'])
+        ps['productUsers'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['productUserGroupID'])        
         ps['devUsers'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['devUserGroupID'])
         ps['projectStatus'] = state.ProjectStatus
-        ps['products'] = product_logic.ProductLogic.instance().query_all_by_active()
+        ps['products'] = product_logic.ProductLogic.instance().query_all_by_active()        
         return ps
 
     def get(self):
@@ -53,9 +53,10 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
                 ps['msg'] = state.ResultInfo.get(111001, '')
                 ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Project/List'
                 project = {'id':'','name':'','teamPath':'','productUserName':'','productUserRealName':'',
-                            'devUserName':'','devUserRealName':'', 'startDate':'', 'endDate':'','remark':'','status':1, 'projects':[]}
+                            'devUserName':'','devUserRealName':'', 'startDate':'', 'endDate':'','remark':'','status':1, 'projects':[], 'devs':[]}
             else:
-                project['projects'] = product_logic.ProductLogic.instance().query_all_by_project(project['id'])
+                project['products'] = product_logic.ProductLogic.instance().query_all_by_project(projectID = project['id'])
+                project['devs'] = project_logic.ProjectLogic.instance().query_dev_by_project(projectID = project['id'])
         else:
             # self.check_oper_right(right = state.operAdd)
             project = self.get_args(['name', 'teamPath', 'productUserName', 'productUserRealName', 
@@ -64,7 +65,8 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
             project['id'] = int(self.get_arg('id', '0'))
             project['startDate'] = datetime.now()
             project['endDate'] = datetime.now()
-            project['projects'] = []
+            project['products'] = []
+            project['devs'] = []
             # if project['productUserRealName'] == '' and len(ps['productUsers']) > 0:
             #     project['productUserRealName'] = ps['productUsers'][0]['userRealName']
             # if project['devUserRealName'] == '' and len(ps['devUsers']) > 0:
@@ -83,13 +85,29 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
         project['status'] = int(self.get_arg('status', '0'))
         project['id'] = int(self.get_arg('id', '0'))        
         project['productIDs'] = str_helper.format_str_to_list_filter_empty(self.get_arg('productIDs',''), ',')
-        project['projects'] = product_logic.ProductLogic.instance().query_by_ids(project['productIDs'])
+        project['products'] = product_logic.ProductLogic.instance().query_by_ids(project['productIDs'])
 
-        ps['project'] = project
+        project['devUserNames'] = str_helper.format_str_to_list_filter_empty(self.get_arg('devUserNames',''), ',')
+
         ps = self._init_template_info(ps)
+
+        devs = []
+        for dev in project['devUserNames']:
+            for d in ps['devUsers']:
+                if dev != d['userName']:
+                    continue
+                devs.append({'devUserName': dev, 'devUserRealName': d['userRealName']})
+
+        project['devs'] = devs
+        ps['project'] = project
 
         if len(project['productIDs']) <= 0:
             ps['msg'] = '请选择产品'
+            self.render('admin/project/add_or_edit.html', **ps)
+            return
+
+        if len(project['devUserNames']) <= 0:
+            ps['msg'] = '请选择开发人员'
             self.render('admin/project/add_or_edit.html', **ps)
             return
         
@@ -109,7 +127,7 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
                         productUserRealName = project['productUserRealName'], devUserName = project['devUserName'], 
                         devUserRealName = project['devUserRealName'], startDate = project['startDate'], 
                         endDate = project['endDate'], status = project['status'], 
-                        remark = project['remark'], user = project['user'], productIDs = project['productIDs'])
+                        remark = project['remark'], user = project['user'], productIDs = project['productIDs'], devs = project['devs'])
                 if info:
                     self.redirect(ps['siteDomain'] + 'Admin/Project/List')
                     return
@@ -125,7 +143,7 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
                         productUserRealName = project['productUserRealName'], devUserName = project['devUserName'], 
                         devUserRealName = project['devUserRealName'], startDate = project['startDate'], 
                         endDate = project['endDate'], status = project['status'], 
-                        remark = project['remark'], user = project['user'], productIDs = project['productIDs'])
+                        remark = project['remark'], user = project['user'], productIDs = project['productIDs'], devs = project['devs'])
                 if info > 0:
                     self.redirect(ps['siteDomain'] + 'Admin/Project/List')
                     return

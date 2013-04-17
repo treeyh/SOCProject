@@ -81,7 +81,7 @@
                         <td style="width:40px;">删除</td>
                     </tr>
                     {% set pids = ',' %}
-                    {% for p in project['projects'] %}
+                    {% for p in project['products'] %}
                     {% set pids = pids + str(p['id']) + ',' %}
                     <tr id="product_{{p['id']}}">
                         <td>{{p['name']}}</td>
@@ -97,7 +97,27 @@
                 研发团队：<span class="red">*</span>
             </td>
             <td>
-                {{ devUsers }}
+                <select name="devs" id="devs">
+                    {% for k in devUsers %}
+                    <option value="{{k['userName']}}">{{k['userRealName']}}</option>
+                    {% end %}
+                </select>
+                <input type="button" value="选择开发者" id="addDev" style="width:80px;height:30px;cursor:pointer;" /><br />
+                <table style="width:300px;" id="selectDevs">
+                    <tr>
+                        <td>选择开发者</td>
+                        <td style="width:40px;">删除</td>
+                    </tr>
+                    {% set dids = ',' %}
+                    {% for p in project['devs'] %}
+                    {% set dids = dids + str(p['devUserName']) + ',' %}
+                    <tr id="dev_{{p['devUserName']}}">
+                        <td>{{p['devUserRealName']}}/{{p['devUserName']}}</td>
+                        <td><a href="javascript:;" onclick="Project.delDev('{{p['devUserName']}}');">删除</a></td>
+                    </tr>
+                    {% end %}
+                </table>
+                <input type="hidden" name="devUserNames" id="devUserNames" value="{{dids}}" />
             </td>
         </tr>
         <tr>
@@ -157,13 +177,26 @@
                         }
                     });
                 }
+
+                var dids = $("#devUserNames").val();
+                var diidds = dids.split(',');
+                for(var i = 0 ; i< diidds.length; i++){
+                    if(diidds[i] == ''){
+                        continue;
+                    }
+                    $('#devs option').each(function(){
+                        if( $(this).val() == diidds[i]){
+                            $(this).remove();
+                        }
+                    });
+                }
             },
             addProduct : function(){
                 $('#products option:selected').each(function(){
                     var name = $(this).text();
                     var id = $(this).val();
                     if($('#product_'+id).length > 0){
-                        Common.alert('您已选择改产品.');
+                        Common.alert('您已选择该产品.');
                         return;
                     }
                     $(this).remove();
@@ -178,6 +211,27 @@
                 $('#products').append('<option value="'+id+'">'+name+'</option>');
                 var ids = $('#productIDs').val();
                 $('#productIDs').val(ids.replace(','+id+',', ','));
+            },
+            addDev : function(){
+                $('#devs option:selected').each(function(){
+                    var userRealName = $(this).text();
+                    var userName = $(this).val();
+                    if($('#dev_'+userName).length > 0){
+                        Common.alert('您已选择该开发者.');
+                        return;
+                    }
+                    $(this).remove();
+                    var ids = $('#devUserNames').val();
+                    $('#devUserNames').val(ids + userName + ',');
+                    $('#selectDevs').append('<tr id="dev_'+userName+'"><td>'+userRealName+'/'+userName+'</td><td><a href="javascript:;" onclick="Project.delDev(\''+userName+'\');">删除</a></td></tr>');
+                });
+            },
+            delDev : function(userName){
+                var userRealName = $('#dev_'+userName+' td:first-child').html();
+                $('#dev_'+userName).remove();
+                $('#devs').append('<option value="'+userName+'">'+userRealName+'</option>');
+                var ids = $('#devUserNames').val();
+                $('#devUserNames').val(ids.replace(','+userName+',', ','));
             },
             selectProducter : function(){
                 $('#productUserName option:selected').each(function(){
@@ -202,6 +256,9 @@
         Project.selectDever();
         $('#addProject').bind('click', function(){
             Project.addProduct();
+        });
+        $('#addDev').bind('click', function(){
+            Project.addDev();
         });
         Project.initSelectProduct();
     });

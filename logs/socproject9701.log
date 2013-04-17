@@ -3295,3 +3295,319 @@
 [I 130416 02:58:37 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
 [I 130416 02:59:20 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
 [I 130416 03:00:00 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130416 22:32:19 web:1514] 200 GET /Admin/Main?token=06c44936a70711e28a9508002775323f& (127.0.0.1) 30.65ms
+[W 130416 22:32:19 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 4.32ms
+[W 130416 22:32:20 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 1.06ms
+[I 130416 22:32:20 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 7.38ms
+[I 130416 22:32:21 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 99.44ms
+[I 130416 22:32:22 web:1514] 200 GET /Admin/Product/Add (127.0.0.1) 54.45ms
+[I 130416 22:32:23 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 68.51ms
+[I 130416 22:32:25 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 47.53ms
+[I 130417 00:41:39 web:1514] 304 GET /Admin/Main?token=06c44936a70711e28a9508002775323f& (127.0.0.1) 28.69ms
+[I 130417 00:41:39 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 6.55ms
+[I 130417 00:41:41 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 68.40ms
+[I 130417 00:41:42 web:1514] 200 GET /Admin/Task/Edits (127.0.0.1) 88.89ms
+[I 130417 00:41:42 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 35.81ms
+[I 130417 00:47:18 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 24.23ms
+[I 130417 00:47:21 web:1514] 200 GET /Admin/Project/Edit?id=8 (127.0.0.1) 125.75ms
+[I 130417 00:47:24 web:1514] 200 GET /Admin/Project/Edit?id=9 (127.0.0.1) 44.17ms
+[I 130417 00:47:26 web:1514] 200 GET /Admin/Project/Edit?id=10 (127.0.0.1) 19.79ms
+[I 130417 00:47:37 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 27.62ms
+[I 130417 00:47:39 web:1514] 304 GET /Admin/Project/Edit?id=10 (127.0.0.1) 29.79ms
+[I 130417 00:48:03 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 00:48:05 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 00:54:11 web:1514] 200 GET /Admin/Project/Edit?id=10 (127.0.0.1) 67.90ms
+[I 130417 00:54:58 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 00:55:14 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 00:55:18 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 00:55:28 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 00:55:46 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 00:56:02 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 00:56:21 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 01:24:52 web:1514] 200 GET /Admin/Project/Edit?id=10 (127.0.0.1) 72.71ms
+[I 130417 01:25:11 web:1514] 200 GET /Admin/Project/Edit?id=10 (127.0.0.1) 56.79ms
+[E 130417 03:11:40 web:1121] Uncaught exception GET /Admin/Project/Edit?id=10 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Edit?id=10', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'X-Real-Ip': '192.168.18.121'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 46, in get
+        ps = self._init_template_info(ps)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 38, in _init_template_info
+        ps['productUsers'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['productUserGroupID'])
+      File "/opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py", line 40, in get_users_by_usergroup
+        obj = _http_get(url, params)
+      File "/opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py", line 21, in _http_get
+        obj = str_helper.json_decode(json)
+      File "/opt/www/02_SOC/SOCProject/app/helper/str_helper.py", line 141, in json_decode
+        return _json_decode(to_basestring(value))
+      File "/opt/soft/python/lib/python2.7/json/__init__.py", line 326, in loads
+        return _default_decoder.decode(s)
+      File "/opt/soft/python/lib/python2.7/json/decoder.py", line 366, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+    TypeError: expected string or buffer
+[E 130417 03:11:40 web:1514] 500 GET /Admin/Project/Edit?id=10 (127.0.0.1) 42.65ms
+[E 130417 03:12:02 web:1121] Uncaught exception GET /Admin/Project/Edit?id=10 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Edit?id=10', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.121'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 46, in get
+        ps = self._init_template_info(ps)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 38, in _init_template_info
+        ps['productUsers'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['productUserGroupID'])
+      File "/opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py", line 40, in get_users_by_usergroup
+        obj = _http_get(url, params)
+      File "/opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py", line 21, in _http_get
+        obj = str_helper.json_decode(json)
+      File "/opt/www/02_SOC/SOCProject/app/helper/str_helper.py", line 141, in json_decode
+        return _json_decode(to_basestring(value))
+      File "/opt/soft/python/lib/python2.7/json/__init__.py", line 326, in loads
+        return _default_decoder.decode(s)
+      File "/opt/soft/python/lib/python2.7/json/decoder.py", line 366, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+    TypeError: expected string or buffer
+[E 130417 03:12:02 web:1514] 500 GET /Admin/Project/Edit?id=10 (127.0.0.1) 18.86ms
+[E 130417 03:12:03 web:1121] Uncaught exception GET /Admin/Project/Edit?id=10 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Edit?id=10', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.121'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 46, in get
+        ps = self._init_template_info(ps)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 38, in _init_template_info
+        ps['productUsers'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['productUserGroupID'])
+      File "/opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py", line 40, in get_users_by_usergroup
+        obj = _http_get(url, params)
+      File "/opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py", line 21, in _http_get
+        obj = str_helper.json_decode(json)
+      File "/opt/www/02_SOC/SOCProject/app/helper/str_helper.py", line 141, in json_decode
+        return _json_decode(to_basestring(value))
+      File "/opt/soft/python/lib/python2.7/json/__init__.py", line 326, in loads
+        return _default_decoder.decode(s)
+      File "/opt/soft/python/lib/python2.7/json/decoder.py", line 366, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+    TypeError: expected string or buffer
+[E 130417 03:12:03 web:1514] 500 GET /Admin/Project/Edit?id=10 (127.0.0.1) 25.35ms
+[I 130417 03:12:31 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[I 130417 03:12:34 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[E 130417 03:12:41 web:1121] Uncaught exception GET /Admin/Project/Edit?id=10 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Edit?id=10', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.121'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 46, in get
+        ps = self._init_template_info(ps)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 38, in _init_template_info
+        ps['productUsers'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['productUserGroupID'])
+      File "/opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py", line 39, in get_users_by_usergroup
+        obj = _http_get(url, params)
+      File "/opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py", line 20, in _http_get
+        obj = str_helper.json_decode(json)
+      File "/opt/www/02_SOC/SOCProject/app/helper/str_helper.py", line 141, in json_decode
+        return _json_decode(to_basestring(value))
+      File "/opt/soft/python/lib/python2.7/json/__init__.py", line 326, in loads
+        return _default_decoder.decode(s)
+      File "/opt/soft/python/lib/python2.7/json/decoder.py", line 366, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+    TypeError: expected string or buffer
+[E 130417 03:12:41 web:1514] 500 GET /Admin/Project/Edit?id=10 (127.0.0.1) 27.94ms
+[E 130417 03:12:43 web:1121] Uncaught exception GET /Admin/Project/Edit?id=10 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Edit?id=10', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.121'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 46, in get
+        ps = self._init_template_info(ps)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 38, in _init_template_info
+        ps['productUsers'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['productUserGroupID'])
+      File "/opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py", line 39, in get_users_by_usergroup
+        obj = _http_get(url, params)
+      File "/opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py", line 20, in _http_get
+        obj = str_helper.json_decode(json)
+      File "/opt/www/02_SOC/SOCProject/app/helper/str_helper.py", line 141, in json_decode
+        return _json_decode(to_basestring(value))
+      File "/opt/soft/python/lib/python2.7/json/__init__.py", line 326, in loads
+        return _default_decoder.decode(s)
+      File "/opt/soft/python/lib/python2.7/json/decoder.py", line 366, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+    TypeError: expected string or buffer
+[E 130417 03:12:43 web:1514] 500 GET /Admin/Project/Edit?id=10 (127.0.0.1) 8.68ms
+[I 130417 03:15:53 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[I 130417 03:15:58 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[I 130417 03:16:06 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[I 130417 03:16:10 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[E 130417 03:16:45 web:1121] Uncaught exception GET /Admin/Project/Edit?id=10 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Edit?id=10', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.121'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 75, in get
+        self.render('admin/project/add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/project/add_or_edit_html.generated.py", line 72, in _execute
+        for user in productUsers:  # admin/project/add_or_edit.html:35 (via base.html:13)
+    TypeError: 'NoneType' object is not iterable
+[E 130417 03:16:45 web:1514] 500 GET /Admin/Project/Edit?id=10 (127.0.0.1) 84.17ms
+[I 130417 03:17:29 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[I 130417 03:17:31 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[I 130417 03:17:33 web:1514] 200 GET /Admin/Project/Edit?id=10 (127.0.0.1) 79.52ms
+[I 130417 03:18:40 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[I 130417 03:18:41 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[I 130417 03:18:53 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[I 130417 03:18:55 autoreload:186] /opt/www/02_SOC/SOCProject/app/proxy/soc_right_proxy.py modified; restarting server
+[I 130417 03:20:21 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:22:56 web:1514] 200 GET /Admin/Main?token=a0047c74a72f11e299c708002775323f& (127.0.0.1) 16.59ms
+[I 130417 03:22:56 web:1514] 200 GET /Admin/NotRight (127.0.0.1) 7.74ms
+[I 130417 03:23:01 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 64.26ms
+[I 130417 03:23:04 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 26.70ms
+[I 130417 03:25:34 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:25:43 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:25:45 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:31:22 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 47.17ms
+[I 130417 03:31:24 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 39.51ms
+[I 130417 03:31:25 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 60.27ms
+[I 130417 03:31:36 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:32:48 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:32:52 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:33:39 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:33:41 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:33:42 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:33:58 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:34:00 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:34:49 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:43:02 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 86.49ms
+[I 130417 03:44:40 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 37.13ms
+[I 130417 03:44:43 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 42.28ms
+[I 130417 03:45:31 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 36.25ms
+[I 130417 03:48:27 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 57.71ms
+[E 130417 03:49:37 web:1121] Uncaught exception POST /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='name=afasf&productUserName=fuchen&productUserRealName=%E5%82%85%E7%90%9B&devUserName=Tree&devUserRealName=%E4%BD%99%E6%B5%B7&status=1&products=1&productIDs=%2C&devUserNames=%2CTree%2Czhengxi%2Cfuchen%2Cjiangchangren%2Cchangbo%2Cyanyizhou%2C&startDate=2013-04-17&endDate=2013-04-17&teamPath=&remark=', headers={'Content-Length': '298', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Project/Add', 'X-Real-Ip': '192.168.18.121', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 106, in post
+        self.render('admin/project/add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/project/add_or_edit_html.generated.py", line 212, in _execute
+        dids = dids + str(p['devUserName']) + ','  # admin/project/add_or_edit.html:113 (via base.html:13)
+    KeyError: 'devUserName'
+[E 130417 03:49:37 web:1514] 500 POST /Admin/Project/Add (127.0.0.1) 42.24ms
+[I 130417 03:51:16 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:51:17 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:51:19 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[E 130417 03:51:34 web:1121] Uncaught exception POST /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='name=afasf&productUserName=fuchen&productUserRealName=%E5%82%85%E7%90%9B&devUserName=Tree&devUserRealName=%E4%BD%99%E6%B5%B7&status=1&products=1&productIDs=%2C&devUserNames=%2CTree%2Czhengxi%2Cfuchen%2Cjiangchangren%2Cchangbo%2Cyanyizhou%2C&startDate=2013-04-17&endDate=2013-04-17&teamPath=&remark=', headers={'Content-Length': '298', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Project/Add', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.121', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 106, in post
+        self.render('admin/project/add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/project/add_or_edit_html.generated.py", line 162, in _execute
+        for p in project['products']:  # admin/project/add_or_edit.html:84 (via base.html:13)
+    KeyError: 'products'
+[E 130417 03:51:34 web:1514] 500 POST /Admin/Project/Add (127.0.0.1) 42.81ms
+[I 130417 03:52:43 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[E 130417 03:52:46 web:1121] Uncaught exception POST /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='name=afasf&productUserName=fuchen&productUserRealName=%E5%82%85%E7%90%9B&devUserName=Tree&devUserRealName=%E4%BD%99%E6%B5%B7&status=1&products=1&productIDs=%2C&devUserNames=%2CTree%2Czhengxi%2Cfuchen%2Cjiangchangren%2Cchangbo%2Cyanyizhou%2C&startDate=2013-04-17&endDate=2013-04-17&teamPath=&remark=', headers={'Content-Length': '298', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Project/Add', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.121', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 106, in post
+        self.render('admin/project/add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/project/add_or_edit_html.generated.py", line 220, in _execute
+        _tmp = p['name']  # admin/project/add_or_edit.html:115 (via base.html:13)
+    KeyError: 'name'
+[E 130417 03:52:46 web:1514] 500 POST /Admin/Project/Add (127.0.0.1) 57.14ms
+[I 130417 03:53:49 web:1514] 200 POST /Admin/Project/Add (127.0.0.1) 31.42ms
+[I 130417 03:53:56 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 43.80ms
+[I 130417 03:54:23 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 36.85ms
+[I 130417 03:55:17 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:55:19 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 03:55:23 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[E 130417 04:07:59 web:1121] Uncaught exception POST /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='name=abc&productUserName=fuchen&productUserRealName=%E5%82%85%E7%90%9B&devUserName=Tree&devUserRealName=%E4%BD%99%E6%B5%B7&status=1&products=1&productIDs=%2C2%2C&devs=Tree&devUserNames=%2Czhengxi%2Cjiangchangren%2Cchangbo%2Cyanyizhou%2C&startDate=2013-04-17&endDate=2013-04-17&teamPath=&remark=', headers={'Content-Length': '294', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Project/Add', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.121', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 95, in post
+        for dev in project['devs']:
+    KeyError: 'devs'
+[E 130417 04:07:59 web:1514] 500 POST /Admin/Project/Add (127.0.0.1) 51.57ms
+[I 130417 04:08:20 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 04:08:22 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[E 130417 04:09:05 web:1121] Uncaught exception POST /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='name=abc&productUserName=fuchen&productUserRealName=%E5%82%85%E7%90%9B&devUserName=Tree&devUserRealName=%E4%BD%99%E6%B5%B7&status=1&products=1&productIDs=%2C2%2C&devs=Tree&devUserNames=%2Czhengxi%2Cjiangchangren%2Cchangbo%2Cyanyizhou%2C&startDate=2013-04-17&endDate=2013-04-17&teamPath=&remark=', headers={'Content-Length': '294', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Project/Add', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.121', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 146, in post
+        remark = project['remark'], user = project['user'], productIDs = project['productIDs'], devUserNames = project['devUserNames'])
+      File "/opt/www/02_SOC/SOCProject/app/logic/project_logic.py", line 109, in add
+        self._bind_project_dev(projectID = result, devUserNames = devUserNames, user = user)
+      File "/opt/www/02_SOC/SOCProject/app/logic/project_logic.py", line 170, in _bind_project_dev
+        result = mysql.insert_or_update_or_delete(self._del_bind_project_dev_sql, yx)
+    NameError: global name 'yx' is not defined
+[E 130417 04:09:05 web:1514] 500 POST /Admin/Project/Add (127.0.0.1) 72.19ms
+[I 130417 04:09:34 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 04:09:51 web:1514] 200 POST /Admin/Project/Add (127.0.0.1) 56.56ms
+[I 130417 04:09:57 web:1514] 302 POST /Admin/Project/Add (127.0.0.1) 50.62ms
+[I 130417 04:09:57 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 25.26ms
+[I 130417 04:10:00 web:1514] 200 POST /Admin/Project/Del (127.0.0.1) 12.11ms
+[I 130417 04:10:01 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 30.44ms
+[I 130417 04:10:08 web:1514] 200 GET /Admin/Project/Edit?id=12 (127.0.0.1) 38.98ms
+[I 130417 04:14:10 web:1514] 304 GET /Admin/Project/Edit?id=12 (127.0.0.1) 46.45ms
+[I 130417 04:14:10 web:1514] 304 GET /Admin/Project/Edit?id=12 (127.0.0.1) 50.08ms
+[I 130417 04:14:35 web:1514] 200 GET /Admin/Project/Edit?id=12 (127.0.0.1) 40.71ms
+[I 130417 04:14:41 web:1514] 200 GET /Admin/Project/Edit?id=12 (127.0.0.1) 67.44ms
+[I 130417 04:15:56 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 04:15:58 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 04:16:07 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 04:16:10 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 04:16:18 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 04:16:21 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 04:16:23 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 04:16:34 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 04:16:40 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 04:16:48 web:1514] 200 GET /Admin/Project/Edit?id=12 (127.0.0.1) 72.68ms
+[E 130417 04:17:01 web:1121] Uncaught exception POST /Admin/Project/Edit?id=12 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Project/Edit?id=12', version='HTTP/1.0', remote_ip='127.0.0.1', body='id=12&name=abcd&productUserName=fuchen&productUserRealName=%E5%82%85%E7%90%9B&devUserName=Tree&devUserRealName=%E4%BD%99%E6%B5%B7&status=1&products=1&productIDs=%2C2%2C&devs=yanyizhou&devUserNames=%2Cfuchen%2C&startDate=2013-04-17&endDate=2013-04-17&teamPath=&remark=', headers={'Content-Length': '267', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Project/Edit?id=12', 'X-Real-Ip': '192.168.18.121', 'Cookie': 'soc_project_manager_user=06dd0124a70711e2851308002775323f', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 130, in post
+        remark = project['remark'], user = project['user'], productIDs = project['productIDs'], devs = project['devs'])
+      File "/opt/www/02_SOC/SOCProject/app/logic/project_logic.py", line 129, in update
+        self._bind_project_dev(projectID = id, devUserNames = devUserNames, user = user)
+    NameError: global name 'devUserNames' is not defined
+[E 130417 04:17:01 web:1514] 500 POST /Admin/Project/Edit?id=12 (127.0.0.1) 41.97ms
+[I 130417 04:17:19 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 04:17:21 web:1514] 302 POST /Admin/Project/Edit?id=12 (127.0.0.1) 46.49ms
+[I 130417 04:17:21 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 42.11ms
+[I 130417 04:17:23 web:1514] 200 GET /Admin/Project/Edit?id=12 (127.0.0.1) 40.92ms
+[I 130417 04:17:28 web:1514] 302 POST /Admin/Project/Edit?id=12 (127.0.0.1) 59.41ms
+[I 130417 04:17:28 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 54.39ms
+[I 130417 04:17:29 web:1514] 200 GET /Admin/Project/Edit?id=12 (127.0.0.1) 31.10ms
+[I 130417 04:17:35 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server

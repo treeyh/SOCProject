@@ -95,7 +95,7 @@ class ProjectLogic():
                         VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now(), %s, now())  '''
     ''' 添加项目 '''
     def add(self, name, teamPath, productUserName, productUserRealName, devUserName, 
-            devUserRealName, startDate, endDate, status, remark, user, productIDs = []):
+            devUserRealName, startDate, endDate, status, remark, user, productIDs = [], devs = []):
         obj = self.query_one_by_name(name = name)
         if None != obj:
             raise error.ProjectError(code = 111002)
@@ -106,6 +106,7 @@ class ProjectLogic():
         result = mysql.insert_or_update_or_delete(self._add_sql, yz, isbackinsertid = True)
         if result > 0:
             self._bind_project_product(result, productIDs, user)
+            self._bind_project_dev(projectID = result, devs = devs, user = user)
         return result
 
 
@@ -116,7 +117,7 @@ class ProjectLogic():
                             lastUpdateTime = now() where id = %s '''
     ''' 更新项目 '''
     def update(self, id, name, teamPath, productUserName, productUserRealName, 
-                devUserName, devUserRealName, startDate, endDate, status, remark, user, productIDs = []):
+                devUserName, devUserRealName, startDate, endDate, status, remark, user, productIDs = [], devs = []):
         obj = self.query_one_by_name(name = name)
         if None != obj and str(obj['id']) != str(id):
             raise error.ProjectError(code = 111002)
@@ -125,6 +126,7 @@ class ProjectLogic():
                     devUserRealName, startDate, endDate, status, remark, user, id)
         result = mysql.insert_or_update_or_delete(self._update_sql, yz)
         self._bind_project_product(id, productIDs, user)
+        self._bind_project_dev(projectID = id, devs = devs, user = user)
         return 0 == result
 
     
@@ -161,12 +163,24 @@ class ProjectLogic():
     _del_bind_project_dev_sql = '''  UPDATE pm_project_dev SET isDelete = %s, lastUpdater = %s, 
                             lastUpdateTime = now() WHERE projectID = %s AND isDelete = %s  '''
     ''' 绑定项目与开发者 '''
-    def _bind_project_dev(self, projectID, devUserNames, user):
+    def _bind_project_dev(self, projectID, devs, user):
         isdeletefalse = state.Boole['false']
         isdeletetrue = state.Boole['true']
         yz = (isdeletetrue, user, projectID, isdeletefalse)
-        result = mysql.insert_or_update_or_delete(self._del_bind_project_dev_sql, yx)
-        for devUserName in devUserNames:
-            yz = (projectID, devUserName, '', '', isdeletefalse, user, user)
+        result = mysql.insert_or_update_or_delete(self._del_bind_project_dev_sql, yz)
+        for dev in devs:
+            yz = (projectID, dev['devUserName'], dev['devUserRealName'], '', isdeletefalse, user, user)
             result =  mysql.insert_or_update_or_delete(self._add_bind_project_dev_sql, yz)
         return 0 == result
+
+
+    _query_dev_by_projectID_sql = ''' select id, projectID, devUserName, devUserRealName, remark from pm_project_dev 
+                            where projectID = %s and isDelete = %s '''
+    _query_dev_by_projectID_col = str_helper.format_str_to_list_filter_empty('id, projectID, devUserName, devUserRealName, remark', ',')
+    ''' 绑定项目开发者 '''
+    def query_dev_by_project(self, projectID):
+        isdelete = state.Boole['false']
+        
+        yz = (projectID, isdelete)
+        devs = mysql.find_all(self._query_dev_by_projectID_sql, yz, self._query_dev_by_projectID_col)
+        return devs
