@@ -28,44 +28,6 @@
         </tr>
         <tr>
             <td>
-                产品负责人：<span class="red">*</span>
-            </td>
-            <td>
-                <select name="productUserName" id="productUserName">
-                    {% for user in productUsers %}
-                    <option value="{{user['userName']}}" {% if user['userName'] == project['productUserName'] %} selected {% end %}>{{user['userRealName']}}</option>
-                    {% end %}
-                </select>
-                <input type="hidden" name="productUserRealName" id="productUserRealName" value="{{project['productUserRealName']}}"> 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                研发负责人：<span class="red">*</span>
-            </td>
-            <td>
-                <select name="devUserName" id="devUserName">
-                    {% for user in devUsers %}
-                    <option value="{{user['userName']}}" {% if user['userName'] == project['devUserName'] %} selected {% end %}>{{user['userRealName']}}</option>
-                    {% end %}
-                </select>
-                <input type="hidden" name="devUserRealName" id="devUserRealName" value="{{project['devUserRealName']}}"> 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                状态：<span class="red">*</span>
-            </td>
-            <td>
-                <select name="status">
-                    {% for k in projectStatus.keys() %}
-                    <option value="{{k}}" {% if k == project['status'] %} selected{% end %}>{{projectStatus[k]}}</option>
-                    {% end %}
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 所属产品：<span class="red">*</span>
             </td>
             <td>
@@ -74,7 +36,7 @@
                     <option value="{{k['id']}}">{{k['name']}}</option>
                     {% end %}
                 </select>
-                <input type="button" value="选择产品" id="addProject" style="width:80px;height:30px;cursor:pointer;" /><br />
+                <input type="button" value="选择产品" id="addProject" style="width:80px;height:30px;cursor:pointer;margin-left: 25px;" /><br />
                 <table style="width:300px;" id="selectProducts">
                     <tr>
                         <td>选择产品</td>
@@ -90,34 +52,6 @@
                     {% end %}
                 </table>
                 <input type="hidden" name="productIDs" id="productIDs" value="{{pids}}" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                研发团队：<span class="red">*</span>
-            </td>
-            <td>
-                <select name="devs" id="devs">
-                    {% for k in devUsers %}
-                    <option value="{{k['userName']}}">{{k['userRealName']}}</option>
-                    {% end %}
-                </select>
-                <input type="button" value="选择开发者" id="addDev" style="width:80px;height:30px;cursor:pointer;" /><br />
-                <table style="width:300px;" id="selectDevs">
-                    <tr>
-                        <td>选择开发者</td>
-                        <td style="width:40px;">删除</td>
-                    </tr>
-                    {% set dids = ',' %}
-                    {% for p in project['devs'] %}
-                    {% set dids = dids + str(p['devUserName']) + ',' %}
-                    <tr id="dev_{{p['devUserName']}}">
-                        <td>{{p['devUserRealName']}}/{{p['devUserName']}}</td>
-                        <td><a href="javascript:;" onclick="Project.delDev('{{p['devUserName']}}');">删除</a></td>
-                    </tr>
-                    {% end %}
-                </table>
-                <input type="hidden" name="devUserNames" id="devUserNames" value="{{dids}}" />
             </td>
         </tr>
         <tr>
@@ -141,9 +75,65 @@
                 团队协作目录：
             </td>
             <td>
-                <input type="text" name="teamPath" value="{{ project['teamPath'] }}" style="width:320px;" />
+                <input type="text" name="teamPath" value="{{ project['teamPath'] }}" style="width:420px;" />
             </td>
         </tr>
+        <tr>
+            <td>
+                状态：<span class="red">*</span>
+            </td>
+            <td>
+                <select name="status">
+                    {% for k in projectStatus.keys() %}
+                    <option value="{{k}}" {% if k == project['status'] %} selected{% end %}>{{projectStatus[k]}}</option>
+                    {% end %}
+                </select>
+            </td>
+        </tr>
+        {% for role in projectRoles %}
+        <tr>
+            <td>
+                {{role['name']}}：<span class="red">*</span>
+            </td>
+            <td>
+                {% if role['isOne'] == 1 %}
+                    {# 单人的角色 #}
+                <select name="role_select_{{role['id']}}" id="role_select_{{role['id']}}">
+                    {% for user in roleUsers[role['id']] %}
+                    <option value="{{user['userName']}}" {% if user['userName'] == project.get('userName_'+str(role['id'])) %} selected {% end %}>{{user['userRealName']}}</option>
+                    {% end %}
+                </select>
+                    {% set realName = project.get('userRealName_'+str(role['id'])) if None != project.get('userRealName_'+str(role['id'])) else '' %}
+                <input type="hidden" name="user_real_name_{{role['id']}}" id="user_real_name_{{role['id']}}" value="{{realName}}"> 
+                {% else %}
+                    {# 多人的角色 #}
+                    <select name="roles_select_{{role['id']}}" id="roles_select_{{role['id']}}">
+                        {% for user in roleUsers[role['id']] %}
+                        <option value="{{user['userName']}}">{{user['userRealName']}}</option>
+                        {% end %}
+                    </select>
+                    <input type="button" value="选择{{role['name']}}" id="addUser_{{role['id']}}" style="width:80px;height:30px;cursor:pointer;margin-left: 25px;" /><br />
+                    <table style="width:300px;" id="selectUsers_{{role['id']}}">
+                        <tr>
+                            <td>选择{{role['name']}}</td>
+                            <td style="width:40px;">删除</td>
+                        </tr>
+                        {% set dids = ',' %}
+                        {% for u in project['users'] %}
+                        {% if u['type'] == role['id'] %}
+                            {% set dids = dids + str(u['userName']) + ',' %}
+                            <tr id="dev_{{u['userName']}}">
+                                <td>{{u['userRealName']}}({{u['userName']}})</td>
+                                <td><a href="javascript:;" onclick="Project.delUser('{{u['userName']}}', {{role['id']}});">删除</a></td>
+                            </tr>
+                        {% end %}
+                        {% end %}
+                    </table>
+                    <input type="hidden" name="userNames_{{role['id']}}" id="userNames_{{role['id']}}" value="{{dids}}" />
+                {% end %}
+            </td>
+        </tr>
+        {% end %}
         <tr>
             <td>
                 备注：
@@ -155,7 +145,7 @@
         <tr>
             <td colspan="2" style="padding-left:120px; height:40px;">
                 <input type="submit" style="width:100px; height:30px;line-height:18px; cursor:pointer; margin-right:3px;" value="提交" />
-                <input type="button" style="width:100px; height:30px;line-height:18px; cursor:pointer; margin-right:3px;" onclick="window.history.go(-1);" value="返回" />
+                <input type="button" style="width:100px; height:30px;line-height:18px; cursor:pointer; margin-right:3px;" onclick="alert(Project.roles[0]['name']);" value="返回" />
             </td>
         </tr>
     </table>
@@ -164,6 +154,9 @@
 <script type="text/javascript">
         <!--
         var Project = {
+            {% set roles = str_helper.json_encode(projectRoles) %}
+            roles : {{roles}},
+
             initSelectProduct : function(){
                 var ids = $("#productIDs").val();
                 var iidds = ids.split(',');
@@ -178,18 +171,18 @@
                     });
                 }
 
-                var dids = $("#devUserNames").val();
-                var diidds = dids.split(',');
-                for(var i = 0 ; i< diidds.length; i++){
-                    if(diidds[i] == ''){
-                        continue;
-                    }
-                    $('#devs option').each(function(){
-                        if( $(this).val() == diidds[i]){
-                            $(this).remove();
-                        }
-                    });
-                }
+                // var dids = $("#devUserNames").val();
+                // var diidds = dids.split(',');
+                // for(var i = 0 ; i< diidds.length; i++){
+                //     if(diidds[i] == ''){
+                //         continue;
+                //     }
+                //     $('#devs option').each(function(){
+                //         if( $(this).val() == diidds[i]){
+                //             $(this).remove();
+                //         }
+                //     });
+                // }
             },
             addProduct : function(){
                 $('#products option:selected').each(function(){
@@ -212,7 +205,7 @@
                 var ids = $('#productIDs').val();
                 $('#productIDs').val(ids.replace(','+id+',', ','));
             },
-            addDev : function(){
+            addUser : function(roleID){
                 $('#devs option:selected').each(function(){
                     var userRealName = $(this).text();
                     var userName = $(this).val();
@@ -223,10 +216,10 @@
                     $(this).remove();
                     var ids = $('#devUserNames').val();
                     $('#devUserNames').val(ids + userName + ',');
-                    $('#selectDevs').append('<tr id="dev_'+userName+'"><td>'+userRealName+'/'+userName+'</td><td><a href="javascript:;" onclick="Project.delDev(\''+userName+'\');">删除</a></td></tr>');
+                    $('#selectDevs').append('<tr id="dev_'+userName+'"><td>'+userRealName+'('+userName+')</td><td><a href="javascript:;" onclick="Project.delDev(\''+userName+'\');">删除</a></td></tr>');
                 });
             },
-            delDev : function(userName){
+            delUser : function(userName, roleID){
                 var userRealName = $('#dev_'+userName+' td:first-child').html();
                 $('#dev_'+userName).remove();
                 $('#devs').append('<option value="'+userName+'">'+userRealName+'</option>');

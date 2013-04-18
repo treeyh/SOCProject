@@ -33,7 +33,7 @@ class ProductAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
 
     def get(self):
         ps = self.get_page_config('创建产品')
-        ps['users'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['productUserGroupID'])
+        ps['users'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['RoleUserGroup'][10])
         if ps['isedit']:
             # self.check_oper_right(right = state.operEdit)
             ps['title'] = self.get_page_title('编辑产品')
@@ -63,7 +63,7 @@ class ProductAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
         product['status'] = int(self.get_arg('status', '0'))
         product['id'] = int(self.get_arg('id', '0'))
         ps['product'] = product
-        ps['users'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['productUserGroupID'])
+        ps['users'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['RoleUserGroup'][10])
         msg = self.check_str_empty_input(product, ['name', 'userName'])
         if str_helper.is_null_or_empty(msg) == False:
             ps['msg'] = msg

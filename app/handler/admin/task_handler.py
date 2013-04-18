@@ -69,15 +69,10 @@ class TaskProjectAddOrEditHandler(TaskListHandler):
     _rightKey = config.SOCPMConfig['appCode'] + '.AppManager'
     _right = 0
 
-    def _init_template_info(self, ps):        
-        ps['users'] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['devUserGroupID'])
-        ps['projects'] = project_logic.ProjectLogic.instance().query_all_by_active()
-        return ps
-
     def get(self):
         ps = self.get_page_config('编辑任务')
-        ps = self._init_template_info(ps)
-        
+        ps['projects'] = project_logic.ProjectLogic.instance().query_all_by_active()
+
         projectID = int(self.get_arg('projectID', '0'))
         if None == ps['projects'] or len(ps['projects']) <= 0:
             ps['msg'] = state.ResultInfo.get(112006, '')
@@ -88,10 +83,12 @@ class TaskProjectAddOrEditHandler(TaskListHandler):
         if projectID <= 0:
             projectID = ps['projects'][0]['id']
 
+        ps['projectID'] = projectID        
+        ps['users'] = project_logic.ProjectLogic.instance().query_user_by_project(projectID = projectID)
+
         tasks = task_logic.TaskLogic.instance().query_by_projectID(projectID = projectID)
         tasks = self._format_project_tasks(tasks, True)
-        
-        ps['projectID'] = projectID
+
         ps['tasks'] = tasks
         self.render('admin/task/project_add_or_edit.html', **ps)
 
@@ -128,21 +125,21 @@ class TaskProjectAddOrEditHandler(TaskListHandler):
 
     def post(self):
         ps = self.get_page_config('编辑任务')
-        ps = self._init_template_info(ps)
+        ps['projects'] = project_logic.ProjectLogic.instance().query_all_by_active()
+        ps['projectID'] = int(self.get_arg('projectID', '0'))
+        ps['users'] = project_logic.ProjectLogic.instance().query_user_by_project(projectID = ps['projectID'])
 
         if None == ps['projects'] or len(ps['projects']) <= 0:
             ps['msg'] = state.ResultInfo.get(112006, '')
             ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Project/Add'            
             self.render('admin/task/project_add_or_edit.html', **ps)
             return
-
-        ps['projectID'] = int(self.get_arg('projectID', '0'))
+        
         ps['tasks'] = self._format_post_tasks(users = ps['users'])
         ps['user'] = self.get_oper_user()
         try:
             info = task_logic.TaskLogic.instance().save_tasks(projectID = ps['projectID'], 
                 tasks = ps['tasks'], user = ps['user'])
-
             if info:
                 self.redirect(ps['siteDomain'] + 'Admin/Task/List?projectID='+str(ps['projectID']))
                 return

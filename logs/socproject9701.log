@@ -3611,3 +3611,377 @@
 [I 130417 04:17:28 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 54.39ms
 [I 130417 04:17:29 web:1514] 200 GET /Admin/Project/Edit?id=12 (127.0.0.1) 31.10ms
 [I 130417 04:17:35 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 22:53:55 web:1514] 200 GET /Admin/Main?token=354fd672a7d311e2a26508002775323f& (127.0.0.1) 90.64ms
+[W 130417 22:53:55 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 4.47ms
+[W 130417 22:53:55 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 1.02ms
+[I 130417 22:53:55 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 24.07ms
+[I 130417 22:57:12 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 196.54ms
+[I 130417 22:57:26 web:1514] 200 POST /Admin/Project/Add (127.0.0.1) 53.75ms
+[I 130417 22:57:30 web:1514] 302 POST /Admin/Project/Add (127.0.0.1) 137.38ms
+[I 130417 22:57:30 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 38.55ms
+[I 130417 22:58:19 web:1514] 200 GET /Admin/Project/Edit?id=13 (127.0.0.1) 55.37ms
+[I 130417 22:58:23 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 34.90ms
+[I 130417 22:58:24 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 83.22ms
+[I 130417 22:58:25 web:1514] 200 GET /Admin/Task/Edits (127.0.0.1) 80.68ms
+[I 130417 22:58:34 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 23.82ms
+[I 130417 22:58:36 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 32.19ms
+[I 130417 22:58:36 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 15.58ms
+[I 130417 22:58:37 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 44.63ms
+[I 130417 22:58:38 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 43.95ms
+[I 130417 22:58:39 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 43.57ms
+[I 130417 23:00:01 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 23:00:23 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130417 23:01:41 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 63.76ms
+[I 130417 23:01:43 web:1514] 200 GET /Admin/Project/Edit?id=13 (127.0.0.1) 52.12ms
+[I 130417 23:01:49 web:1514] 302 POST /Admin/Project/Edit?id=13 (127.0.0.1) 86.99ms
+[I 130417 23:01:49 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 33.82ms
+[I 130417 23:01:52 web:1514] 200 GET /Admin/Project/Edit?id=13 (127.0.0.1) 64.68ms
+[I 130417 23:02:15 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 32.59ms
+[I 130417 23:02:38 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 31.92ms
+[I 130417 23:02:40 web:1514] 200 GET /Admin/Task/List?projectID=10&random=0.5510377273379475 (127.0.0.1) 14.37ms
+[I 130417 23:02:41 web:1514] 200 GET /Admin/Task/List?projectID=9&random=0.31072525059972955 (127.0.0.1) 29.23ms
+[I 130417 23:02:42 web:1514] 200 GET /Admin/Task/Edit?id=47 (127.0.0.1) 76.48ms
+[I 130417 23:02:48 web:1514] 200 GET /Admin/Task/Edit?id=48 (127.0.0.1) 36.01ms
+[I 130417 23:02:52 web:1514] 200 GET /Admin/Task/Edit?id=49 (127.0.0.1) 25.11ms
+[I 130417 23:02:54 web:1514] 200 GET /Admin/Task/Edit?id=50 (127.0.0.1) 37.98ms
+[I 130417 23:03:41 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 48.56ms
+[W 130417 23:03:41 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 3.22ms
+[W 130417 23:03:45 web:1514] 404 GET /Admin/Role/List (127.0.0.1) 1.72ms
+[W 130417 23:03:47 web:1514] 404 GET /Admin/Role/Add (127.0.0.1) 2.27ms
+[W 130417 23:03:48 web:1514] 404 GET /Admin/Role/List (127.0.0.1) 1.76ms
+[W 130417 23:03:49 web:1514] 404 GET /Admin/Role/Add (127.0.0.1) 1.17ms
+[I 130417 23:04:02 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 46.25ms
+[I 130417 23:05:10 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:05:26 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:05:35 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[E 130417 23:08:10 web:1121] Uncaught exception GET /Admin/Task/Edits (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/Edits', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Main?token=354fd672a7d311e2a26508002775323f&', 'X-Real-Ip': '192.168.18.120', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 90, in get
+        ps['users'] = project_logic.ProjectLogic.instance()._query_dev_by_projectID_col(projectID = ps['projectID'])
+    TypeError: 'list' object is not callable
+[E 130417 23:08:10 web:1514] 500 GET /Admin/Task/Edits (127.0.0.1) 39.70ms
+[I 130417 23:08:34 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[E 130417 23:08:47 web:1121] Uncaught exception GET /Admin/Task/Edits (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/Edits', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Main?token=354fd672a7d311e2a26508002775323f&', 'X-Real-Ip': '192.168.18.120', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 90, in get
+        ps['users'] = project_logic.ProjectLogic.instance()._query_dev_by_projectID_col(projectID = projectID)
+    TypeError: 'list' object is not callable
+[E 130417 23:08:47 web:1514] 500 GET /Admin/Task/Edits (127.0.0.1) 42.96ms
+[I 130417 23:09:15 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:09:18 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:10:18 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:12:05 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 23:12:09 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:12:14 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[E 130417 23:12:17 web:1121] Uncaught exception GET /Admin/Task/Edits (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/Edits', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Main?token=354fd672a7d311e2a26508002775323f&', 'X-Real-Ip': '192.168.18.120', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 93, in get
+        self.render('admin/task/project_add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/task/project_add_or_edit_html.generated.py", line 152, in _execute
+        if user['userName'] == task['userName']:  # admin/task/project_add_or_edit.html:89 (via base.html:13)
+    KeyError: 'userName'
+[E 130417 23:12:17 web:1514] 500 GET /Admin/Task/Edits (127.0.0.1) 108.31ms
+[I 130417 23:12:32 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:12:51 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:12:55 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:13:49 web:1514] 200 GET /Admin/Task/Edits (127.0.0.1) 50.84ms
+[I 130417 23:15:13 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:16:57 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 23:18:26 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 23:18:32 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130417 23:18:39 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:18:45 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:18:52 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:18:54 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[E 130417 23:19:00 web:1121] Uncaught exception GET /Admin/Task/Edits (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/Edits', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Main?token=354fd672a7d311e2a26508002775323f&', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f', 'X-Real-Ip': '192.168.18.120', 'If-None-Match': '"c7f0e110d283d947b08e5d02064cb2ca6246f123"'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 93, in get
+        self.render('admin/task/project_add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/task/project_add_or_edit_html.generated.py", line 150, in _execute
+        for user in users:  # admin/task/project_add_or_edit.html:88 (via base.html:13)
+    NameError: global name 'users' is not defined
+[E 130417 23:19:00 web:1514] 500 GET /Admin/Task/Edits (127.0.0.1) 49.89ms
+[I 130417 23:19:14 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:19:16 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130417 23:19:20 web:1514] 200 GET /Admin/Task/Edits (127.0.0.1) 76.80ms
+[I 130417 23:21:34 web:1514] 302 POST /Admin/Task/Edits (127.0.0.1) 157.72ms
+[I 130417 23:21:34 web:1514] 200 GET /Admin/Task/List?projectID=13 (127.0.0.1) 49.00ms
+[I 130417 23:21:51 web:1514] 200 GET /Admin/Task/Edits?projectID=13 (127.0.0.1) 50.63ms
+[I 130417 23:21:58 web:1514] 302 POST /Admin/Task/Edits (127.0.0.1) 187.97ms
+[I 130417 23:21:58 web:1514] 200 GET /Admin/Task/List?projectID=13 (127.0.0.1) 22.76ms
+[I 130418 01:04:38 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130418 01:04:41 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130418 01:05:25 web:1514] 200 GET /Admin/Task/Edits (127.0.0.1) 50.92ms
+[I 130418 01:05:39 web:1514] 200 GET /Admin/Task/Edits (127.0.0.1) 60.94ms
+[I 130418 01:05:39 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 24.27ms
+[I 130418 01:05:40 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 38.24ms
+[I 130418 01:05:43 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 32.27ms
+[I 130418 01:05:49 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 24.67ms
+[I 130418 01:05:49 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 17.67ms
+[I 130418 01:05:50 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 46.98ms
+[I 130418 01:06:04 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 34.27ms
+[I 130418 01:29:59 web:1514] 304 GET /Admin/Project/Edit?id=13 (127.0.0.1) 51.97ms
+[I 130418 01:30:02 web:1514] 304 GET /Admin/Project/Edit?id=13 (127.0.0.1) 36.08ms
+[W 130418 01:30:22 web:1514] 404 GET /Admin/Role/List (127.0.0.1) 2.49ms
+[W 130418 01:30:23 web:1514] 404 GET /Admin/Role/Add (127.0.0.1) 0.53ms
+[W 130418 01:30:24 web:1514] 404 GET /Admin/Role/List (127.0.0.1) 0.71ms
+[I 130418 01:30:39 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 53.91ms
+[I 130418 02:38:27 autoreload:186] /opt/www/02_SOC/SOCProject/app/config.py modified; restarting server
+[I 130418 02:45:35 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:45:41 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:45:44 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:45:48 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:45:57 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:46:04 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:46:05 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:46:30 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:46:33 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:50:44 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:50:51 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:50:59 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:51:15 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:51:34 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:51:36 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:51:37 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:52:43 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:52:45 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:52:56 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:52:58 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:53:08 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:53:19 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:53:26 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:54:11 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:54:22 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:54:30 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:54:34 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:54:35 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:54:36 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:54:44 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:54:54 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:55:08 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:55:14 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:55:15 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130418 02:55:56 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 02:56:35 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 02:56:36 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 03:02:27 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130418 03:02:32 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130418 03:02:37 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130418 03:02:39 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130418 03:02:50 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130418 03:04:02 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130418 03:32:44 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 30.99ms
+[I 130418 03:32:46 web:1514] 200 GET /Admin/Product/Add (127.0.0.1) 44.64ms
+[I 130418 03:32:50 web:1514] 304 GET /Admin/Product/Add (127.0.0.1) 28.64ms
+[I 130418 03:32:51 web:1514] 304 GET /Admin/Product/List (127.0.0.1) 22.75ms
+[I 130418 03:32:51 web:1514] 304 GET /Admin/Product/Add (127.0.0.1) 18.05ms
+[I 130418 03:34:59 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 03:37:51 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 03:37:54 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 03:38:29 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 03:38:33 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 03:38:42 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 03:38:43 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 03:38:47 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 03:38:51 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 04:03:33 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[E 130418 04:41:02 web:1121] Uncaught exception GET /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Main?token=354fd672a7d311e2a26508002775323f&', 'X-Real-Ip': '192.168.18.120', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 50, in get
+        ps = self._init_template_info(ps)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 40, in _init_template_info
+        roleUsers[role['id']] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['RoleUserGroup'][role['id']])
+    IndexError: list assignment index out of range
+[E 130418 04:41:02 web:1514] 500 GET /Admin/Project/Add (127.0.0.1) 20.43ms
+[I 130418 04:42:27 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 04:42:49 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[E 130418 04:42:55 web:1121] Uncaught exception GET /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Main?token=354fd672a7d311e2a26508002775323f&', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.120', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 51, in get
+        ps = self.get_page_config('创建项目')
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 41, in _init_template_info
+        for role in state.ProjectRoles:
+    IndexError: list assignment index out of range
+[E 130418 04:42:55 web:1514] 500 GET /Admin/Project/Add (127.0.0.1) 21.70ms
+[I 130418 04:43:21 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[E 130418 04:44:24 web:1121] Uncaught exception GET /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.120'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 51, in get
+        ps = self._init_template_info(ps)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 41, in _init_template_info
+        roleUsers[role['id']] = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['RoleUserGroup'][role['id']])
+    IndexError: list assignment index out of range
+[E 130418 04:44:24 web:1514] 500 GET /Admin/Project/Add (127.0.0.1) 17.23ms
+[I 130418 04:44:59 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 04:45:09 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 04:45:15 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 04:45:17 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[E 130418 04:45:38 web:1121] Uncaught exception GET /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.120'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 53, in get
+        ps = self._init_template_info(ps)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 43, in _init_template_info
+        roleUsers[role['id']] = users
+    IndexError: list assignment index out of range
+[E 130418 04:45:38 web:1514] 500 GET /Admin/Project/Add (127.0.0.1) 8.80ms
+[I 130418 04:46:10 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 04:46:11 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[E 130418 04:46:16 web:1121] Uncaught exception GET /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.120'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 82, in get
+        self.render('admin/project/add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/project/add_or_edit_html.generated.py", line 189, in _execute
+        if user['userName'] == project['userName_'+str(role['id'])]:  # admin/project/add_or_edit.html:103 (via base.html:13)
+    KeyError: 'userName_10'
+[E 130418 04:46:16 web:1514] 500 GET /Admin/Project/Add (127.0.0.1) 95.78ms
+[I 130418 04:46:35 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 04:46:39 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 04:46:41 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130418 04:46:42 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[E 130418 04:46:55 web:1121] Uncaught exception GET /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.120'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 79, in get
+        self.render('admin/project/add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/project/add_or_edit_html.generated.py", line 189, in _execute
+        if user['userName'] == project['userName_'+str(role['id'])]:  # admin/project/add_or_edit.html:103 (via base.html:13)
+    KeyError: 'userName_10'
+[E 130418 04:46:55 web:1514] 500 GET /Admin/Project/Add (127.0.0.1) 86.22ms
+[E 130418 04:46:56 web:1121] Uncaught exception GET /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.120'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 79, in get
+        self.render('admin/project/add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/project/add_or_edit_html.generated.py", line 189, in _execute
+        if user['userName'] == project['userName_'+str(role['id'])]:  # admin/project/add_or_edit.html:103 (via base.html:13)
+    KeyError: 'userName_10'
+[E 130418 04:46:56 web:1514] 500 GET /Admin/Project/Add (127.0.0.1) 45.97ms
+[E 130418 04:46:57 web:1121] Uncaught exception GET /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.120'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 79, in get
+        self.render('admin/project/add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/project/add_or_edit_html.generated.py", line 189, in _execute
+        if user['userName'] == project['userName_'+str(role['id'])]:  # admin/project/add_or_edit.html:103 (via base.html:13)
+    KeyError: 'userName_10'
+[E 130418 04:46:57 web:1514] 500 GET /Admin/Project/Add (127.0.0.1) 61.24ms
+[E 130418 04:46:57 web:1121] Uncaught exception GET /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f', 'Cache-Control': 'max-age=0', 'X-Real-Ip': '192.168.18.120'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 79, in get
+        self.render('admin/project/add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/project/add_or_edit_html.generated.py", line 189, in _execute
+        if user['userName'] == project['userName_'+str(role['id'])]:  # admin/project/add_or_edit.html:103 (via base.html:13)
+    KeyError: 'userName_10'
+[E 130418 04:46:57 web:1514] 500 GET /Admin/Project/Add (127.0.0.1) 52.32ms
+[E 130418 04:47:48 web:1121] Uncaught exception GET /Admin/Project/Add (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Project/Add', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=3567da7ea7d311e28c1308002775323f', 'X-Real-Ip': '192.168.18.120'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py", line 79, in get
+        self.render('admin/project/add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/project/add_or_edit_html.generated.py", line 201, in _execute
+        realName = project['userRealName_'+str(role['id'])]  # admin/project/add_or_edit.html:106 (via base.html:13)
+    KeyError: 'userRealName_10'
+[E 130418 04:47:48 web:1514] 500 GET /Admin/Project/Add (127.0.0.1) 47.98ms
+[I 130418 04:48:09 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 55.18ms
+[I 130418 04:53:28 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 58.34ms
+[I 130418 04:53:39 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 48.78ms
+[I 130418 04:54:09 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 67.86ms
+[I 130418 05:02:53 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 68.63ms
+[I 130418 05:05:33 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 50.77ms
+[I 130418 05:05:49 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 71.82ms
+[I 130418 05:06:43 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130418 05:06:58 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 95.37ms
+[I 130418 05:07:21 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 54.61ms
+[I 130418 05:07:46 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 68.69ms
+[I 130418 05:07:50 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 43.83ms
+[I 130418 05:08:10 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130418 05:08:11 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 83.78ms
+[I 130418 05:08:52 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130418 05:11:43 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 73.96ms
+[I 130418 05:11:46 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 55.51ms
