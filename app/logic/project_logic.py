@@ -168,19 +168,18 @@ class ProjectLogic():
         isdeletetrue = state.Boole['true']
         yz = (isdeletetrue, user, projectID, isdeletefalse)
         result = mysql.insert_or_update_or_delete(self._del_bind_project_user_sql, yz)
-        for user in users:
-            yz = (projectID, user['userName'], user['userRealName'], user['type'], '', isdeletefalse, user, user)
+        for u in users:
+            yz = (projectID, u['userName'], u['userRealName'], u['type'], '', isdeletefalse, user, user)
             result =  mysql.insert_or_update_or_delete(self._add_bind_project_user_sql, yz)
         return 0 == result
 
 
-    _query_user_by_projectID_sql = ''' select id, projectID, userName, userRealName, type, remark from pm_project_dev 
+    _query_user_by_projectID_sql = ''' select id, projectID, userName, userRealName, type, remark from pm_project_user 
                             where projectID = %s and isDelete = %s order by type asc '''
     _query_user_by_projectID_col = str_helper.format_str_to_list_filter_empty('id, projectID, userName, userRealName, type, remark', ',')
     ''' 查询项目开发者 '''
     def query_user_by_project(self, projectID):
-        isdelete = state.Boole['false']
-        
+        isdelete = state.Boole['false']        
         yz = (projectID, isdelete)
         users = mysql.find_all(self._query_user_by_projectID_sql, yz, self._query_user_by_projectID_col)
         return users

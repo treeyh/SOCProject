@@ -102,9 +102,8 @@
                     {% for user in roleUsers[role['id']] %}
                     <option value="{{user['userName']}}" {% if user['userName'] == project.get('userName_'+str(role['id'])) %} selected {% end %}>{{user['userRealName']}}</option>
                     {% end %}
-                </select>
-                    {% set realName = project.get('userRealName_'+str(role['id'])) if None != project.get('userRealName_'+str(role['id'])) else '' %}
-                <input type="hidden" name="user_real_name_{{role['id']}}" id="user_real_name_{{role['id']}}" value="{{realName}}"> 
+                </select>                    
+                <input type="hidden" name="user_real_name_{{role['id']}}" id="user_real_name_{{role['id']}}" value=""> 
                 {% else %}
                     {# 多人的角色 #}
                     <select name="roles_select_{{role['id']}}" id="roles_select_{{role['id']}}">
@@ -122,8 +121,8 @@
                         {% for u in project['users'] %}
                         {% if u['type'] == role['id'] %}
                             {% set dids = dids + str(u['userName']) + ',' %}
-                            <tr id="dev_{{u['userName']}}">
-                                <td>{{u['userRealName']}}({{u['userName']}})</td>
+                            <tr id="user_{{role['id']}}_{{u['userName']}}">
+                                <td>{{u['userRealName']}}</td>
                                 <td><a href="javascript:;" onclick="Project.delUser('{{u['userName']}}', {{role['id']}});">删除</a></td>
                             </tr>
                         {% end %}
@@ -155,7 +154,7 @@
         <!--
         var Project = {
             {% set roles = str_helper.json_encode(projectRoles) %}
-            roles : {{roles}},
+            roles : {% raw roles  %},
 
             initSelectProduct : function(){
                 var ids = $("#productIDs").val();
@@ -171,18 +170,38 @@
                     });
                 }
 
-                // var dids = $("#devUserNames").val();
-                // var diidds = dids.split(',');
-                // for(var i = 0 ; i< diidds.length; i++){
-                //     if(diidds[i] == ''){
-                //         continue;
-                //     }
-                //     $('#devs option').each(function(){
-                //         if( $(this).val() == diidds[i]){
-                //             $(this).remove();
-                //         }
-                //     });
-                // }
+                for(var i = 0; i < Project.roles.length; i++){
+                    var roleID = Project.roles[i]['id'];
+                    if(Project.roles[i]['isOne']){
+
+                        $('#role_select_'+roleID).bind('change', function () {
+                            var id = this.id;
+                            id = id.replace('role_select_', '');
+                            Project.selectUser(id);
+                        });
+                        Project.selectUser(roleID);
+                        continue
+                    }
+                    $('#addUser_'+roleID).bind('click', function(){
+                        var id = this.id;
+                        id = id.replace('addUser_', '');
+                        Project.addUser(id);
+                    });
+
+                    var userNames = $('#userNames_'+roleID).val();
+                    var userNamess = userNames.split(',');
+
+                    for(var j = 0 ; j< userNamess.length; j++){
+                        if(userNamess[j] == ''){
+                            continue;
+                        }
+                        $('#roles_select_'+roleID+' option').each(function(){
+                            if( $(this).val() == userNamess[j]){
+                                $(this).remove();
+                            }
+                        });
+                    }
+                }
             },
             addProduct : function(){
                 $('#products option:selected').each(function(){
@@ -206,52 +225,37 @@
                 $('#productIDs').val(ids.replace(','+id+',', ','));
             },
             addUser : function(roleID){
-                $('#devs option:selected').each(function(){
+                $('#roles_select_'+roleID+' option:selected').each(function(){
                     var userRealName = $(this).text();
                     var userName = $(this).val();
-                    if($('#dev_'+userName).length > 0){
-                        Common.alert('您已选择该开发者.');
+                    if($('#user_'+roleID+'_'+userName).length > 0){
+                        Common.alert('您已选择该用户.');
                         return;
                     }
                     $(this).remove();
-                    var ids = $('#devUserNames').val();
-                    $('#devUserNames').val(ids + userName + ',');
-                    $('#selectDevs').append('<tr id="dev_'+userName+'"><td>'+userRealName+'('+userName+')</td><td><a href="javascript:;" onclick="Project.delDev(\''+userName+'\');">删除</a></td></tr>');
+                    var ids = $('#userNames_'+roleID).val();
+                    $('#userNames_'+roleID).val(ids + userName + ',');
+                    $('#selectUsers_'+roleID).append('<tr id="user_'+roleID+'_'+userName+'"><td>'+userRealName+'</td><td><a href="javascript:;" onclick="Project.delUser(\''+userName+'\', '+roleID+');">删除</a></td></tr>');
                 });
             },
             delUser : function(userName, roleID){
-                var userRealName = $('#dev_'+userName+' td:first-child').html();
-                $('#dev_'+userName).remove();
-                $('#devs').append('<option value="'+userName+'">'+userRealName+'</option>');
-                var ids = $('#devUserNames').val();
-                $('#devUserNames').val(ids.replace(','+userName+',', ','));
+                var userRealName = $('#user_'+roleID+'_'+userName+' td:first-child').html();
+                $('#user_'+roleID+'_'+userName).remove();
+                $('#roles_select_'+roleID).append('<option value="'+userName+'">'+userRealName+'</option>');
+                var ids = $('#userNames_'+roleID).val();
+                $('#userNames_'+roleID).val(ids.replace(','+userName+',', ','));
             },
-            selectProducter : function(){
-                $('#productUserName option:selected').each(function(){
-                    $('#productUserRealName').val($(this).text());
-                });
-            },
-            selectDever : function(){
-                $('#devUserName option:selected').each(function(){
-                    $('#devUserRealName').val($(this).text());
+            selectUser : function(roleID){
+                $('#role_select_'+roleID+' option:selected').each(function(){
+                    $('#user_real_name_'+roleID).val($(this).text());
                 });
             }
         };
 
     $(document).ready(function () {
-        $('#productUserName').bind('change', function () {
-            Project.selectProducter();
-        });
-        $('#devUserName').bind('change', function () {
-            Project.selectDever();
-        });
-        Project.selectProducter();
-        Project.selectDever();
+        
         $('#addProject').bind('click', function(){
             Project.addProduct();
-        });
-        $('#addDev').bind('click', function(){
-            Project.addDev();
         });
         Project.initSelectProduct();
     });

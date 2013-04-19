@@ -69,10 +69,13 @@ operEdit = 4
 operDel = 8
 
 ProjectRoles = [
-    {'id' : 10 , 'name' : u'产品经理', 'isOne' : True, 'default' : 0},
-    {'id' : 11 , 'name' : u'产品团队', 'isOne' : False, 'default' : 10},
-    {'id' : 20 , 'name' : u'技术经理', 'isOne' : True, 'default' : 0},
-    {'id' : 21 , 'name' : u'开发团队', 'isOne' : False, 'default' : 20},
-    {'id' : 30 , 'name' : u'测试经理', 'isOne' : True, 'default' : 0},
-    {'id' : 31 , 'name' : u'测试团队', 'isOne' : False, 'default' : 30},
+    {'id' : 10 , 'name' : u'产品经理', 'isOne' : True},
+    {'id' : 11 , 'name' : u'产品团队', 'isOne' : False},
+    {'id' : 20 , 'name' : u'技术经理', 'isOne' : True},
+    {'id' : 21 , 'name' : u'开发团队', 'isOne' : False},
+    {'id' : 30 , 'name' : u'测试经理', 'isOne' : True},
+    {'id' : 31 , 'name' : u'测试团队', 'isOne' : False},
 ]
+
+productManagerRoleID=10
+devManagerRoleID=20

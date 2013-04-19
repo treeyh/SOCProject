@@ -3985,3 +3985,68 @@
 [I 130418 05:08:52 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
 [I 130418 05:11:43 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 73.96ms
 [I 130418 05:11:46 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 55.51ms
+[I 130418 22:00:34 web:1514] 200 GET /Admin/Main?token=84e7e32aa89411e28b3e08002775323f& (127.0.0.1) 74.51ms
+[W 130418 22:00:34 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 14.24ms
+[W 130418 22:00:34 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 0.32ms
+[I 130418 22:00:34 web:1514] 200 GET /Admin/NotRight (127.0.0.1) 6.25ms
+[I 130418 22:00:37 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 201.65ms
+[I 130419 01:43:22 web:1514] 200 GET /Admin/Main?token=0bdb94b6a8b411e2816c08002775323f& (127.0.0.1) 28.89ms
+[W 130419 01:43:22 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 2.37ms
+[W 130419 01:43:22 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 0.39ms
+[I 130419 01:43:22 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 6.49ms
+[I 130419 01:43:27 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 126.06ms
+[I 130419 01:43:28 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 26.79ms
+[I 130419 01:43:29 web:1514] 200 GET /Admin/Product/Add (127.0.0.1) 35.11ms
+[I 130419 01:43:35 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 43.63ms
+[I 130419 01:43:36 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 56.39ms
+[I 130419 01:43:38 web:1514] 304 GET /Admin/Product/List (127.0.0.1) 15.64ms
+[I 130419 01:43:39 web:1514] 200 GET /Admin/Product/Edit?id=1 (127.0.0.1) 20.59ms
+[I 130419 01:43:44 web:1514] 304 GET /Admin/Product/List (127.0.0.1) 12.81ms
+[I 130419 01:43:54 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 31.97ms
+[I 130419 01:43:55 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 58.87ms
+[I 130419 01:44:11 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 48.15ms
+[I 130419 01:44:13 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 45.14ms
+[I 130419 01:48:55 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 73.93ms
+[I 130419 01:48:58 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 64.45ms
+[I 130419 01:53:53 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 42.47ms
+[I 130419 01:56:01 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 38.09ms
+[I 130419 01:56:04 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 53.28ms
+[I 130419 02:01:36 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 40.16ms
+[I 130419 02:02:00 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 54.31ms
+[I 130419 02:07:57 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 59.86ms
+[I 130419 02:08:37 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 65.15ms
+[I 130419 02:08:41 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 57.08ms
+[I 130419 02:10:01 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 39.43ms
+[I 130419 02:18:35 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 56.90ms
+[I 130419 02:19:25 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 59.37ms
+[I 130419 02:19:31 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 46.18ms
+[I 130419 02:20:14 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 35.91ms
+[I 130419 02:20:29 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 84.45ms
+[I 130419 02:23:21 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 78.85ms
+[I 130419 02:23:54 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 53.21ms
+[I 130419 02:23:58 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 65.84ms
+[I 130419 02:24:13 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 50.69ms
+[I 130419 02:24:24 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 54.84ms
+[I 130419 02:24:42 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 42.57ms
+[I 130419 02:31:17 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130419 02:31:19 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130419 02:31:31 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130419 02:31:32 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130419 02:31:50 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/project_handler.py modified; restarting server
+[I 130419 03:43:17 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 107.74ms
+[I 130419 03:44:02 web:1514] 302 POST /Admin/Project/Add (127.0.0.1) 142.07ms
+[I 130419 03:44:02 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 27.98ms
+[I 130419 03:44:04 web:1514] 200 GET /Admin/Project/Edit?id=14 (127.0.0.1) 64.82ms
+[I 130419 03:48:40 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130419 03:48:43 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130419 03:49:56 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130419 03:50:50 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130419 03:50:51 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130419 03:51:19 web:1514] 302 POST /Admin/Project/Edit?id=14 (127.0.0.1) 64.36ms
+[I 130419 03:51:19 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 26.28ms
+[I 130419 03:51:21 web:1514] 200 GET /Admin/Project/Edit?id=14 (127.0.0.1) 71.26ms
+[I 130419 03:51:41 web:1514] 302 POST /Admin/Project/Edit?id=14 (127.0.0.1) 71.04ms
+[I 130419 03:51:41 web:1514] 200 GET /Admin/Project/List (127.0.0.1) 32.46ms
+[I 130419 03:55:24 web:1514] 200 GET /Admin/Project/Edit?id=14 (127.0.0.1) 54.82ms
+[I 130419 04:10:01 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server
+[I 130419 04:10:04 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/project_logic.py modified; restarting server

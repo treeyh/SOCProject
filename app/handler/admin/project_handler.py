@@ -91,24 +91,37 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
         project['productIDs'] = str_helper.format_str_to_list_filter_empty(self.get_arg('productIDs',''), ',')
         project['products'] = product_logic.ProductLogic.instance().query_by_ids(project['productIDs'])
 
-        project['devUserNames'] = str_helper.format_str_to_list_filter_empty(self.get_arg('devUserNames',''), ',')
-
         ps = self._init_template_info(ps)
 
+        '''  获取绑定的用户  BEGIN '''
         users = []
-        isInclude = False
-        for dev in project['devUserNames']:
-            if dev == project['devUserName']:
-                isInclude = True
-            for d in ps['devUsers']:
-                if dev != d['userName']:
-                    continue
-                users.append({'devUserName': dev, 'devUserRealName': d['userRealName']})
-
-        if not isInclude:
-            users.append({'devUserName': project['devUserName'], 'devUserRealName': project['devUserRealName']})
-
+        oneUserNames = {}        
+        for role in ps['projectRoles']:
+            rid = role['id']
+            if role['isOne']:
+                #单人
+                un = self.get_arg('role_select_'+str(rid), '')
+                urn = self.get_arg('user_real_name_'+str(rid), '')
+                if un != '':                    
+                    project['userName_'+str(rid)] = un
+                    users.append({'type':rid, 'userName':un, 'userRealName': urn})
+                if rid == state.productManagerRoleID:
+                    project['productUserName'] = un
+                    project['productUserRealName'] = urn
+                elif rid == state.devManagerRoleID:
+                    project['devUserName'] = un
+                    project['devUserRealName'] = urn
+            else:
+                #多人
+                uns = str_helper.format_str_to_list_filter_empty(self.get_arg('userNames_'+str(rid),''), ',')
+                for un in uns:
+                    for unn in ps['roleUsers'][rid]:
+                        if un != unn['userName']:
+                            continue
+                        users.append({'type':rid, 'userName':un, 'userRealName': unn['userRealName']})
+        '''  获取绑定的用户  END '''
         project['users'] = users
+
         ps['project'] = project
 
         if len(project['productIDs']) <= 0:
@@ -116,8 +129,8 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
             self.render('admin/project/add_or_edit.html', **ps)
             return
 
-        if len(project['devUserNames']) <= 0:
-            ps['msg'] = '请选择开发人员'
+        if len(project['users']) <= 0:
+            ps['msg'] = '请选择人员'
             self.render('admin/project/add_or_edit.html', **ps)
             return
         
@@ -137,7 +150,7 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
                         productUserRealName = project['productUserRealName'], devUserName = project['devUserName'], 
                         devUserRealName = project['devUserRealName'], startDate = project['startDate'], 
                         endDate = project['endDate'], status = project['status'], 
-                        remark = project['remark'], user = project['user'], productIDs = project['productIDs'], devs = project['devs'])
+                        remark = project['remark'], user = project['user'], productIDs = project['productIDs'], users = project['users'])
                 if info:
                     self.redirect(ps['siteDomain'] + 'Admin/Project/List')
                     return
@@ -153,7 +166,7 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
                         productUserRealName = project['productUserRealName'], devUserName = project['devUserName'], 
                         devUserRealName = project['devUserRealName'], startDate = project['startDate'], 
                         endDate = project['endDate'], status = project['status'], 
-                        remark = project['remark'], user = project['user'], productIDs = project['productIDs'], devs = project['devs'])
+                        remark = project['remark'], user = project['user'], productIDs = project['productIDs'], users = project['users'])
                 if info > 0:
                     self.redirect(ps['siteDomain'] + 'Admin/Project/List')
                     return
