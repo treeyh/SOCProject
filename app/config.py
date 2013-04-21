@@ -15,7 +15,7 @@ SOCPMConfig = {
     'appCode' : 'SOCProject',
     'adminCookieName' : 'soc_project_manager_user',
 
-    'RoleUserGroup' : { 10:2, 11:2, 20:1, 21:1, 30:1, 31:1 }
+    'RoleUserGroup' : { 10:3, 11:3, 20:4, 21:4, 30:5, 31:5 }
 }
 
 urls = {

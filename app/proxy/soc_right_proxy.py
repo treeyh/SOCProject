@@ -56,3 +56,6 @@ def get_user_by_name(userName):
     # redis_cache.setObj(key = key, val = obj, time = config.cache['SOCRightInfoTimeOut'])    
     return obj
     
+def get_users_by_names(userNames = []):
+    if None == userNames or len(userNames) <= 0:
+        return None

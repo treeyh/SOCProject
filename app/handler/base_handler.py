@@ -75,7 +75,7 @@ class BaseHandler(tornado.web.RequestHandler):
         if data == None or data == '':
             j = '{"code":0,"msg":"OK"}'
         else:
-            j = '{"code":0,"msg":"OK","data":%s}' % data
+            j = '{"code":0,"msg":"OK","info":%s}' % data
         if jsoncallback == None or jsoncallback == '':
             self.write(j)
         else:

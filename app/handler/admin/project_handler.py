@@ -61,6 +61,16 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
             else:
                 project['products'] = product_logic.ProductLogic.instance().query_all_by_project(projectID = project['id'])
                 project['users'] = project_logic.ProjectLogic.instance().query_user_by_project(projectID = project['id'])
+                for user in project['users']:
+                    t = user['type']
+                    b = False
+                    for role in ps['projectRoles']:
+                        if role['id'] == t:
+                            if role['isOne'] == True:
+                                b = True
+                            break
+                    if b == True:
+                        project['userName_'+str(t)] = user['userName']
         else:
             # self.check_oper_right(right = state.operAdd)
             project = self.get_args(['name', 'teamPath', 'productUserName', 'productUserRealName', 
@@ -71,10 +81,6 @@ class ProjectAddOrEditHandler(admin_base_handler.AdminRightBaseHandler):
             project['endDate'] = datetime.now()
             project['products'] = []
             project['users'] = []
-            # if project['productUserRealName'] == '' and len(ps['productUsers']) > 0:
-            #     project['productUserRealName'] = ps['productUsers'][0]['userRealName']
-            # if project['devUserRealName'] == '' and len(ps['devUsers']) > 0:
-            #     project['devUserRealName'] = ps['devUsers'][0]['userRealName']
         ps['project'] = project
         self.render('admin/project/add_or_edit.html', **ps)
 

@@ -84,7 +84,7 @@ class TaskProjectAddOrEditHandler(TaskListHandler):
             projectID = ps['projects'][0]['id']
 
         ps['projectID'] = projectID        
-        ps['users'] = project_logic.ProjectLogic.instance().query_user_by_project(projectID = projectID)
+        ps['users'] = project_logic.ProjectLogic.instance().query_user_by_project_distinct(projectID = projectID)
 
         tasks = task_logic.TaskLogic.instance().query_by_projectID(projectID = projectID)
         tasks = self._format_project_tasks(tasks, True)
@@ -127,7 +127,7 @@ class TaskProjectAddOrEditHandler(TaskListHandler):
         ps = self.get_page_config('编辑任务')
         ps['projects'] = project_logic.ProjectLogic.instance().query_all_by_active()
         ps['projectID'] = int(self.get_arg('projectID', '0'))
-        ps['users'] = project_logic.ProjectLogic.instance().query_user_by_project(projectID = ps['projectID'])
+        ps['users'] = project_logic.ProjectLogic.instance().query_user_by_project_distinct(projectID = ps['projectID'])
 
         if None == ps['projects'] or len(ps['projects']) <= 0:
             ps['msg'] = state.ResultInfo.get(112006, '')

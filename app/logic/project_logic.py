@@ -184,4 +184,21 @@ class ProjectLogic():
         users = mysql.find_all(self._query_user_by_projectID_sql, yz, self._query_user_by_projectID_col)
         return users
 
-    
+    _query_user_by_projectID_sql = ''' select id, projectID, userName, userRealName, type, remark from pm_project_user 
+                            where projectID = %s and isDelete = %s order by type asc '''
+    _query_user_by_projectID_col = str_helper.format_str_to_list_filter_empty('id, projectID, userName, userRealName, type, remark', ',')
+    ''' 查询项目开发者_去重 '''
+    def query_user_by_project_distinct(self, projectID):
+        users = []
+        us = self.query_user_by_project(projectID = projectID)
+        if None == us or len(us) <= 0:
+            return users
+        for u in us:
+            b = True
+            for user in users:
+                if u['userName'] == user['userName']:
+                    b = False
+                    break
+            if b == True:
+                users.append(u)
+        return users
