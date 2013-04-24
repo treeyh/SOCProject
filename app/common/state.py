@@ -49,6 +49,16 @@ Status = {
     2 : '不可用',
 }
 
+TaskStatus = {
+    1 : '未开始',
+    2 : '进行中',
+    3 : '已完成',
+}
+TaskNoRunStatus = 1 
+TaskRunningStatus = 2
+TaskRunedStatus = 3
+
+
 ProjectStatus = {
     1 : '需求分析',
     2 : '概要设计',

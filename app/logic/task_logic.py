@@ -19,7 +19,7 @@ class TaskLogic():
 
 
 
-    _query_sql = '''  SELECT t.id, t.name, t.projectID, t.userName, t.userRealName, t.date,
+    _query_sql = '''  SELECT t.id, t.name, t.type, t.projectID, t.userName, t.userRealName, t.date,
                             t.startDate, t.endDate, t.users, t.preID, t.parentID, t.sort, t.`status`, t.degree,
                             t.remark, t.isDelete, t.creater, t.createTime, t.lastUpdater, 
                             t.lastUpdateTime , ta.name AS preName, p.name as projectName
@@ -27,7 +27,7 @@ class TaskLogic():
                     LEFT JOIN pm_task as ta ON ta.id = t.preID 
                     LEFT JOIN pm_project as p ON p.id = t.projectID 
                     WHERE t.isDelete = %s   '''
-    _query_col = str_helper.format_str_to_list_filter_empty('id, name, projectID, userName, userRealName, date, startDate, endDate, users, preID, parentID, sort, status, degree, remark, isDelete, creater, createTime, lastUpdater, lastUpdateTime, preName, projectName', ',')
+    _query_col = str_helper.format_str_to_list_filter_empty('id, name, type, projectID, userName, userRealName, date, startDate, endDate, users, preID, parentID, sort, status, degree, remark, isDelete, creater, createTime, lastUpdater, lastUpdateTime, preName, projectName', ',')
     def query_by_projectID(self, projectID):
         sql = self._query_sql
         isdelete = state.Boole['false']
@@ -38,6 +38,34 @@ class TaskLogic():
         if tasks != None or len(tasks) > 0:
             for task in tasks:
                 task = self._format_task_status(task)
+        return tasks
+
+    ''' 分页查询任务 '''
+    def query_by_type_userName_status_begin_end(self, type, userName, status, begin, end, page, size):
+        sql = self._query_sql
+        isdelete = state.Boole['false']
+        ps = [isdelete]
+        if 0 != type:
+            sql = sql + ' and t.type = %s '
+            ps.append(type)
+        if not str_helper.is_null_or_empty(userName):
+            sql = sql + ' and  t.userName = %s '
+            ps.append(userName)
+        if 0 != status:
+            sql = sql + ' and t.`status` = %s '
+            ps.append(status)
+        if not str_helper.is_null_or_empty(begin):
+            sql = sql + ' and t.startDate >= %s'
+            ps.append(begin)
+        if not str_helper.is_null_or_empty(end):
+            sql = sql + ' and t.startDate <= %s'
+            ps.append(end)
+        sql = sql + ' order by startDate asc '
+        yz = tuple(ps)
+        tasks = mysql.find_page(sql, yz, self._query_col, page, size)
+        if None != tasks['data']:
+            for r in tasks['data']:
+                r = self._format_task_status(r)
         return tasks
 
 
@@ -74,7 +102,7 @@ class TaskLogic():
         #插入新任务
         sortMap = {0:0}
         for task in tasks:
-            taskid = self.add(name = task['name'], projectID = projectID, userName = task['userName'],
+            taskid = self.add(name = task['name'], type = task['type'], projectID = projectID, userName = task['userName'],
                         userRealName = task['userRealName'],date = task['date'], startDate = task['startDate'], 
                         endDate = task['endDate'], users = task['users'], preID = 0, parentID = 0,
                         sort = task['sort'], status = 0, degree = task['degree'], remark = '', user = user)
@@ -96,14 +124,14 @@ class TaskLogic():
 
 
 
-    _add_sql = '''   INSERT INTO pm_task(name, projectID, userName, 
+    _add_sql = '''   INSERT INTO pm_task(name, type, projectID, userName, 
                         userRealName, date, startDate, endDate, users, `preID`, parentID, sort, 
                         status, degree, remark, isDelete, creater, createTime, lastUpdater, lastUpdateTime)  
-                        VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now(), %s, now())  '''
-    def add(self, name, projectID, userName, userRealName, date,  
+                        VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now(), %s, now())  '''
+    def add(self, name, type, projectID, userName, userRealName, date,  
             startDate, endDate, users, preID, parentID, sort, status, degree, remark, user):
         isdelete = state.Boole['false']
-        yz = (name, projectID, userName, userRealName, date ,
+        yz = (name, type, projectID, userName, userRealName, date ,
             startDate, endDate, users, preID, parentID, sort, status, degree, remark, isdelete, user, user)
         result = mysql.insert_or_update_or_delete(self._add_sql, yz, isbackinsertid = True)
         return result
@@ -152,17 +180,18 @@ class TaskLogic():
 
 
 
-
+    def get_task_status(self, degree):
+        if 0 < degree and 100 > degree:
+            return state.TaskRunningStatus
+        elif 100 == degree:
+            return state.TaskRunedStatus
+        else:
+            return state.TaskNoRunStatus
 
     def _format_task_status(self, task):
         if None == task:
             return None
-        if task['status'] == 0:
-            task['statusname'] = '未开始'
-        elif task['status'] >= 100:
-            task['statusname'] = '已完成'
-        else:
-            task['statusname'] = '%d%' % (task['status'])   
+        task['statusname'] = state.TaskStatus[task['status']]        
         return task
 
 

@@ -104,8 +104,9 @@ class TaskProjectAddOrEditHandler(TaskListHandler):
             ind = str(i)
             task = {}
             task['sort'] = i
-            task['name'] = self.get_arg('task_'+ind, '')
+            task['name'] = self.get_arg('task_'+ind, '')            
             task['level'] = int(self.get_arg('level_'+ind, '1'))
+            task['type'] = 1
             task['parentID'] = int(self.get_arg('parentID_'+ind, '0'))
             task['status'] = int(self.get_arg('status_'+ind, '0'))
             task['taskID'] = int(self.get_arg('taskID_'+ind, '0'))
@@ -222,3 +223,38 @@ class TaskDetailHandler(admin_base_handler.AdminRightBaseHandler):
         project['projects'] = product_logic.ProductLogic.instance().query_all_by_project(project['id'])
         ps['project'] = project
         self.render('admin/project/detail.html', **ps)
+
+
+class UserTaskListHandler(admin_base_handler.AdminRightBaseHandler):
+    _rightKey = config.SOCPMConfig['appCode'] + '.AppManager'
+    _right = state.operView
+
+    def _get_user_list(self):
+        users = []
+        for role in state.ProjectRoles:
+            title = role['name']
+            us = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['RoleUserGroup'][role['id']])
+            if None != us and len(us) > 0:
+                for u in us:
+                    u['userRealName'] = title + u['userRealName']
+                    users.append(u)
+        return users
+
+
+    def get(self):
+        ps = self.get_page_config('用户任务列表')
+        ps['users'] = self._get_user_list()
+
+        if None == ps['users'] or len(ps['users']) <= 0:            
+            self.render('admin/task/list.html', **ps)
+            return
+
+
+        ps['userName'] = self.get_arg('userName', '')
+        if str_helper.is_null_or_empty(ps['userName']) == '':
+            ps['userName'] = ps['users'][0]['userName']
+
+        tasks = task_logic.TaskLogic.instance().query_by_projectID(projectID = ps['projectID'])
+        tasks = self._format_project_tasks(tasks, False)
+        ps['tasks'] = tasks
+        self.render('admin/task/list.html', **ps)
