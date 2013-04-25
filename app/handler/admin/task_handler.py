@@ -10,7 +10,7 @@ from helper import str_helper, http_helper
 from proxy import soc_right_proxy
 from logic import project_logic, product_logic, task_logic
 
-class TaskListHandler(admin_base_handler.AdminRightBaseHandler):
+class TaskProjectListHandler(admin_base_handler.AdminRightBaseHandler):
     _rightKey = config.SOCPMConfig['appCode'] + '.AppManager'
     _right = state.operView
 
@@ -26,7 +26,6 @@ class TaskListHandler(admin_base_handler.AdminRightBaseHandler):
         indexMap = {}
         #格式化 statusname，level        
         for task in tasks:
-            print task
             if task['parentID'] == 0:
                 task['level'] = 1
             else:
@@ -53,7 +52,7 @@ class TaskListHandler(admin_base_handler.AdminRightBaseHandler):
             ps['tasks'] = []
             ps['msg'] = state.ResultInfo.get(111003, '')
             ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Project/Add'
-            self.render('admin/task/list.html', **ps)
+            self.render('admin/task/project_task_list.html', **ps)
             return
 
         ps['projectID'] = int(self.get_arg('projectID', '0'))
@@ -63,9 +62,9 @@ class TaskListHandler(admin_base_handler.AdminRightBaseHandler):
         tasks = task_logic.TaskLogic.instance().query_by_projectID(projectID = ps['projectID'])
         tasks = self._format_project_tasks(tasks, False)
         ps['tasks'] = tasks
-        self.render('admin/task/list.html', **ps)
+        self.render('admin/task/project_task_list.html', **ps)
 
-class TaskProjectAddOrEditHandler(TaskListHandler):
+class TaskProjectAddOrEditHandler(TaskProjectListHandler):
     _rightKey = config.SOCPMConfig['appCode'] + '.AppManager'
     _right = 0
 
@@ -77,7 +76,7 @@ class TaskProjectAddOrEditHandler(TaskListHandler):
         if None == ps['projects'] or len(ps['projects']) <= 0:
             ps['msg'] = state.ResultInfo.get(112006, '')
             ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Project/Add'            
-            self.render('admin/task/project_add_or_edit.html', **ps)
+            self.render('admin/task/project_task_add_or_edit.html', **ps)
             return
 
         if projectID <= 0:
@@ -90,7 +89,7 @@ class TaskProjectAddOrEditHandler(TaskListHandler):
         tasks = self._format_project_tasks(tasks, True)
 
         ps['tasks'] = tasks
-        self.render('admin/task/project_add_or_edit.html', **ps)
+        self.render('admin/task/project_task_add_or_edit.html', **ps)
 
 
 
@@ -133,7 +132,7 @@ class TaskProjectAddOrEditHandler(TaskListHandler):
         if None == ps['projects'] or len(ps['projects']) <= 0:
             ps['msg'] = state.ResultInfo.get(112006, '')
             ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Project/Add'            
-            self.render('admin/task/project_add_or_edit.html', **ps)
+            self.render('admin/task/project_task_add_or_edit.html', **ps)
             return
         
         ps['tasks'] = self._format_post_tasks(users = ps['users'])
@@ -142,18 +141,18 @@ class TaskProjectAddOrEditHandler(TaskListHandler):
             info = task_logic.TaskLogic.instance().save_tasks(projectID = ps['projectID'], 
                 tasks = ps['tasks'], user = ps['user'])
             if info:
-                self.redirect(ps['siteDomain'] + 'Admin/Task/List?projectID='+str(ps['projectID']))
+                self.redirect(ps['siteDomain'] + 'Admin/Task/ProjectList?projectID='+str(ps['projectID']))
                 return
             else:
                 ps['msg'] = state.ResultInfo.get(101, '')
         except error.RightError as e:
             ps['msg'] = e.msg
         ps = self.format_none_to_empty(ps)
-        self.render('admin/task/project_add_or_edit.html', **ps)
+        self.render('admin/task/project_task_add_or_edit.html', **ps)
 
 
 
-class TaskAddOrEditHandler(TaskListHandler):
+class TaskAddOrEditHandler(TaskProjectListHandler):
     _rightKey = config.SOCPMConfig['appCode'] + '.AppManager'
     _right = 0
 
@@ -164,7 +163,7 @@ class TaskAddOrEditHandler(TaskListHandler):
 
         if id <= 0:
             ps['msg'] = state.ResultInfo.get(112007, '')
-            ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Task/List'            
+            ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Task/ProjectList'            
             self.render('admin/task/edit.html', **ps)
             return
 
@@ -180,26 +179,30 @@ class TaskAddOrEditHandler(TaskListHandler):
         id = int(self.get_arg('id', '0'))
         if id <= 0:
             ps['msg'] = state.ResultInfo.get(112007, '')
-            ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Task/List'            
+            ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Task/ProjectList'            
             self.render('admin/task/edit.html', **ps)
             return
 
-        task = self.get_args(['users', 'remark'], '')
-        task['id'] = int(self.get_arg('id', '0'))
+        task = task_logic.TaskLogic.instance().query_one(id = id)
+        task['users'] = self.get_arg('users', '')
+        task['remark'] = self.get_arg('remark', '')
         task['degree'] = int(self.get_arg('degree', '0'))
-        task['projectID'] = int(self.get_arg('projectID', '0'))
 
         ps['user'] = self.get_oper_user()
-        try:
-            info = task_logic.TaskLogic.instance().update_degree_remark(
-                        id = task['id'], degree = task['degree'], users = task['users'], remark = task['remark'], user = ps['user'])
-            if info:
-                self.redirect(ps['siteDomain'] + 'Admin/Task/List?projectID='+str(task['projectID']))
-                return
-            else:
-                ps['msg'] = state.ResultInfo.get(101, '')
-        except error.RightError as e:
-            ps['msg'] = e.msg
+        if 0 <= task['degree'] and 100 >= task['degree']:
+            try:
+                info = task_logic.TaskLogic.instance().update_degree_remark(
+                            id = task['id'], degree = task['degree'], users = task['users'], remark = task['remark'], user = ps['user'])
+                if info:
+                    self.redirect(ps['siteDomain'] + 'Admin/Task/ProjectList?projectID='+str(task['projectID']))
+                    return
+                else:
+                    ps['msg'] = state.ResultInfo.get(101, '')
+            except error.ProjectError as e:
+                ps['msg'] = e.msg
+        else:
+            ps['msg'] = state.ResultInfo.get(112008, '')
+        ps['task'] = task
         ps = self.format_none_to_empty(ps)
         self.render('admin/task/edit.html', **ps)
 
@@ -215,7 +218,7 @@ class TaskDetailHandler(admin_base_handler.AdminRightBaseHandler):
         task = task_logic.TaskLogic.instance().query_one(id = id)
         if None == task:
             ps['msg'] = state.ResultInfo.get(112007, '')
-            ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Task/List'
+            ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Task/ProjectList'
             product = {'id':'','name':'','teamPath':'','productUserName':'','productUserRealName':'',
                             'devUserName':'','devUserRealName':'', 'startDate':'', 'endDate':''
                             ,'remark':'','status':1,'creater':'', 
@@ -246,7 +249,7 @@ class UserTaskListHandler(admin_base_handler.AdminRightBaseHandler):
         ps['users'] = self._get_user_list()
 
         if None == ps['users'] or len(ps['users']) <= 0:            
-            self.render('admin/task/list.html', **ps)
+            self.render('admin/task/project_task_list.html', **ps)
             return
 
 
@@ -257,4 +260,4 @@ class UserTaskListHandler(admin_base_handler.AdminRightBaseHandler):
         tasks = task_logic.TaskLogic.instance().query_by_projectID(projectID = ps['projectID'])
         tasks = self._format_project_tasks(tasks, False)
         ps['tasks'] = tasks
-        self.render('admin/task/list.html', **ps)
+        self.render('admin/task/project_task_list.html', **ps)

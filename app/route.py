@@ -34,6 +34,6 @@ route.append((r'^/Admin/Project/Del', project_handler.ProjectDelHandler))
 
 
 
-route.append((r'^/Admin/Task/List', task_handler.TaskListHandler))
-route.append((r'^/Admin/Task/Edits', task_handler.TaskProjectAddOrEditHandler))
+route.append((r'^/Admin/Task/ProjectList', task_handler.TaskProjectListHandler))
+route.append((r'^/Admin/Task/ProjectEdit', task_handler.TaskProjectAddOrEditHandler))
 route.append((r'^/Admin/Task/Edit', task_handler.TaskAddOrEditHandler))

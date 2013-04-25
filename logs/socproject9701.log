@@ -4499,3 +4499,439 @@
 [I 130424 21:54:53 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
 [I 130424 21:55:50 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
 [I 130424 22:00:35 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 20:40:44 web:1514] 200 GET /Admin?token=58826592ada511e2906608002734d502& (127.0.0.1) 77.45ms
+[I 130425 20:40:44 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 5.87ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.48ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/zTree/zTreeStyle/zTreeStyle.css?1 (127.0.0.1) 0.55ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/zTree/jquery.ztree.core-3.2.min.js?1 (127.0.0.1) 0.49ms
+[W 130425 20:40:44 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 1.10ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.47ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.52ms
+[I 130425 20:40:44 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 5.09ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/My97DatePicker/skin/WdatePicker.css (127.0.0.1) 0.49ms
+[W 130425 20:40:44 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 0.79ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/zTree/zTreeStyle/img/zTreeStandard.png (127.0.0.1) 0.38ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/zTree/zTreeStyle/img/line_conn.gif (127.0.0.1) 0.36ms
+[I 130425 20:40:44 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.44ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.24ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.43ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.34ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/My97DatePicker/My97DatePicker.htm (127.0.0.1) 0.52ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/My97DatePicker/config.js (127.0.0.1) 0.44ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/My97DatePicker/calendar.js (127.0.0.1) 0.37ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/My97DatePicker/lang/zh-cn.js (127.0.0.1) 1.10ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/My97DatePicker/skin/default/datepicker.css (127.0.0.1) 0.42ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/My97DatePicker/skin/whyGreen/datepicker.css (127.0.0.1) 0.29ms
+[I 130425 20:40:44 web:1514] 304 GET /static/js/My97DatePicker/skin/default/img.gif (127.0.0.1) 0.50ms
+[E 130425 20:40:46 web:1121] Uncaught exception GET /Admin/Task/Edits (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/Edits', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=58826592ada511e2906608002734d502&', 'X-Real-Ip': '192.168.0.108', 'Cookie': 'soc_project_manager_user=5888cd92ada511e2bdcb08002734d502'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 89, in get
+        tasks = task_logic.TaskLogic.instance().query_by_projectID(projectID = projectID)
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 40, in query_by_projectID
+        task = self._format_task_status(task)
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 194, in _format_task_status
+        task['statusname'] = state.TaskStatus[task['status']]
+    KeyError: 0L
+[E 130425 20:40:46 web:1514] 500 GET /Admin/Task/Edits (127.0.0.1) 81.91ms
+[W 130425 20:40:47 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 1.00ms
+[E 130425 20:41:39 web:1121] Uncaught exception GET /Admin/Task/Edits (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/Edits', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=58826592ada511e2906608002734d502&', 'X-Real-Ip': '192.168.0.108', 'Cookie': 'soc_project_manager_user=5888cd92ada511e2bdcb08002734d502'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 89, in get
+        tasks = task_logic.TaskLogic.instance().query_by_projectID(projectID = projectID)
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 40, in query_by_projectID
+        task = self._format_task_status(task)
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 194, in _format_task_status
+        task['statusname'] = state.TaskStatus[task['status']]
+    KeyError: 0L
+[E 130425 20:41:39 web:1514] 500 GET /Admin/Task/Edits (127.0.0.1) 24.47ms
+[I 130425 20:43:57 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 20:44:00 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 20:44:06 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 20:44:34 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 20:44:38 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 20:44:40 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 20:44:41 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 20:48:06 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 20:51:55 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 20:52:03 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[E 130425 20:52:05 web:1121] Uncaught exception GET /Admin/Task/List (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/List', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=58826592ada511e2906608002734d502&', 'Cookie': 'soc_project_manager_user=5888cd92ada511e2bdcb08002734d502', 'X-Real-Ip': '192.168.0.108', 'If-None-Match': '"0a33beb1f54beca7a0df7d1c833e57e8f66dbf34"'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 63, in get
+        tasks = task_logic.TaskLogic.instance().query_by_projectID(projectID = ps['projectID'])
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 40, in query_by_projectID
+        task = self._format_task_status(task)
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 196, in _format_task_status
+        task['statusname'] = state.TaskStatus[task['status']]
+    KeyError: 0L
+[E 130425 20:52:05 web:1514] 500 GET /Admin/Task/List (127.0.0.1) 35.87ms
+[I 130425 20:53:02 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 36.26ms
+[I 130425 20:53:02 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 10.65ms
+[I 130425 20:53:02 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.93ms
+[I 130425 20:53:02 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.78ms
+[I 130425 20:53:02 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.61ms
+[I 130425 20:53:03 web:1514] 304 GET /Admin/Task/Edit?id=82 (127.0.0.1) 44.15ms
+[I 130425 20:53:03 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.77ms
+[I 130425 20:53:03 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.44ms
+[I 130425 20:53:03 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.51ms
+[I 130425 20:53:03 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.46ms
+[I 130425 20:53:08 web:1514] 302 POST /Admin/Task/Edit?id=82 (127.0.0.1) 16.06ms
+[I 130425 20:53:08 web:1514] 200 GET /Admin/Task/List?projectID=11 (127.0.0.1) 23.23ms
+[I 130425 20:53:08 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.44ms
+[I 130425 20:53:08 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.25ms
+[I 130425 20:53:08 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.80ms
+[I 130425 20:53:08 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.42ms
+[I 130425 20:53:13 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 18.38ms
+[I 130425 20:53:13 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.88ms
+[I 130425 20:53:13 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 1.61ms
+[I 130425 20:53:13 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 1.00ms
+[I 130425 20:53:13 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.67ms
+[I 130425 20:53:22 web:1514] 200 POST /Admin/Task/Edit?id=82 (127.0.0.1) 9.39ms
+[I 130425 20:53:22 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.59ms
+[I 130425 20:53:22 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.41ms
+[I 130425 20:53:22 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 1.24ms
+[I 130425 20:53:22 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.37ms
+[I 130425 20:53:26 web:1514] 200 POST /Admin/Task/Edit?id=82 (127.0.0.1) 15.44ms
+[I 130425 20:53:26 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.62ms
+[I 130425 20:53:26 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.46ms
+[I 130425 20:53:26 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.47ms
+[I 130425 20:53:26 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.52ms
+[I 130425 20:53:29 web:1514] 302 POST /Admin/Task/Edit?id=82 (127.0.0.1) 31.45ms
+[I 130425 20:53:29 web:1514] 200 GET /Admin/Task/List?projectID=11 (127.0.0.1) 14.47ms
+[I 130425 20:53:29 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.52ms
+[I 130425 20:53:29 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.29ms
+[I 130425 20:53:29 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.51ms
+[I 130425 20:53:29 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.36ms
+[I 130425 20:53:31 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 19.19ms
+[I 130425 20:53:31 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.45ms
+[I 130425 20:53:31 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.32ms
+[I 130425 20:53:31 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.36ms
+[I 130425 20:53:31 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.34ms
+[I 130425 20:53:35 web:1514] 200 POST /Admin/Task/Edit?id=82 (127.0.0.1) 13.17ms
+[I 130425 20:53:35 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.50ms
+[I 130425 20:53:35 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.96ms
+[I 130425 20:53:35 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.39ms
+[I 130425 20:53:35 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.39ms
+[I 130425 20:54:27 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 24.89ms
+[I 130425 20:54:27 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.57ms
+[I 130425 20:54:27 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.46ms
+[I 130425 20:54:27 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.61ms
+[I 130425 20:54:27 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.46ms
+[I 130425 20:54:28 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 18.11ms
+[I 130425 20:54:28 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 1.66ms
+[I 130425 20:54:28 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.67ms
+[I 130425 20:54:28 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.49ms
+[I 130425 20:54:28 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.40ms
+[I 130425 20:54:34 web:1514] 200 POST /Admin/Task/Edit?id=82 (127.0.0.1) 14.67ms
+[I 130425 20:54:34 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.56ms
+[I 130425 20:54:34 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.44ms
+[I 130425 20:54:34 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.52ms
+[I 130425 20:54:34 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.39ms
+[I 130425 20:55:25 web:1514] 304 GET /Admin/Product/List (127.0.0.1) 31.99ms
+[I 130425 20:55:25 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.65ms
+[I 130425 20:55:25 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.45ms
+[I 130425 20:55:25 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.54ms
+[I 130425 20:55:25 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.94ms
+[I 130425 20:55:27 web:1514] 200 GET /Admin/Product/Edit?id=1 (127.0.0.1) 33.08ms
+[I 130425 20:55:27 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 1.18ms
+[I 130425 20:55:27 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.34ms
+[I 130425 20:55:27 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.43ms
+[I 130425 20:55:27 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.35ms
+[I 130425 20:55:31 web:1514] 200 POST /Admin/Product/Edit?id=1 (127.0.0.1) 19.68ms
+[I 130425 20:55:31 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.51ms
+[I 130425 20:55:31 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.40ms
+[I 130425 20:55:31 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.57ms
+[I 130425 20:55:31 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.38ms
+[I 130425 20:55:34 web:1514] 200 POST /Admin/Product/Edit?id=1 (127.0.0.1) 21.02ms
+[I 130425 20:55:34 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.46ms
+[I 130425 20:55:34 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 1.02ms
+[I 130425 20:55:34 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.43ms
+[I 130425 20:55:34 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.42ms
+[I 130425 20:58:03 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 21:00:00 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 21:00:39 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[E 130425 21:00:48 web:1121] Uncaught exception POST /Admin/Task/Edit?id=82 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Task/Edit?id=82', version='HTTP/1.0', remote_ip='127.0.0.1', body='projectID=11&users=44444444&degree=1002&remark=', headers={'Content-Length': '47', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/Edit?id=82', 'X-Real-Ip': '192.168.0.108', 'Cookie': 'soc_project_manager_user=5888cd92ada511e2bdcb08002734d502', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 188, in post
+        tast['users'] = self.get_arg('users', '')
+    NameError: global name 'tast' is not defined
+[E 130425 21:00:48 web:1514] 500 POST /Admin/Task/Edit?id=82 (127.0.0.1) 29.09ms
+[I 130425 21:00:59 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 21:01:05 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 43.10ms
+[I 130425 21:01:05 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 4.29ms
+[I 130425 21:01:05 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.35ms
+[I 130425 21:01:05 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.50ms
+[I 130425 21:01:05 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.20ms
+[I 130425 21:01:06 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 19.24ms
+[I 130425 21:01:06 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.50ms
+[I 130425 21:01:06 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.40ms
+[I 130425 21:01:06 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.55ms
+[I 130425 21:01:06 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.39ms
+[I 130425 21:01:09 web:1514] 200 POST /Admin/Task/Edit?id=82 (127.0.0.1) 18.52ms
+[I 130425 21:01:09 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.36ms
+[I 130425 21:01:09 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.36ms
+[I 130425 21:01:09 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.45ms
+[I 130425 21:01:09 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.47ms
+[E 130425 21:01:14 web:1121] Uncaught exception POST /Admin/Task/Edit?id=82 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Task/Edit?id=82', version='HTTP/1.0', remote_ip='127.0.0.1', body='projectID=11&users=4444444555&degree=aa1001&remark=', headers={'Content-Length': '51', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/Edit?id=82', 'X-Real-Ip': '192.168.0.108', 'Cookie': 'soc_project_manager_user=5888cd92ada511e2bdcb08002734d502', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 190, in post
+        task['degree'] = int(self.get_arg('degree', '0'))
+    ValueError: invalid literal for int() with base 10: 'aa1001'
+[E 130425 21:01:14 web:1514] 500 POST /Admin/Task/Edit?id=82 (127.0.0.1) 7.85ms
+[I 130425 21:03:19 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 21:03:26 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 65.07ms
+[I 130425 21:03:26 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 11.09ms
+[I 130425 21:03:26 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.77ms
+[I 130425 21:03:26 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.59ms
+[I 130425 21:03:26 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.90ms
+[I 130425 21:03:26 web:1514] 304 GET /static/js/My97DatePicker/skin/datePicker.gif (127.0.0.1) 0.20ms
+[I 130425 21:03:26 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 24.01ms
+[I 130425 21:03:26 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.46ms
+[I 130425 21:03:26 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.37ms
+[I 130425 21:03:26 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.43ms
+[I 130425 21:03:26 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.36ms
+[I 130425 21:03:27 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 19.88ms
+[I 130425 21:03:27 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.58ms
+[I 130425 21:03:27 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.48ms
+[I 130425 21:03:27 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.52ms
+[I 130425 21:03:27 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.42ms
+[E 130425 21:03:30 web:1121] Uncaught exception POST /Admin/Task/Edit?id=82 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Task/Edit?id=82', version='HTTP/1.0', remote_ip='127.0.0.1', body='projectID=11&users=44444&degree=100&remark=', headers={'Content-Length': '43', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/Edit?id=82', 'X-Real-Ip': '192.168.0.108', 'Cookie': 'soc_project_manager_user=5888cd92ada511e2bdcb08002734d502', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 202, in post
+        except error.RightError as e:
+    AttributeError: 'module' object has no attribute 'RightError'
+[E 130425 21:03:30 web:1514] 500 POST /Admin/Task/Edit?id=82 (127.0.0.1) 6.58ms
+[I 130425 21:04:21 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 21:04:23 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 21:04:29 web:1514] 304 GET /Admin?token=58826592ada511e2906608002734d502& (127.0.0.1) 22.16ms
+[I 130425 21:04:29 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 5.02ms
+[I 130425 21:04:29 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.41ms
+[I 130425 21:04:29 web:1514] 304 GET /static/js/zTree/zTreeStyle/zTreeStyle.css?1 (127.0.0.1) 0.52ms
+[I 130425 21:04:29 web:1514] 304 GET /static/js/zTree/jquery.ztree.core-3.2.min.js?1 (127.0.0.1) 0.46ms
+[I 130425 21:04:29 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.42ms
+[I 130425 21:04:29 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.39ms
+[I 130425 21:04:30 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 3.76ms
+[I 130425 21:04:30 web:1514] 304 GET /static/js/My97DatePicker/skin/WdatePicker.css (127.0.0.1) 0.38ms
+[I 130425 21:04:30 web:1514] 304 GET /static/js/zTree/zTreeStyle/img/zTreeStandard.png (127.0.0.1) 1.09ms
+[I 130425 21:04:30 web:1514] 304 GET /static/js/zTree/zTreeStyle/img/line_conn.gif (127.0.0.1) 0.36ms
+[I 130425 21:04:30 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.41ms
+[I 130425 21:04:30 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.37ms
+[I 130425 21:04:30 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.42ms
+[I 130425 21:04:30 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.34ms
+[I 130425 21:04:31 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 25.33ms
+[I 130425 21:04:31 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.51ms
+[I 130425 21:04:31 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.37ms
+[I 130425 21:04:31 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.52ms
+[I 130425 21:04:31 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.31ms
+[I 130425 21:04:32 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 17.78ms
+[I 130425 21:04:32 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.55ms
+[I 130425 21:04:32 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.44ms
+[I 130425 21:04:32 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.47ms
+[I 130425 21:04:32 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.41ms
+[E 130425 21:04:33 web:1121] Uncaught exception POST /Admin/Task/Edit?id=82 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Task/Edit?id=82', version='HTTP/1.0', remote_ip='127.0.0.1', body='projectID=11&users=44444&degree=100&remark=', headers={'Content-Length': '43', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/Edit?id=82', 'X-Real-Ip': '192.168.0.108', 'Cookie': 'soc_project_manager_user=5888cd92ada511e2bdcb08002734d502', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 196, in post
+        id = task['id'], degree = task['degree'], users = task['users'], remark = task['remark'], user = ps['user'])
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 168, in update_degree_remark
+        result = mysql.insert_or_up
+    AttributeError: 'module' object has no attribute 'insert_or_up'
+[E 130425 21:04:33 web:1514] 500 POST /Admin/Task/Edit?id=82 (127.0.0.1) 10.08ms
+[I 130425 21:05:49 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 21:05:50 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 21:05:52 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 29.30ms
+[I 130425 21:05:52 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 5.82ms
+[I 130425 21:05:52 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.75ms
+[I 130425 21:05:52 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.56ms
+[I 130425 21:05:52 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.28ms
+[I 130425 21:05:53 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 15.89ms
+[I 130425 21:05:53 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 1.00ms
+[I 130425 21:05:53 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.72ms
+[I 130425 21:05:53 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.54ms
+[I 130425 21:05:53 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.37ms
+[I 130425 21:05:55 web:1514] 302 POST /Admin/Task/Edit?id=82 (127.0.0.1) 31.23ms
+[I 130425 21:05:55 web:1514] 200 GET /Admin/Task/List?projectID=11 (127.0.0.1) 10.56ms
+[I 130425 21:05:55 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.53ms
+[I 130425 21:05:55 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.47ms
+[I 130425 21:05:55 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.16ms
+[I 130425 21:05:55 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.33ms
+[I 130425 21:05:56 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 15.85ms
+[I 130425 21:05:56 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.48ms
+[I 130425 21:05:56 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.32ms
+[I 130425 21:05:56 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.42ms
+[I 130425 21:05:56 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.27ms
+[I 130425 21:05:58 web:1514] 302 POST /Admin/Task/Edit?id=82 (127.0.0.1) 32.78ms
+[I 130425 21:05:58 web:1514] 200 GET /Admin/Task/List?projectID=11 (127.0.0.1) 24.08ms
+[I 130425 21:05:58 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.55ms
+[I 130425 21:05:58 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.38ms
+[I 130425 21:05:58 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.85ms
+[I 130425 21:05:58 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.40ms
+[I 130425 21:06:24 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 18.73ms
+[I 130425 21:06:24 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.43ms
+[I 130425 21:06:24 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.36ms
+[I 130425 21:06:24 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.69ms
+[I 130425 21:06:24 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.31ms
+[I 130425 22:02:07 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 22:02:11 web:1514] 302 POST /Admin/Task/Edit?id=82 (127.0.0.1) 50.75ms
+[I 130425 22:02:11 web:1514] 200 GET /Admin/Task/List?projectID=11 (127.0.0.1) 26.31ms
+[I 130425 22:02:11 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 5.10ms
+[I 130425 22:02:11 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.55ms
+[I 130425 22:02:11 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.48ms
+[I 130425 22:02:11 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.45ms
+[I 130425 22:02:20 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 17.17ms
+[I 130425 22:02:21 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.71ms
+[I 130425 22:02:21 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.78ms
+[I 130425 22:02:21 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 1.38ms
+[I 130425 22:02:21 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.54ms
+[I 130425 22:02:23 web:1514] 302 POST /Admin/Task/Edit?id=82 (127.0.0.1) 27.18ms
+[I 130425 22:02:23 web:1514] 200 GET /Admin/Task/List?projectID=11 (127.0.0.1) 23.18ms
+[I 130425 22:02:23 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.96ms
+[I 130425 22:02:23 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.84ms
+[I 130425 22:02:23 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 1.18ms
+[I 130425 22:02:23 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.75ms
+[I 130425 22:03:19 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 22:03:25 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 22:03:30 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 39.21ms
+[I 130425 22:03:31 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 5.15ms
+[I 130425 22:03:31 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.56ms
+[I 130425 22:03:31 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.49ms
+[I 130425 22:03:31 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.48ms
+[E 130425 22:03:33 web:1121] Uncaught exception POST /Admin/Task/Edit?id=82 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Task/Edit?id=82', version='HTTP/1.0', remote_ip='127.0.0.1', body='projectID=11&users=44444111&degree=100&remark=', headers={'Content-Length': '46', 'Accept-Language': 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/Edit?id=82', 'X-Real-Ip': '192.168.0.108', 'Cookie': 'soc_project_manager_user=5888cd92ada511e2bdcb08002734d502', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 196, in post
+        id = task['id'], degree = task['degree'], users = task['users'], remark = task['remark'], user = ps['user'])
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 167, in update_degree_remark
+        s = self.get_task_status(degree = task['degree'])
+    NameError: global name 'task' is not defined
+[E 130425 22:03:33 web:1514] 500 POST /Admin/Task/Edit?id=82 (127.0.0.1) 8.78ms
+[I 130425 22:03:44 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130425 22:03:55 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 32.09ms
+[I 130425 22:03:55 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 10.99ms
+[I 130425 22:03:55 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.85ms
+[I 130425 22:03:55 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 1.60ms
+[I 130425 22:03:55 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.76ms
+[I 130425 22:03:56 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 18.39ms
+[I 130425 22:03:56 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 1.25ms
+[I 130425 22:03:56 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.65ms
+[I 130425 22:03:56 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.51ms
+[I 130425 22:03:56 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.38ms
+[I 130425 22:03:57 web:1514] 302 POST /Admin/Task/Edit?id=82 (127.0.0.1) 27.12ms
+[I 130425 22:03:57 web:1514] 200 GET /Admin/Task/List?projectID=11 (127.0.0.1) 24.70ms
+[I 130425 22:03:57 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.46ms
+[I 130425 22:03:57 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.33ms
+[I 130425 22:03:57 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.70ms
+[I 130425 22:03:57 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.65ms
+[I 130425 22:03:58 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 17.01ms
+[I 130425 22:03:58 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.52ms
+[I 130425 22:03:58 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.41ms
+[I 130425 22:03:58 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.49ms
+[I 130425 22:03:58 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.42ms
+[I 130425 22:04:00 web:1514] 302 POST /Admin/Task/Edit?id=82 (127.0.0.1) 28.07ms
+[I 130425 22:04:00 web:1514] 200 GET /Admin/Task/List?projectID=11 (127.0.0.1) 23.11ms
+[I 130425 22:04:00 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.96ms
+[I 130425 22:04:00 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.81ms
+[I 130425 22:04:00 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 1.02ms
+[I 130425 22:04:00 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 1.25ms
+[I 130425 22:04:06 web:1514] 200 GET /Admin/Task/Edits (127.0.0.1) 41.39ms
+[I 130425 22:04:06 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 1.10ms
+[I 130425 22:04:06 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.85ms
+[I 130425 22:04:06 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.67ms
+[I 130425 22:04:06 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 1.44ms
+[W 130425 22:04:07 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 1.38ms
+[I 130425 22:04:08 web:1514] 304 GET /Admin/Task/Edits (127.0.0.1) 24.89ms
+[I 130425 22:04:08 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.76ms
+[I 130425 22:04:08 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.64ms
+[I 130425 22:04:08 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.36ms
+[I 130425 22:04:08 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.37ms
+[W 130425 22:04:08 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 1.16ms
+[I 130425 22:04:10 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 24.81ms
+[I 130425 22:04:10 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.52ms
+[I 130425 22:04:10 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.41ms
+[I 130425 22:04:10 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.64ms
+[I 130425 22:04:10 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.41ms
+[I 130425 22:05:38 autoreload:186] /opt/www/02_SOC/SOCProject/app/route.py modified; restarting server
+[I 130425 22:06:20 autoreload:186] /opt/www/02_SOC/SOCProject/app/route.py modified; restarting server
+[I 130425 22:08:44 web:1514] 200 GET /Admin?token=58826592ada511e2906608002734d502& (127.0.0.1) 18.85ms
+[I 130425 22:08:44 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 7.09ms
+[I 130425 22:08:44 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.36ms
+[I 130425 22:08:44 web:1514] 304 GET /static/js/zTree/zTreeStyle/zTreeStyle.css?1 (127.0.0.1) 0.35ms
+[I 130425 22:08:44 web:1514] 304 GET /static/js/zTree/jquery.ztree.core-3.2.min.js?1 (127.0.0.1) 0.48ms
+[I 130425 22:08:44 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.42ms
+[I 130425 22:08:44 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.38ms
+[I 130425 22:08:44 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 4.35ms
+[I 130425 22:08:44 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.48ms
+[I 130425 22:08:44 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.51ms
+[I 130425 22:08:44 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.51ms
+[I 130425 22:08:44 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.36ms
+[I 130425 22:08:46 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 52.90ms
+[I 130425 22:08:46 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.67ms
+[I 130425 22:08:46 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.22ms
+[I 130425 22:08:46 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.40ms
+[I 130425 22:08:46 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.43ms
+[I 130425 22:08:46 web:1514] 200 GET /Admin/Task/ProjectEdit (127.0.0.1) 28.53ms
+[I 130425 22:08:46 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.53ms
+[I 130425 22:08:46 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.39ms
+[I 130425 22:08:46 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.44ms
+[I 130425 22:08:46 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.41ms
+[I 130425 22:08:47 web:1514] 200 GET /Admin/Task/ProjectList (127.0.0.1) 22.26ms
+[I 130425 22:08:47 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.91ms
+[I 130425 22:08:47 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.78ms
+[I 130425 22:08:47 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.85ms
+[I 130425 22:08:47 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 1.16ms
+[I 130425 22:08:56 web:1514] 304 GET /Admin/Task/ProjectList (127.0.0.1) 12.66ms
+[I 130425 22:08:56 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 1.09ms
+[I 130425 22:08:56 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.34ms
+[I 130425 22:08:56 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.46ms
+[I 130425 22:08:56 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.16ms
+[I 130425 22:08:57 web:1514] 304 GET /Admin/Task/ProjectEdit (127.0.0.1) 35.04ms
+[I 130425 22:08:57 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 0.46ms
+[I 130425 22:08:57 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.21ms
+[I 130425 22:08:57 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 1.14ms
+[I 130425 22:08:57 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.54ms
+[W 130425 22:08:58 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 1.71ms
+[I 130425 22:10:33 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:10:42 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:10:45 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:10:49 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:10:59 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:11:09 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:11:23 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:11:29 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:11:35 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:11:47 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:11:52 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:11:55 web:1514] 304 GET /Admin/Task/ProjectList (127.0.0.1) 45.09ms
+[I 130425 22:11:55 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 4.92ms
+[I 130425 22:11:55 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.34ms
+[I 130425 22:11:55 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.45ms
+[I 130425 22:11:55 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.44ms
+[I 130425 22:11:55 web:1514] 304 GET /Admin/Task/ProjectEdit (127.0.0.1) 33.84ms
+[I 130425 22:11:55 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 1.00ms
+[I 130425 22:11:55 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 0.34ms
+[I 130425 22:11:55 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.44ms
+[I 130425 22:11:55 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.63ms
+[W 130425 22:11:56 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 2.24ms
+[I 130425 22:13:37 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130425 22:13:38 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server

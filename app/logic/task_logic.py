@@ -102,10 +102,11 @@ class TaskLogic():
         #插入新任务
         sortMap = {0:0}
         for task in tasks:
+            s = self.get_task_status(degree = task['degree'])
             taskid = self.add(name = task['name'], type = task['type'], projectID = projectID, userName = task['userName'],
                         userRealName = task['userRealName'],date = task['date'], startDate = task['startDate'], 
                         endDate = task['endDate'], users = task['users'], preID = 0, parentID = 0,
-                        sort = task['sort'], status = 0, degree = task['degree'], remark = '', user = user)
+                        sort = task['sort'], status = s, degree = task['degree'], remark = '', user = user)
             task['id'] = taskid
             sortMap[task['sort']] = taskid
             if task.get('taskID', 0) > 0:
@@ -151,18 +152,20 @@ class TaskLogic():
                             lastUpdateTime = now() WHERE id = %s '''
     def update(self, id, name, userName, userRealName, users, status, degree,
                 remark, user):
-        yz = (name, userName, userRealName, users, status, degree, 
+        s = self.get_task_status(degree = task['degree'])
+        yz = (name, userName, userRealName, users, s, degree, 
                 remark, user, id)
         result = mysql.insert_or_update_or_delete(self._update_sql, yz)
         return 0 == result
 
 
 
-    update_degree_remark_sql = '''   UPDATE pm_task SET degree = %s, users = %s, 
+    update_degree_remark_sql = '''   UPDATE pm_task SET status = %s, degree = %s, users = %s, 
                             remark = %s, lastUpdater = %s, 
                             lastUpdateTime = now() WHERE id = %s '''
     def update_degree_remark(self, id, degree, users, remark, user):
-        yz = (degree, users, remark, user, id)
+        s = self.get_task_status(degree = degree)
+        yz = (s, degree, users, remark, user, id)
         result = mysql.insert_or_update_or_delete(self.update_degree_remark_sql, yz)
         return 0 == result
 
