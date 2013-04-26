@@ -22,7 +22,7 @@ class TaskLogic():
     _query_sql = '''  SELECT t.id, t.name, t.type, t.projectID, t.userName, t.userRealName, t.date,
                             t.startDate, t.endDate, t.users, t.preID, t.parentID, t.sort, t.`status`, t.degree,
                             t.remark, t.isDelete, t.creater, t.createTime, t.lastUpdater, 
-                            t.lastUpdateTime , ta.name AS preName, p.name as projectName
+                            t.lastUpdateTime , ta.name AS preName, p.name AS projectName
                     FROM pm_task AS t 
                     LEFT JOIN pm_task as ta ON ta.id = t.preID 
                     LEFT JOIN pm_project as p ON p.id = t.projectID 

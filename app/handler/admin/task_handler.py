@@ -43,7 +43,7 @@ class TaskProjectListHandler(admin_base_handler.AdminRightBaseHandler):
 
 
     def get(self):
-        ps = self.get_page_config('任务列表')
+        ps = self.get_page_config('项目任务列表')
         ps['projects'] = project_logic.ProjectLogic.instance().query_all_by_active()
 
         if None == ps['projects'] or len(ps['projects']) <= 0:
@@ -228,7 +228,7 @@ class TaskDetailHandler(admin_base_handler.AdminRightBaseHandler):
         self.render('admin/project/detail.html', **ps)
 
 
-class UserTaskListHandler(admin_base_handler.AdminRightBaseHandler):
+class TaskListHandler(admin_base_handler.AdminRightBaseHandler):
     _rightKey = config.SOCPMConfig['appCode'] + '.AppManager'
     _right = state.operView
 
@@ -245,7 +245,7 @@ class UserTaskListHandler(admin_base_handler.AdminRightBaseHandler):
 
 
     def get(self):
-        ps = self.get_page_config('用户任务列表')
+        ps = self.get_page_config('任务列表')
         ps['users'] = self._get_user_list()
 
         if None == ps['users'] or len(ps['users']) <= 0:            

@@ -89,3 +89,11 @@ ProjectRoles = [
 
 productManagerRoleID=10
 devManagerRoleID=20
+
+
+TaskTypes = [
+    {'id' : 1 , 'name' : u'项目工作'},
+    {'id' : 2 , 'name' : u'会议'},
+    {'id' : 3 , 'name' : u'例行工作'},
+    {'id' : 4 , 'name' : u'例行工作111'},
+]
