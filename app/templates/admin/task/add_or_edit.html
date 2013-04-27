@@ -1,0 +1,139 @@
+{% extends "../../base.html" %} {% block head %} {% end %} {% block body %}
+<div class="titlediv">
+    <h1>
+        {{ title }}</h1>
+</div>
+<div class="inputdiv">
+
+    <form action="{{ request.uri }}" method="post">
+    <table class="inputtable">
+        {% if isedit %}
+        <tr>
+            <td style="width: 100px;">
+                编号：<span class="red">*</span>
+            </td>
+            <td>
+                <input type="text" style="ime-mode:Disabled" disabled value="{{ task['id'] }}" />
+                <input type="hidden" name="id" value="{{ task['id'] }}" />
+            </td>
+        </tr>
+        {% end %} 
+        <tr>
+            <td style="width: 100px;">
+                任务名称：<span class="red">*</span>
+            </td>
+            <td>
+                <input type="text" name="name" value="{{ task['name'] }}" style="width:200px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                负责人：<span class="red">*</span>
+            </td>
+            <td>
+                <select name="userName" id="userName">
+                    {% for user in users %}
+                    <option value="{{user['userName']}}" {% if user['userName'] == task['userName'] %} selected {% end %}>{{user['userRealName']}}</option>
+                    {% end %}
+                </select>
+                <input type="hidden" name="userRealName" id="userRealName" value="{{task['userRealName']}}"> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                类型：<span class="red">*</span>
+            </td>
+            <td>
+                <select name="type" id="type">
+                    {% for t in types %}
+                    <option value="{{t['id']}}" {% if t['id'] == task['type'] %} selected {% end %}>{{t['name']}}</option>
+                    {% end %}
+                </select>
+            </td>
+        </tr>
+        {% if isedit %}
+        <tr>
+            <td>
+                状态：
+            </td>
+            <td>
+                {{task['statusname']}}
+            </td>
+        </tr>
+        {% end %}
+        <tr>
+            <td>
+                开始时间：<span class="red">*</span>
+            </td>
+            <td>
+                <select name="type" id="type">
+                    {% for t in types %}
+                    <option value="{{t['id']}}" {% if t['id'] == task['type'] %} selected {% end %}>{{t['name']}}</option>
+                    {% end %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                结束时间：<span class="red">*</span>
+            </td>
+            <td>
+                <select name="type" id="type">
+                    {% for t in types %}
+                    <option value="{{t['id']}}" {% if t['id'] == task['type'] %} selected {% end %}>{{t['name']}}</option>
+                    {% end %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100px;">
+                完成度：<span class="red">*</span>
+            </td>
+            <td>
+                <input type="text" name="degree" value="{{ task['degree'] }}" style="width:30px;" /> %
+            </td>
+        </tr>
+        <tr>
+            <td>
+                参与人：
+            </td>
+            <td>
+                <textarea rows="8" cols="40" name="users">{{ task['users'] }}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                备注：
+            </td>
+            <td>
+                <textarea rows="8" cols="40" name="remark">{{ product['remark'] }}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-left:120px; height:40px;">
+                <input type="submit" style="width:100px; height:30px;line-height:18px; cursor:pointer; margin-right:3px;" value="提交" />
+                <input type="button" style="width:100px; height:30px;line-height:18px; cursor:pointer; margin-right:3px;" onclick="window.history.go(-1);" value="返回" />
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>
+<script type="text/javascript">
+        <!--
+        var Task = {
+            selectUser : function(){
+                $('#userName option:selected').each(function(){
+                    $('#userRealName').val($(this).text());
+                });
+            }
+        };
+
+    $(document).ready(function () {
+        $('#userName').bind('change', function () {
+            Task.selectUser();
+        });
+        Task.selectUser();
+    });
+    //-->
+</script>
+{% end %}
