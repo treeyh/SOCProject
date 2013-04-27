@@ -49,11 +49,12 @@ Status = {
     2 : '不可用',
 }
 
-TaskStatus = {
-    1 : '未开始',
-    2 : '进行中',
-    3 : '已完成',
-}
+TaskStatus = [
+    {'id': 1, 'name': u'未开始'},
+    {'id': 2, 'name': u'进行中'},
+    {'id': 3, 'name': u'已完成'},
+]
+
 TaskNoRunStatus = 1 
 TaskRunningStatus = 2
 TaskRunedStatus = 3
@@ -81,10 +82,12 @@ operDel = 8
 ProjectRoles = [
     {'id' : 10 , 'name' : u'产品经理', 'isOne' : True},
     {'id' : 11 , 'name' : u'产品团队', 'isOne' : False},
-    {'id' : 20 , 'name' : u'技术经理', 'isOne' : True},
-    {'id' : 21 , 'name' : u'开发团队', 'isOne' : False},
-    {'id' : 30 , 'name' : u'测试经理', 'isOne' : True},
-    {'id' : 31 , 'name' : u'测试团队', 'isOne' : False},
+    {'id' : 20 , 'name' : u'需求经理', 'isOne' : True},
+    {'id' : 21 , 'name' : u'需求团队', 'isOne' : False},
+    {'id' : 30 , 'name' : u'技术经理', 'isOne' : True},
+    {'id' : 31 , 'name' : u'开发团队', 'isOne' : False},
+    {'id' : 40 , 'name' : u'测试经理', 'isOne' : True},
+    {'id' : 41 , 'name' : u'测试团队', 'isOne' : False},
 ]
 
 productManagerRoleID=10
@@ -92,8 +95,12 @@ devManagerRoleID=20
 
 
 TaskTypes = [
-    {'id' : 1 , 'name' : u'项目工作'},
-    {'id' : 2 , 'name' : u'会议'},
-    {'id' : 3 , 'name' : u'例行工作'},
-    {'id' : 4 , 'name' : u'例行工作111'},
+    {'id' : 1 , 'name' : u'项目工作计划'},
+    {'id' : 2 , 'name' : u'项目工作'},
+    {'id' : 3 , 'name' : u'会议'},
+    {'id' : 4 , 'name' : u'例行工作'},
+    {'id' : 5 , 'name' : u'知识分享和培训'},
+    {'id' : 6 , 'name' : u'培训'},
 ]
+
+TaskProjectType = 1

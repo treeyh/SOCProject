@@ -31,17 +31,17 @@ class TaskLogic():
     def query_by_projectID(self, projectID):
         sql = self._query_sql
         isdelete = state.Boole['false']
-        sql = sql + ' AND t.projectID = %s order by sort asc '
-        yz = (isdelete, projectID)
+        sql = sql + ' AND t.projectID = %s AND t.type = %s order by sort asc '
+        yz = (isdelete, projectID, state.TaskProjectType)
         tasks = mysql.find_all(sql, yz, self._query_col)        
 
         if tasks != None or len(tasks) > 0:
             for task in tasks:
-                task = self._format_task_status(task)
+                task = self._format_task_status_type(task)
         return tasks
 
     ''' 分页查询任务 '''
-    def query_by_type_userName_status_begin_end(self, type, userName, status, begin, end, page, size):
+    def query_by_type_userName_status_begin_end(self, type, userName, status, startDate, endDate, page = 1, size = 12):
         sql = self._query_sql
         isdelete = state.Boole['false']
         ps = [isdelete]
@@ -54,18 +54,18 @@ class TaskLogic():
         if 0 != status:
             sql = sql + ' and t.`status` = %s '
             ps.append(status)
-        if not str_helper.is_null_or_empty(begin):
-            sql = sql + ' and t.startDate >= %s'
-            ps.append(begin)
-        if not str_helper.is_null_or_empty(end):
-            sql = sql + ' and t.startDate <= %s'
-            ps.append(end)
-        sql = sql + ' order by startDate asc '
+        if not str_helper.is_null_or_empty(startDate):
+            sql = sql + ' and t.startDate >= %s '
+            ps.append(startDate)
+        if not str_helper.is_null_or_empty(endDate):
+            sql = sql + ' and t.startDate <= %s '
+            ps.append(endDate)
+        sql = sql + ' order by t.startDate asc '
         yz = tuple(ps)
         tasks = mysql.find_page(sql, yz, self._query_col, page, size)
         if None != tasks['data']:
             for r in tasks['data']:
-                r = self._format_task_status(r)
+                r = self._format_task_status_type(r)
         return tasks
 
 
@@ -80,7 +80,7 @@ class TaskLogic():
             return None
         yz = tuple(ps)
         task = mysql.find_one(sql, yz, self._query_col)
-        task = self._format_task_status(task)
+        task = self._format_task_status_type(task)
         return task
 
 
@@ -191,10 +191,18 @@ class TaskLogic():
         else:
             return state.TaskNoRunStatus
 
-    def _format_task_status(self, task):
+    def _format_task_status_type(self, task):
         if None == task:
             return None
-        task['statusname'] = state.TaskStatus[task['status']]        
+        for s in state.TaskStatus:
+            if s['id'] == task['status']:
+                task['statusname'] = s['name']
+                break
+
+        for t in state.TaskTypes:
+            if t['id'] == task['type']:
+                task['typename'] = t['name']
+                break
         return task
 
 

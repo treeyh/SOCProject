@@ -23,7 +23,7 @@ class MainHandler(admin_base_handler.AdminBaseHandler):
         ps = self.get_page_config('后台')
         token = self.get_args(['token'], '')
         ps['token'] = token['token']
-        user = self.current_user        
+        user = self.current_user
         if None == user:
             ''' 判断用户是否存在，如果不存在，判断token重新登录 '''
             if '' == ps['token']:

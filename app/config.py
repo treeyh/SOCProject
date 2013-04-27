@@ -11,11 +11,11 @@ SOCPMConfig = {
     'siteDomain' : 'http://pm.kanchene.com/',
     'rightSiteDomain' : 'http://sso.kanchene.com/',
 
-    'size' : 10,
+    'size' : 15,
     'appCode' : 'SOCProject',
     'adminCookieName' : 'soc_project_manager_user',
 
-    'RoleUserGroup' : { 10:3, 11:3, 20:4, 21:4, 30:5, 31:5 }
+    'RoleUserGroup' : { 10:6, 11:6, 20:5, 21:5, 30:4, 31:4, 40:3, 41:3 }
 }
 
 urls = {

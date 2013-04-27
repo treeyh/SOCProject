@@ -14,14 +14,14 @@ from helper import str_helper
 class BaseHandler(tornado.web.RequestHandler):    
     def get_current_user(self):
         #if not self.current_user:
-        uuid = self.get_cookie(config.SOCPMConfig['rightCookieName'])
+        uuid = self.get_cookie(config.SOCPMConfig['adminCookieName'])
         if None == uuid:
             return None
         user = redis_cache.getObj(uuid)
         return user
 
     def clear_user_info(self):
-        uuid = self.get_cookie(config.SOCPMConfig['rightCookieName'])
+        uuid = self.get_cookie(config.SOCPMConfig['adminCookieName'])
         if None == uuid:
             return None
         user = redis_cache.delete(uuid)

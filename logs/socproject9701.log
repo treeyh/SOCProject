@@ -5045,3 +5045,490 @@
 [I 130426 15:34:10 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
 [I 130426 17:09:08 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
 [I 130426 17:43:26 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 09:32:49 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 09:33:26 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 09:33:28 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 09:35:02 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 09:41:48 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 09:42:29 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 09:47:13 web:1514] 200 GET /Admin?token=61b69cccaedc11e2b43f080027f69eb2& (127.0.0.1) 37.78ms
+[I 130427 09:47:13 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 6.65ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 1.22ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/zTree/zTreeStyle/zTreeStyle.css?1 (127.0.0.1) 1.28ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/zTree/jquery.ztree.core-3.2.min.js?1 (127.0.0.1) 0.47ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 1.36ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.42ms
+[I 130427 09:47:13 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 19.31ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/My97DatePicker/skin/WdatePicker.css (127.0.0.1) 0.93ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/zTree/zTreeStyle/img/line_conn.gif (127.0.0.1) 3.97ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/zTree/zTreeStyle/img/zTreeStandard.png (127.0.0.1) 0.53ms
+[W 130427 09:47:13 web:1514] 404 GET /img/favicon.ico (127.0.0.1) 65.95ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/My97DatePicker/My97DatePicker.htm (127.0.0.1) 0.73ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/My97DatePicker/config.js (127.0.0.1) 0.26ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/My97DatePicker/calendar.js (127.0.0.1) 1.11ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/My97DatePicker/lang/zh-cn.js (127.0.0.1) 0.47ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/My97DatePicker/skin/default/datepicker.css (127.0.0.1) 0.57ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/My97DatePicker/skin/whyGreen/datepicker.css (127.0.0.1) 1.31ms
+[I 130427 09:47:13 web:1514] 304 GET /static/js/My97DatePicker/skin/default/img.gif (127.0.0.1) 0.61ms
+[I 130427 09:47:17 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 115.03ms
+[I 130427 09:47:17 web:1514] 304 GET /static/js/My97DatePicker/skin/datePicker.gif (127.0.0.1) 0.76ms
+[W 130427 09:47:17 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 4.78ms
+[E 130427 09:47:18 web:1121] Uncaught exception GET /Admin/Task/ProjectEdit (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/ProjectEdit', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=61b69cccaedc11e2b43f080027f69eb2&', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 92, in get
+        self.render('admin/task/project_task_add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 628, in render_string
+        t = loader.load(template_name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 336, in load
+        self.templates[name] = self._create_template(name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 363, in _create_template
+        f = open(path, "rb")
+    IOError: [Errno 2] No such file or directory: '/opt/www/02_SOC/SOCProject/app/templates/admin/task/project_task_add_or_edit.html'
+[E 130427 09:47:18 web:1514] 500 GET /Admin/Task/ProjectEdit (127.0.0.1) 55.80ms
+[E 130427 09:47:20 web:1121] Uncaught exception GET /Admin/Task/ProjectList (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/ProjectList', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=61b69cccaedc11e2b43f080027f69eb2&', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 65, in get
+        self.render('admin/task/project_task_list.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 628, in render_string
+        t = loader.load(template_name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 336, in load
+        self.templates[name] = self._create_template(name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 363, in _create_template
+        f = open(path, "rb")
+    IOError: [Errno 2] No such file or directory: '/opt/www/02_SOC/SOCProject/app/templates/admin/task/project_task_list.html'
+[E 130427 09:47:20 web:1514] 500 GET /Admin/Task/ProjectList (127.0.0.1) 16.33ms
+[E 130427 09:47:21 web:1121] Uncaught exception GET /Admin/Task/ProjectEdit (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/ProjectEdit', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=61b69cccaedc11e2b43f080027f69eb2&', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 92, in get
+        self.render('admin/task/project_task_add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 628, in render_string
+        t = loader.load(template_name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 336, in load
+        self.templates[name] = self._create_template(name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 363, in _create_template
+        f = open(path, "rb")
+    IOError: [Errno 2] No such file or directory: '/opt/www/02_SOC/SOCProject/app/templates/admin/task/project_task_add_or_edit.html'
+[E 130427 09:47:21 web:1514] 500 GET /Admin/Task/ProjectEdit (127.0.0.1) 30.69ms
+[W 130427 09:47:21 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 1.64ms
+[E 130427 09:47:48 web:1121] Uncaught exception GET /Admin/Task/ProjectEdit (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/ProjectEdit', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=61b69cccaedc11e2b43f080027f69eb2&', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 88, in get
+        tasks = task_logic.TaskLogic.instance().query_by_projectID(projectID = projectID)
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 40, in query_by_projectID
+        task = self._format_task_status(task)
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 197, in _format_task_status
+        task['statusname'] = state.TaskStatus[task['status']]
+    KeyError: 0L
+[E 130427 09:47:48 web:1514] 500 GET /Admin/Task/ProjectEdit (127.0.0.1) 15.01ms
+[W 130427 09:47:48 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 4.68ms
+[W 130427 09:49:22 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 0.80ms
+[W 130427 09:49:23 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 3.97ms
+[I 130427 09:50:01 autoreload:186] /opt/www/02_SOC/SOCProject/app/route.py modified; restarting server
+[I 130427 09:50:20 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 09:50:31 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 09:51:43 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 09:51:44 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 09:51:47 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 09:51:48 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 09:52:46 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 82.68ms
+[I 130427 09:57:45 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 09:58:12 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 09:59:06 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 09:59:57 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 10:01:15 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 10:01:16 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 10:01:17 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 10:01:18 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 10:01:23 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 10:01:24 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 10:02:24 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 10:02:31 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 10:02:32 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 10:02:50 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 10:14:59 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 10:15:01 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 10:16:31 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 10:17:01 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 11:09:38 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 11:11:30 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/admin_base_handler.py modified; restarting server
+[I 130427 11:11:38 autoreload:186] /opt/www/02_SOC/SOCProject/app/config.py modified; restarting server
+[I 130427 11:12:09 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[W 130427 11:12:58 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 4.15ms
+[W 130427 11:13:02 web:1514] 404 GET /Admin/Task/UserList (127.0.0.1) 1.40ms
+[I 130427 11:13:09 web:1514] 200 GET /Admin?token=61b69cccaedc11e2b43f080027f69eb2& (127.0.0.1) 21.65ms
+[I 130427 11:13:09 web:1514] 200 GET /static/css/style.css?1 (127.0.0.1) 77.61ms
+[I 130427 11:13:09 web:1514] 200 GET /static/js/common.js?1 (127.0.0.1) 2.76ms
+[I 130427 11:13:09 web:1514] 200 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 2.34ms
+[I 130427 11:13:09 web:1514] 200 GET /static/js/zTree/jquery.ztree.core-3.2.min.js?1 (127.0.0.1) 13.75ms
+[I 130427 11:13:09 web:1514] 200 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 14.01ms
+[I 130427 11:13:09 web:1514] 200 GET /static/js/zTree/zTreeStyle/zTreeStyle.css?1 (127.0.0.1) 23.40ms
+[I 130427 11:13:10 web:1514] 200 GET /Admin/NotRight (127.0.0.1) 9.65ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/My97DatePicker/skin/WdatePicker.css (127.0.0.1) 5.32ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 3.30ms
+[I 130427 11:13:10 web:1514] 200 GET /static/css/style.css?1 (127.0.0.1) 6.50ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 2.38ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/common.js?1 (127.0.0.1) 2.40ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/zTree/zTreeStyle/img/line_conn.gif (127.0.0.1) 1.91ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/zTree/zTreeStyle/img/zTreeStandard.png (127.0.0.1) 4.81ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/My97DatePicker/My97DatePicker.htm (127.0.0.1) 3.87ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/My97DatePicker/config.js (127.0.0.1) 1.16ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/My97DatePicker/calendar.js (127.0.0.1) 4.48ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/My97DatePicker/lang/zh-cn.js (127.0.0.1) 5.45ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/My97DatePicker/skin/default/datepicker.css (127.0.0.1) 3.11ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/My97DatePicker/skin/whyGreen/datepicker.css (127.0.0.1) 1.03ms
+[I 130427 11:13:10 web:1514] 200 GET /static/js/My97DatePicker/skin/default/img.gif (127.0.0.1) 11.74ms
+[E 130427 11:13:12 web:1121] Uncaught exception GET /Admin/Task/List (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/List', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=61b69cccaedc11e2b43f080027f69eb2&', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 275, in get
+        self.render('admin/task/list.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/task/list_html.generated.py", line 60, in _execute
+        if t['id'] == task['type']:  # admin/task/list.html:17 (via base.html:14)
+    NameError: global name 'task' is not defined
+[E 130427 11:13:12 web:1514] 500 GET /Admin/Task/List (127.0.0.1) 87.45ms
+[I 130427 11:13:45 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 11:13:47 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[E 130427 11:13:49 web:1121] Uncaught exception GET /Admin/Task/List (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/List', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=61b69cccaedc11e2b43f080027f69eb2&', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 276, in get
+        self.render('admin/task/list.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/task/list_html.generated.py", line 130, in _execute
+        for r in pagedata['data']:  # admin/task/list.html:105 (via base.html:14)
+    NameError: global name 'pagedata' is not defined
+[E 130427 11:13:49 web:1514] 500 GET /Admin/Task/List (127.0.0.1) 80.06ms
+[I 130427 11:14:14 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 11:14:23 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 11:14:34 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 82.59ms
+[I 130427 11:14:34 web:1514] 200 GET /static/css/style.css?1 (127.0.0.1) 9.60ms
+[I 130427 11:14:34 web:1514] 200 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 3.47ms
+[I 130427 11:14:34 web:1514] 200 GET /static/js/common.js?1 (127.0.0.1) 2.38ms
+[I 130427 11:14:34 web:1514] 200 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 7.74ms
+[I 130427 11:14:34 web:1514] 200 GET /static/js/My97DatePicker/skin/WdatePicker.css (127.0.0.1) 1.49ms
+[I 130427 11:14:35 web:1514] 200 GET /static/js/My97DatePicker/My97DatePicker.htm (127.0.0.1) 0.75ms
+[I 130427 11:14:35 web:1514] 200 GET /static/js/My97DatePicker/config.js (127.0.0.1) 1.63ms
+[I 130427 11:14:35 web:1514] 200 GET /static/js/My97DatePicker/calendar.js (127.0.0.1) 4.59ms
+[I 130427 11:14:35 web:1514] 200 GET /static/js/My97DatePicker/lang/zh-cn.js (127.0.0.1) 2.72ms
+[I 130427 11:14:35 web:1514] 200 GET /static/js/My97DatePicker/skin/default/datepicker.css (127.0.0.1) 2.13ms
+[I 130427 11:14:35 web:1514] 200 GET /static/js/My97DatePicker/skin/whyGreen/datepicker.css (127.0.0.1) 1.06ms
+[I 130427 11:14:35 web:1514] 200 GET /static/js/My97DatePicker/skin/default/img.gif (127.0.0.1) 1.66ms
+[I 130427 11:14:40 web:1514] 200 GET /Admin/Task/List?type=0&userName=0&status=2&startDate=&endDate= (127.0.0.1) 47.19ms
+[I 130427 11:14:43 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=2&startDate=&endDate= (127.0.0.1) 36.46ms
+[I 130427 11:14:55 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=2&startDate=&endDate= (127.0.0.1) 61.09ms
+[I 130427 11:15:21 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 11:15:28 web:1514] 200 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 68.82ms
+[I 130427 11:15:30 web:1514] 200 GET /Admin/Task/List?type=0&userName=0&status=2&startDate=&endDate= (127.0.0.1) 63.10ms
+[I 130427 11:15:54 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 11:15:58 web:1514] 200 GET /Admin/Task/List?type=0&userName=0&status=2&startDate=&endDate= (127.0.0.1) 78.21ms
+[I 130427 11:16:15 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:03:12 web:1514] 200 GET /Admin/Task/List?type=0&userName=0&status=2&startDate=&endDate= (127.0.0.1) 129.79ms
+[I 130427 13:03:20 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 54.77ms
+[I 130427 13:03:26 web:1514] 200 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 73.37ms
+[I 130427 13:03:53 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:03:54 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:04:39 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:04:40 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:04:46 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 60.28ms
+[I 130427 13:04:53 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 47.40ms
+[I 130427 13:05:26 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:05:27 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:05:35 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:05:36 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:06:03 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:06:04 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:06:06 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:06:07 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:06:15 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:06:39 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 71.76ms
+[I 130427 13:08:01 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:08:08 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 75.81ms
+[I 130427 13:08:37 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:08:40 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:08:42 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:08:44 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:08:45 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:09:10 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:09:11 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:09:16 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:09:23 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 66.65ms
+[I 130427 13:09:38 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:09:41 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:09:42 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:09:53 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:10:06 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:10:43 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:10:47 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 74.47ms
+[I 130427 13:11:05 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:11:10 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 70.09ms
+[E 130427 13:11:22 web:1121] Uncaught exception GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/List?type=0&userName=&status=0&startDate=&endDate=', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2', 'X-Real-Ip': '192.168.18.61'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 276, in get
+        self.render('admin/task/list.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/task/list_html.generated.py", line 168, in _execute
+        _tmp = r['statusname']  # admin/task/list.html:123 (via base.html:14)
+    KeyError: 'statusname'
+[E 130427 13:11:22 web:1514] 500 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 51.42ms
+[I 130427 13:11:31 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 49.33ms
+[I 130427 13:11:48 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 13:12:02 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:12:10 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 66.64ms
+[I 130427 13:12:25 web:1514] 200 GET /Admin/Task/List?type=0&userName=0&status=1&startDate=&endDate= (127.0.0.1) 79.10ms
+[I 130427 13:12:28 web:1514] 200 GET /Admin/Task/List?type=0&userName=0&status=3&startDate=&endDate= (127.0.0.1) 49.57ms
+[I 130427 13:13:08 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=3&startDate=&endDate= (127.0.0.1) 61.28ms
+[I 130427 13:13:10 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=1&startDate=&endDate= (127.0.0.1) 47.57ms
+[I 130427 13:13:14 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=2&startDate=&endDate= (127.0.0.1) 40.55ms
+[I 130427 13:13:17 web:1514] 304 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 92.40ms
+[I 130427 13:14:38 web:1514] 200 GET /Admin/Task/List?type=0&userName=0&status=0&startDate=&endDate= (127.0.0.1) 37.57ms
+[I 130427 13:14:39 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 57.65ms
+[I 130427 13:15:38 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 83.09ms
+[I 130427 13:15:38 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 11.67ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 1.14ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.72ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.98ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/My97DatePicker/skin/WdatePicker.css (127.0.0.1) 0.79ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/My97DatePicker/My97DatePicker.htm (127.0.0.1) 0.99ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/My97DatePicker/config.js (127.0.0.1) 1.52ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/My97DatePicker/calendar.js (127.0.0.1) 1.74ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/My97DatePicker/lang/zh-cn.js (127.0.0.1) 2.49ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/My97DatePicker/skin/default/datepicker.css (127.0.0.1) 0.66ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/My97DatePicker/skin/whyGreen/datepicker.css (127.0.0.1) 0.65ms
+[I 130427 13:15:38 web:1514] 304 GET /static/js/My97DatePicker/skin/default/img.gif (127.0.0.1) 3.44ms
+[I 130427 13:16:13 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 72.75ms
+[I 130427 13:16:29 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 75.99ms
+[I 130427 13:16:53 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 85.83ms
+[I 130427 13:17:56 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 54.58ms
+[I 130427 13:18:25 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:19:33 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:19:51 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:20:06 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:20:13 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:20:20 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:20:21 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:20:28 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:20:29 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:20:54 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:20:55 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130427 13:21:41 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 61.29ms
+[I 130427 13:45:51 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 44.60ms
+[I 130427 13:46:03 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 54.72ms
+[I 130427 13:46:36 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=2&startDate=&endDate= (127.0.0.1) 38.29ms
+[I 130427 13:46:41 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=2&startDate=2013-05-03&endDate=2013-04-25 (127.0.0.1) 41.19ms
+[I 130427 13:46:44 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=2013-05-03&endDate=2013-04-25 (127.0.0.1) 48.54ms
+[I 130427 13:46:53 web:1514] 304 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 69.73ms
+[I 130427 13:53:22 web:1514] 200 GET /Admin?token=c52e51ceaefe11e28cee080027f69eb2& (127.0.0.1) 10.06ms
+[I 130427 13:53:22 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 6.52ms
+[I 130427 13:53:24 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 50.35ms
+[I 130427 13:53:25 web:1514] 200 GET /Admin/Project/Edit?id=10 (127.0.0.1) 97.55ms
+[I 130427 13:53:39 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 48.69ms
+[I 130427 13:54:06 web:1514] 200 GET /Admin/Project/List?name=&productUserRealName=&devUserRealName=&productID=0&status=4 (127.0.0.1) 31.11ms
+[I 130427 13:54:08 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 100.32ms
+[W 130427 15:45:43 web:1514] 404 GET /Admin/?token=770d04daaf0e11e28cee080027f69eb2& (127.0.0.1) 0.84ms
+[W 130427 15:46:09 web:1514] 404 GET /Admin/?token=8692d556af0e11e28cee080027f69eb2& (127.0.0.1) 0.85ms
+[I 130427 15:46:21 web:1514] 200 GET /Admin?token=8692d556af0e11e28cee080027f69eb2& (127.0.0.1) 21.75ms
+[I 130427 15:46:21 web:1514] 304 GET /static/js/zTree/zTreeStyle/zTreeStyle.css?1 (127.0.0.1) 13.71ms
+[I 130427 15:46:21 web:1514] 304 GET /static/js/zTree/jquery.ztree.core-3.2.min.js?1 (127.0.0.1) 1.32ms
+[I 130427 15:46:21 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 11.35ms
+[I 130427 15:46:21 web:1514] 304 GET /static/js/zTree/zTreeStyle/img/line_conn.gif (127.0.0.1) 1.26ms
+[I 130427 15:46:22 web:1514] 304 GET /static/js/zTree/zTreeStyle/img/zTreeStandard.png (127.0.0.1) 1.48ms
+[I 130427 15:47:42 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 15:56:19 web:1514] 200 GET /Admin?token=e7238784af0f11e28cee080027f69eb2& (127.0.0.1) 18.21ms
+[I 130427 15:56:19 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 6.17ms
+[I 130427 15:56:22 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 128.29ms
+[I 130427 15:56:22 web:1514] 304 GET /static/js/My97DatePicker/skin/datePicker.gif (127.0.0.1) 18.05ms
+[I 130427 15:56:43 autoreload:186] /opt/www/02_SOC/SOCProject/app/common/state.py modified; restarting server
+[I 130427 15:56:49 web:1514] 304 GET /Admin/Project/List (127.0.0.1) 51.96ms
+[I 130427 15:56:50 web:1514] 200 GET /Admin/Project/Add (127.0.0.1) 76.81ms
+[E 130427 15:59:40 web:1121] Uncaught exception GET /Admin/Task/ProjectList (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/ProjectList', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=e7238784af0f11e28cee080027f69eb2&', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 65, in get
+        self.render('admin/task/project_task_list.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 628, in render_string
+        t = loader.load(template_name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 336, in load
+        self.templates[name] = self._create_template(name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 363, in _create_template
+        f = open(path, "rb")
+    IOError: [Errno 2] No such file or directory: '/opt/www/02_SOC/SOCProject/app/templates/admin/task/project_task_list.html'
+[E 130427 15:59:40 web:1514] 500 GET /Admin/Task/ProjectList (127.0.0.1) 35.11ms
+[I 130427 15:59:44 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 60.36ms
+[E 130427 15:59:44 web:1121] Uncaught exception GET /Admin/Task/ProjectEdit (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/ProjectEdit', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=e7238784af0f11e28cee080027f69eb2&', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 92, in get
+        self.render('admin/task/project_task_add_or_edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 628, in render_string
+        t = loader.load(template_name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 336, in load
+        self.templates[name] = self._create_template(name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 363, in _create_template
+        f = open(path, "rb")
+    IOError: [Errno 2] No such file or directory: '/opt/www/02_SOC/SOCProject/app/templates/admin/task/project_task_add_or_edit.html'
+[E 130427 15:59:44 web:1514] 500 GET /Admin/Task/ProjectEdit (127.0.0.1) 33.73ms
+[I 130427 15:59:45 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 52.51ms
+[W 130427 15:59:51 web:1514] 404 GET /Admin/Task/Add (127.0.0.1) 4.31ms
+[I 130427 15:59:53 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 59.05ms
+[I 130427 15:59:59 web:1514] 304 GET /Admin/Project/Add (127.0.0.1) 87.57ms
+[E 130427 15:59:59 web:1121] Uncaught exception GET /Admin/Task/ProjectList (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/ProjectList', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=e7238784af0f11e28cee080027f69eb2&', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 65, in get
+        self.render('admin/task/project_task_list.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 628, in render_string
+        t = loader.load(template_name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 336, in load
+        self.templates[name] = self._create_template(name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 363, in _create_template
+        f = open(path, "rb")
+    IOError: [Errno 2] No such file or directory: '/opt/www/02_SOC/SOCProject/app/templates/admin/task/project_task_list.html'
+[E 130427 15:59:59 web:1514] 500 GET /Admin/Task/ProjectList (127.0.0.1) 34.12ms
+[I 130427 16:00:01 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 65.96ms
+[I 130427 16:03:20 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 60.09ms
+[I 130427 16:03:21 web:1514] 200 GET /Admin/Task/Edit?id=59 (127.0.0.1) 31.83ms
+[I 130427 16:04:58 autoreload:186] /opt/www/02_SOC/SOCProject/app/route.py modified; restarting server
+[I 130427 16:05:16 autoreload:186] /opt/www/02_SOC/SOCProject/app/route.py modified; restarting server
+[I 130427 16:13:30 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 60.56ms
+[E 130427 16:13:35 web:1121] Uncaught exception GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/List?type=0&userName=&status=0&startDate=&endDate=', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/List', 'If-None-Match': '"8d9f88d0c3f691c4b28e37ecfab0a0d788b6ac67"', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 327, in get
+        self.render('admin/task/list.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/task/list_html.generated.py", line 234, in _execute
+        if user['userName'] == r['userName']:  # admin/task/list.html:147 (via base.html:14)
+    KeyError: 'userName'
+[E 130427 16:13:35 web:1514] 500 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 73.41ms
+[I 130427 16:14:02 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:14:04 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 56.91ms
+[I 130427 16:14:21 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:14:33 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate= (127.0.0.1) 102.94ms
+[I 130427 16:14:46 web:1514] 200 GET /Admin/Task/List?type=0&userName=&status=0&startDate=&endDate=&page=2 (127.0.0.1) 50.11ms
+[E 130427 16:16:44 web:1121] Uncaught exception GET /Admin/Task/Add?userName= (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/Add?userName=', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/List?type=0&userName=&status=0&startDate=&endDate=&page=2', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 167, in get
+        self.render('admin/task/edit.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 631, in render_string
+        return t.generate(**namespace)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 270, in generate
+        return execute()
+      File "admin/task/edit_html.generated.py", line 52, in _execute
+        _tmp = task['id']  # admin/task/edit.html:14 (via base.html:14)
+    KeyError: 'id'
+[E 130427 16:16:44 web:1514] 500 GET /Admin/Task/Add?userName= (127.0.0.1) 21.70ms
+[I 130427 16:17:28 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:17:32 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[E 130427 16:17:41 web:1121] Uncaught exception GET /Admin/Task/List (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/List', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin?token=e7238784af0f11e28cee080027f69eb2&', 'If-None-Match': '"b07d5efaffc801b86ec3e8db632cfe4ec62ba246"', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=61c633c6aedc11e2862c080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 327, in get
+        self.render('admin/task/list_status.html', **ps)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 524, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 628, in render_string
+        t = loader.load(template_name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 336, in load
+        self.templates[name] = self._create_template(name)
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/template.py", line 363, in _create_template
+        f = open(path, "rb")
+    IOError: [Errno 2] No such file or directory: '/opt/www/02_SOC/SOCProject/app/templates/admin/task/list_status.html'
+[E 130427 16:17:41 web:1514] 500 GET /Admin/Task/List (127.0.0.1) 72.28ms
+[I 130427 16:18:05 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:18:16 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:18:23 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:18:33 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 79.20ms
+[I 130427 16:20:14 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:21:04 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:21:05 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:21:09 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 69.20ms
+[I 130427 16:22:13 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:22:15 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:22:16 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:23:56 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:23:58 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:24:01 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 81.74ms
+[I 130427 16:24:05 web:1514] 200 GET /Admin/Task/List?type=0&userName=Tree&status=0&startDate=&endDate= (127.0.0.1) 65.97ms
+[I 130427 16:55:29 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:55:30 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:56:01 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:56:58 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 16:59:27 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:00:03 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:00:11 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:01:59 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:02:12 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:02:54 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:03:07 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:03:22 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:03:26 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:03:33 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:03:34 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130427 17:04:11 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server

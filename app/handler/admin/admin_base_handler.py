@@ -9,14 +9,7 @@ from helper import str_helper
 from handler import base_handler
 
 
-class AdminBaseHandler(base_handler.BaseHandler):    
-    def get_current_user(self):
-        #if not self.current_user:
-        uuid = self.get_cookie(config.SOCPMConfig['adminCookieName'])
-        if None == uuid:
-            return None
-        user = redis_cache.getObj(uuid)        
-        return user
+class AdminBaseHandler(base_handler.BaseHandler):
     
     def is_edit(self):        
         return 'edit' in self.request.path.lower()
@@ -24,18 +17,11 @@ class AdminBaseHandler(base_handler.BaseHandler):
     def get_page_config(self, title):
         ps = base_handler.BaseHandler.get_page_config(self, title)
         ps['isedit'] = self.is_edit()
+        ps['size'] = config.SOCPMConfig['size']
         return ps
 
     def get_oper_user(self):
         return self.current_user['name']
-
-    def clear_user_info(self):
-        uuid = self.get_cookie(config.SOCPMConfig['adminCookieName'])
-        if None == uuid:
-            return None
-        user = redis_cache.delete(uuid)
-        self.clear_all_cookies()
-
 
 
 class AdminRightBaseHandler(AdminBaseHandler):
