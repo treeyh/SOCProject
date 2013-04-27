@@ -66,11 +66,7 @@
                 开始时间：<span class="red">*</span>
             </td>
             <td>
-                <select name="type" id="type">
-                    {% for t in types %}
-                    <option value="{{t['id']}}" {% if t['id'] == task['type'] %} selected {% end %}>{{t['name']}}</option>
-                    {% end %}
-                </select>
+                <input type="text" name="startDate" id="startDate" value="{{ str(task['startDate'])[0:10] }}" class="Wdate" onfocus="WdatePicker()" />
             </td>
         </tr>
         <tr>
@@ -78,11 +74,7 @@
                 结束时间：<span class="red">*</span>
             </td>
             <td>
-                <select name="type" id="type">
-                    {% for t in types %}
-                    <option value="{{t['id']}}" {% if t['id'] == task['type'] %} selected {% end %}>{{t['name']}}</option>
-                    {% end %}
-                </select>
+                <input type="text" name="endDate" id="endDate" value="{{ str(task['endDate'])[0:10] }}" class="Wdate" onfocus="WdatePicker()" />
             </td>
         </tr>
         <tr>
@@ -90,7 +82,7 @@
                 完成度：<span class="red">*</span>
             </td>
             <td>
-                <input type="text" name="degree" value="{{ task['degree'] }}" style="width:30px;" /> %
+                <input type="text" name="degree" value="{{ task['degree'] }}" style="width:30px;" />&nbsp;%&nbsp;&nbsp;&nbsp;(请输入0~100的整数)
             </td>
         </tr>
         <tr>
@@ -98,7 +90,7 @@
                 参与人：
             </td>
             <td>
-                <textarea rows="8" cols="40" name="users">{{ task['users'] }}</textarea>
+                <textarea rows="4" cols="40" name="users">{{ task['users'] }}</textarea>
             </td>
         </tr>
         <tr>
@@ -106,7 +98,7 @@
                 备注：
             </td>
             <td>
-                <textarea rows="8" cols="40" name="remark">{{ product['remark'] }}</textarea>
+                <textarea rows="8" cols="40" name="remark">{{ task['remark'] }}</textarea>
             </td>
         </tr>
         <tr>

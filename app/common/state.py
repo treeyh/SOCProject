@@ -80,18 +80,18 @@ operEdit = 4
 operDel = 8
 
 ProjectRoles = [
-    {'id' : 10 , 'name' : u'产品经理', 'isOne' : True},
+    {'id' : 10 , 'name' : u'产品负责人', 'isOne' : True},
     {'id' : 11 , 'name' : u'产品团队', 'isOne' : False},
-    {'id' : 20 , 'name' : u'需求经理', 'isOne' : True},
+    {'id' : 20 , 'name' : u'需求负责人', 'isOne' : True},
     {'id' : 21 , 'name' : u'需求团队', 'isOne' : False},
-    {'id' : 30 , 'name' : u'技术经理', 'isOne' : True},
-    {'id' : 31 , 'name' : u'开发团队', 'isOne' : False},
-    {'id' : 40 , 'name' : u'测试经理', 'isOne' : True},
+    {'id' : 30 , 'name' : u'研发负责人', 'isOne' : True},
+    {'id' : 31 , 'name' : u'研发团队', 'isOne' : False},
+    {'id' : 40 , 'name' : u'测试负责人', 'isOne' : True},
     {'id' : 41 , 'name' : u'测试团队', 'isOne' : False},
 ]
 
 productManagerRoleID=10
-devManagerRoleID=20
+devManagerRoleID=30
 
 
 TaskTypes = [
@@ -100,7 +100,6 @@ TaskTypes = [
     {'id' : 3 , 'name' : u'会议'},
     {'id' : 4 , 'name' : u'例行工作'},
     {'id' : 5 , 'name' : u'知识分享和培训'},
-    {'id' : 6 , 'name' : u'培训'},
 ]
 
-TaskProjectType = 1
+TaskProjectPlanType = 1

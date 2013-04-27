@@ -152,36 +152,103 @@ class TaskProjectAddOrEditHandler(TaskProjectListHandler):
 
 
 
+
+class TaskListHandler(admin_base_handler.AdminRightBaseHandler):
+    _rightKey = config.SOCPMConfig['appCode'] + '.AppManager'
+    _right = state.operView
+
+    def _get_user_list(self):
+        users = []
+        for role in state.ProjectRoles:
+            title = role['name']
+            us = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['RoleUserGroup'][role['id']])
+            if None != us and len(us) > 0:
+                for u in us:
+                    t = True
+                    for user in users:
+                        if user['userName'] == u['userName']:
+                            t = False
+                            break
+                    if True == t:
+                        users.append(u)
+        return users
+
+
+    def get(self):
+        ps = self.get_page_config('任务列表')
+        ps['users'] = self._get_user_list()
+
+        if None == ps['users'] or len(ps['users']) <= 0:            
+            self.render('admin/task/project_task_list.html', **ps)
+            return
+        ps['user'] = self.get_oper_user()
+        ps['type'] = state.TaskTypes
+        ps['status'] = state.TaskStatus
+
+        task = self.get_args(['userName', 'startDate', 'endDate'], '')
+        if '0' == task['userName']:
+            task['userName'] = ''
+        elif '' == task['userName']:            
+            task['userName'] = ps['user']
+
+        task['status'] = self.get_arg('status', '')
+        if '' == task['status']:
+            task['status'] = state.TaskRunningStatus
+        else:
+            task['status'] = int(task['status'])
+        task['type'] = int(self.get_arg('type', '0'))
+        ps['page'] = int(self.get_arg('page', '1'))
+
+        ps['pagedata'] = task_logic.TaskLogic.instance().query_by_type_userName_status_begin_end(
+                        type = task['type'], userName = task['userName'], status = task['status'],
+                        startDate = task['startDate'], endDate = task['endDate'], 
+                        page = ps['page'], size = ps['size'])
+                        
+        ps['pager'] = self.build_page_html(page = ps['page'], size = ps['size'], total = ps['pagedata']['total'], pageTotal = ps['pagedata']['pagetotal'])        
+        ps['task'] = task
+        self.render('admin/task/list.html', **ps)
+
+
+
 class TaskAddOrEditHandler(TaskListHandler):
     _rightKey = config.SOCPMConfig['appCode'] + '.AppManager'
     _right = 0
 
     def get(self):
-        ps = self.get_page_config('创建非项目任务') 
+        ps = self.get_page_config('创建非项目计划任务') 
         ps['users'] = self._get_user_list()
         if None == ps['users'] or len(ps['users']) <= 0:            
             self.render('admin/task/project_task_list.html', **ps)
             return
+
         ps['user'] = self.get_oper_user()
+        ps['types'] = [s for s in state.TaskTypes if s['id'] != state.TaskProjectPlanType] 
 
         if ps['isedit']:
-            ps['title'] = self.get_page_title('编辑非项目任务')
+            ps['title'] = self.get_page_title('编辑非项目计划任务')
             id = int(self.get_arg('id', '0'))
             task = task_logic.TaskLogic.instance().query_one(id = id)
-            if None == task:
+            if None == task or task['type'] == state.TaskProjectPlanType:
                 ps['msg'] = state.ResultInfo.get(112007, '')
                 ps['gotoUrl'] = ps['siteDomain'] + 'Admin/Task/List'
-                task = {'id':'','name':'','type':'','projectID':'','userName':'','userRealName':'','date':'','startDate':'','endDate':'','users':'','preID':'','parentID':'','sort':'','status':'','degree':'','remark':'','creater':'','createTime':'','lastUpdater':'','lastUpdateTime':''}
+                task = {'id':'','name':'','type':'','projectID':'','userName':'','userRealName':'','date':'','startDate':'','endDate':'','users':'','preID':'','parentID':'','sort':'','status':'', 'statusname': '','degree':'','remark':'','creater':'','createTime':'','lastUpdater':'','lastUpdateTime':''}
         else:
             task = {'id':'','name':'','type':'','projectID':'','userName':'','userRealName':'','date':'','startDate':'','endDate':'','users':'','preID':'','parentID':'','sort':'','status':'','degree':'','remark':'','creater':'','createTime':'','lastUpdater':'','lastUpdateTime':''}
-      
+            task['userName'] = self.get_arg('userName', '')
+            task['startDate'] = datetime.now()
+            task['endDate'] = datetime.now()
+            task['degree'] = '0'
+
         ps['task'] = task
         ps = self.format_none_to_empty(ps)
         self.render('admin/task/add_or_edit.html', **ps)
 
 
     def post(self):
-        ps = self.get_page_config('创建非项目任务') 
+        ps = self.get_page_config('创建非项目计划任务') 
+        if ps['isedit']:
+            ps['title'] = self.get_page_title('编辑非项目计划任务')
+
         ps['users'] = self._get_user_list()
         if None == ps['users'] or len(ps['users']) <= 0:            
             self.render('admin/task/project_task_list.html', **ps)
@@ -189,11 +256,49 @@ class TaskAddOrEditHandler(TaskListHandler):
         ps['user'] = self.get_oper_user()
 
         task = self.get_args(['name','userName','userRealName','startDate','endDate','users','remark'], '')
+        task['degree'] = int(self.get_arg('degree', '0'))
+        task['type'] = int(self.get_arg('type', '0'))
+        task['id'] = int(self.get_arg('id', '0'))
+
+        ps['task'] = task
+
+        msg = self.check_str_empty_input(task, ['name', 'userName', 'userRealName', 'startDate', 'endDate'])
+        if str_helper.is_null_or_empty(msg) == False:
+            ps['msg'] = msg
+            self.render('admin/task/add_or_edit.html', **ps)
+            return
 
 
         if ps['isedit']:
-            ps['title'] = self.get_page_title('编辑非项目任务')
-            id = int(self.get_arg('id', '0'))
+            try:
+                info = task_logic.TaskLogic.instance().update(id = product['id'], name = product['name'], 
+                        userName = product['userName'], userRealName = product['userRealName'], status = product['status'],
+                        remark = product['remark'], user = product['user'])
+                if info:
+                    self.redirect(ps['siteDomain'] + 'Admin/Task/List')
+                    return 
+                else:
+                    ps['msg'] = state.ResultInfo.get(101, '')
+            except error.ProjectError as e:
+                ps['msg'] = e.msg
+        else:
+            # self.check_oper_right(right = state.operAdd)
+            try:
+                status = task_logic.TaskLogic.instance().get_task_status(degree = task['degree'])
+                info = task_logic.TaskLogic.instance().add(name = task['name'], type = task['type'], projectID = 0,
+                        userName = task['userName'], userRealName = task['userRealName'], date = 1, startDate = task['startDate'],
+                        endDate = task['endDate'], users = task['users'], preID = 0, parentID = 0, sort = 0, status = status, 
+                        degree = task['degree'], remark = task['remark'], user = ps['user'])
+                if info > 0:
+                    self.redirect(ps['siteDomain'] + 'Admin/Task/List')
+                    return
+                else:
+                    ps['msg'] = state.ResultInfo.get(101, '')
+            except error.ProjectError as e:
+                ps['msg'] = e.msg
+        ps = self.format_none_to_empty(ps)
+        self.render('admin/task/add_or_edit.html', **ps)
+
 
 
 class TaskStatusAddOrEditHandler(TaskProjectListHandler):
@@ -270,58 +375,4 @@ class TaskDetailHandler(admin_base_handler.AdminRightBaseHandler):
         self.render('admin/project/detail.html', **ps)
 
 
-class TaskListHandler(admin_base_handler.AdminRightBaseHandler):
-    _rightKey = config.SOCPMConfig['appCode'] + '.AppManager'
-    _right = state.operView
-
-    def _get_user_list(self):
-        users = []
-        for role in state.ProjectRoles:
-            title = role['name']
-            us = soc_right_proxy.get_users_by_usergroup(userGroupID = config.SOCPMConfig['RoleUserGroup'][role['id']])
-            if None != us and len(us) > 0:
-                for u in us:
-                    t = True
-                    for user in users:
-                        if user['userName'] == u['userName']:
-                            t = False
-                            break
-                    if True == t:
-                        users.append(u)
-        return users
-
-
-    def get(self):
-        ps = self.get_page_config('任务列表')
-        ps['users'] = self._get_user_list()
-
-        if None == ps['users'] or len(ps['users']) <= 0:            
-            self.render('admin/task/project_task_list.html', **ps)
-            return
-        ps['user'] = self.get_oper_user()
-        ps['type'] = state.TaskTypes
-        ps['status'] = state.TaskStatus
-
-        task = self.get_args(['userName', 'startDate', 'endDate'], '')
-        if '0' == task['userName']:
-            task['userName'] = ''
-        elif '' == task['userName']:
-            task['userName'] = ps['user']['name']
-
-        task['status'] = self.get_arg('status', '')
-        if '' == task['status']:
-            task['status'] = state.TaskRunningStatus
-        else:
-            task['status'] = int(task['status'])
-        task['type'] = int(self.get_arg('type', '0'))
-        ps['page'] = int(self.get_arg('page', '1'))
-
-        ps['pagedata'] = task_logic.TaskLogic.instance().query_by_type_userName_status_begin_end(
-                        type = task['type'], userName = task['userName'], status = task['status'],
-                        startDate = task['startDate'], endDate = task['endDate'], 
-                        page = ps['page'], size = ps['size'])
-
-        ps['pager'] = self.build_page_html(page = ps['page'], size = ps['size'], total = ps['pagedata']['total'], pageTotal = ps['pagedata']['pagetotal'])        
-        ps['task'] = task
-        self.render('admin/task/list.html', **ps)
 
