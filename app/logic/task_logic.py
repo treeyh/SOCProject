@@ -32,7 +32,7 @@ class TaskLogic():
         sql = self._query_sql
         isdelete = state.Boole['false']
         sql = sql + ' AND t.projectID = %s AND t.type = %s order by sort asc '
-        yz = (isdelete, projectID, state.TaskProjectType)
+        yz = (isdelete, projectID, state.TaskProjectPlanType)
         tasks = mysql.find_all(sql, yz, self._query_col)        
 
         if tasks != None or len(tasks) > 0:
@@ -147,13 +147,14 @@ class TaskLogic():
 
 
     _update_sql = '''   UPDATE pm_task SET name = %s, userName = %s, 
-                            userRealName = %s, users = %s, status = %s, degree = %s,
+                            userRealName = %s, `date` = %s, startDate = %s, endDate = %s,
+                             users = %s, status = %s, degree = %s,
                             remark = %s, lastUpdater = %s, 
                             lastUpdateTime = now() WHERE id = %s '''
-    def update(self, id, name, userName, userRealName, users, status, degree,
-                remark, user):
-        s = self.get_task_status(degree = task['degree'])
-        yz = (name, userName, userRealName, users, s, degree, 
+    def update(self, id, name, userName, userRealName, date, startDate, endDate, users, 
+                degree, remark, user):
+        s = self.get_task_status(degree = degree)
+        yz = (name, userName, userRealName, date, startDate, endDate, users, s, degree, 
                 remark, user, id)
         result = mysql.insert_or_update_or_delete(self._update_sql, yz)
         return 0 == result

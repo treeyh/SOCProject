@@ -206,6 +206,7 @@ class TaskListHandler(admin_base_handler.AdminRightBaseHandler):
                         
         ps['pager'] = self.build_page_html(page = ps['page'], size = ps['size'], total = ps['pagedata']['total'], pageTotal = ps['pagedata']['pagetotal'])        
         ps['task'] = task
+        ps = self.format_none_to_empty(ps)
         self.render('admin/task/list.html', **ps)
 
 
@@ -268,12 +269,12 @@ class TaskAddOrEditHandler(TaskListHandler):
             self.render('admin/task/add_or_edit.html', **ps)
             return
 
-
         if ps['isedit']:
             try:
-                info = task_logic.TaskLogic.instance().update(id = product['id'], name = product['name'], 
-                        userName = product['userName'], userRealName = product['userRealName'], status = product['status'],
-                        remark = product['remark'], user = product['user'])
+                info = task_logic.TaskLogic.instance().update(id = task['id'], name = task['name'], 
+                        userName = task['userName'], userRealName = task['userRealName'], date = 1, 
+                        startDate = task['startDate'], endDate = task['endDate'], users = task['users'], 
+                        degree = task['degree'], remark = task['remark'], user = ps['user'])
                 if info:
                     self.redirect(ps['siteDomain'] + 'Admin/Task/List')
                     return 
@@ -283,8 +284,8 @@ class TaskAddOrEditHandler(TaskListHandler):
                 ps['msg'] = e.msg
         else:
             # self.check_oper_right(right = state.operAdd)
+            status = task_logic.TaskLogic.instance().get_task_status(degree = task['degree'])
             try:
-                status = task_logic.TaskLogic.instance().get_task_status(degree = task['degree'])
                 info = task_logic.TaskLogic.instance().add(name = task['name'], type = task['type'], projectID = 0,
                         userName = task['userName'], userRealName = task['userRealName'], date = 1, startDate = task['startDate'],
                         endDate = task['endDate'], users = task['users'], preID = 0, parentID = 0, sort = 0, status = status, 

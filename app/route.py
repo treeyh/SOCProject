@@ -17,6 +17,7 @@ route.append((r'^/Test', test_handler.TestHandler))
 route.append((r'^/Admin', main_handler.MainHandler))
 route.append((r'^/Admin/Main', main_handler.MainHandler))
 route.append((r'^/Admin/NotRight', main_handler.NotRightHandler))
+route.append((r'^/Admin/Welcome', main_handler.WelcomeHandler))
 route.append((r'^/Admin/Logout', main_handler.LogoutHandler))
 
 

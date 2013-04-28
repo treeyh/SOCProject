@@ -61,3 +61,9 @@ class NotRightHandler(admin_base_handler.AdminBaseHandler):
     def get(self):
         ps = self.get_page_config('无该操作权限')
         self.render('admin/not_right.html', **ps)
+
+
+class WelcomeHandler(admin_base_handler.AdminBaseHandler):
+    def get(self):
+        ps = self.get_page_config('欢迎页')
+        self.render('admin/welcome.html', **ps)

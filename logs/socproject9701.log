@@ -6081,3 +6081,164 @@
 [I 130427 23:45:35 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.50ms
 [I 130427 23:45:35 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.28ms
 [I 130427 23:45:49 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130428 10:41:39 web:1514] 200 GET /Admin?token=26f80fa4afad11e2a164080027f69eb2& (127.0.0.1) 77.88ms
+[I 130428 10:41:39 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 6.78ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 1.29ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/zTree/zTreeStyle/zTreeStyle.css?1 (127.0.0.1) 0.54ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/zTree/jquery.ztree.core-3.2.min.js?1 (127.0.0.1) 0.68ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 0.75ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 0.64ms
+[I 130428 10:41:39 web:1514] 304 GET /Admin/NotRight (127.0.0.1) 28.00ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/My97DatePicker/skin/WdatePicker.css (127.0.0.1) 0.67ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/zTree/zTreeStyle/img/line_conn.gif (127.0.0.1) 0.62ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/zTree/zTreeStyle/img/zTreeStandard.png (127.0.0.1) 0.45ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/My97DatePicker/My97DatePicker.htm (127.0.0.1) 1.37ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/My97DatePicker/config.js (127.0.0.1) 1.20ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/My97DatePicker/calendar.js (127.0.0.1) 1.41ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/My97DatePicker/lang/zh-cn.js (127.0.0.1) 0.53ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/My97DatePicker/skin/default/datepicker.css (127.0.0.1) 1.15ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/My97DatePicker/skin/whyGreen/datepicker.css (127.0.0.1) 0.35ms
+[I 130428 10:41:39 web:1514] 304 GET /static/js/My97DatePicker/skin/default/img.gif (127.0.0.1) 0.82ms
+[I 130428 10:41:42 web:1514] 304 GET /Admin/Product/List (127.0.0.1) 140.27ms
+[I 130428 10:41:42 web:1514] 200 GET /Admin/Product/Add (127.0.0.1) 73.35ms
+[I 130428 10:44:52 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/main_handler.py modified; restarting server
+[I 130428 10:45:21 autoreload:186] /opt/www/02_SOC/SOCProject/app/route.py modified; restarting server
+[I 130428 10:45:34 autoreload:186] /opt/www/02_SOC/SOCProject/app/route.py modified; restarting server
+[I 130428 10:45:46 web:1514] 200 GET /Admin?token=ba0aa996afad11e2a164080027f69eb2& (127.0.0.1) 34.42ms
+[I 130428 10:45:46 web:1514] 200 GET /Admin/Welcome (127.0.0.1) 11.68ms
+[I 130428 10:46:01 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/main_handler.py modified; restarting server
+[I 130428 10:46:04 web:1514] 304 GET /Admin?token=ba0aa996afad11e2a164080027f69eb2& (127.0.0.1) 14.57ms
+[I 130428 10:46:04 web:1514] 200 GET /Admin/Welcome (127.0.0.1) 9.78ms
+[I 130428 10:46:09 web:1514] 200 GET /Admin?token=c7ede852afad11e2a164080027f69eb2& (127.0.0.1) 9.29ms
+[I 130428 10:46:09 web:1514] 304 GET /Admin/Welcome (127.0.0.1) 6.79ms
+[I 130428 10:46:45 web:1514] 200 GET /Admin?token=dda8b12cafad11e2a164080027f69eb2& (127.0.0.1) 11.84ms
+[I 130428 10:46:45 web:1514] 304 GET /Admin/Welcome (127.0.0.1) 8.86ms
+[I 130428 10:46:48 web:1514] 304 GET /Admin/Product/List (127.0.0.1) 31.68ms
+[I 130428 10:46:53 web:1514] 200 GET /Admin/Product/Detail?id=1 (127.0.0.1) 61.36ms
+[I 130428 10:46:56 web:1514] 200 GET /Admin/Product/Edit?id=1 (127.0.0.1) 15.38ms
+[I 130428 10:47:14 web:1514] 302 POST /Admin/Product/Edit?id=1 (127.0.0.1) 128.09ms
+[I 130428 10:47:14 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 12.55ms
+[I 130428 10:47:16 web:1514] 200 GET /Admin/Product/Edit?id=2 (127.0.0.1) 29.23ms
+[I 130428 10:47:45 web:1514] 302 POST /Admin/Product/Edit?id=2 (127.0.0.1) 65.05ms
+[I 130428 10:47:45 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 14.32ms
+[I 130428 10:47:58 web:1514] 200 GET /Admin/Product/Edit?id=3 (127.0.0.1) 41.12ms
+[I 130428 10:50:49 web:1514] 302 POST /Admin/Product/Edit?id=3 (127.0.0.1) 72.06ms
+[I 130428 10:50:49 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 13.30ms
+[I 130428 10:51:00 web:1514] 200 GET /Admin/Product/Edit?id=2 (127.0.0.1) 19.48ms
+[I 130428 10:51:03 web:1514] 200 POST /Admin/Product/Edit?id=2 (127.0.0.1) 28.48ms
+[I 130428 10:51:09 web:1514] 302 POST /Admin/Product/Edit?id=2 (127.0.0.1) 58.69ms
+[I 130428 10:51:09 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 11.99ms
+[I 130428 10:51:15 web:1514] 304 GET /Admin/Product/Add (127.0.0.1) 33.06ms
+[I 130428 10:51:34 web:1514] 200 GET /Admin/Product/Edit?id=1 (127.0.0.1) 35.25ms
+[I 130428 10:51:42 web:1514] 302 POST /Admin/Product/Edit?id=1 (127.0.0.1) 84.08ms
+[I 130428 10:51:42 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 14.08ms
+[I 130428 10:51:50 web:1514] 304 GET /Admin/Product/Add (127.0.0.1) 31.28ms
+[I 130428 10:51:59 web:1514] 302 POST /Admin/Product/Add (127.0.0.1) 56.41ms
+[I 130428 10:51:59 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 14.53ms
+[I 130428 10:52:02 web:1514] 304 GET /Admin/Product/Add (127.0.0.1) 27.11ms
+[I 130428 10:54:52 web:1514] 200 GET /Admin/Product/Add (127.0.0.1) 25.87ms
+[I 130428 10:54:55 web:1514] 302 POST /Admin/Product/Add (127.0.0.1) 52.87ms
+[I 130428 10:54:55 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 13.24ms
+[I 130428 10:55:00 web:1514] 200 GET /Admin/Product/Edit?id=5 (127.0.0.1) 32.32ms
+[I 130428 10:55:06 web:1514] 302 POST /Admin/Product/Edit?id=5 (127.0.0.1) 53.02ms
+[I 130428 10:55:06 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 22.69ms
+[I 130428 11:02:19 web:1514] 200 GET /Admin?token=0a5ce196afb011e2a164080027f69eb2& (127.0.0.1) 18.79ms
+[I 130428 11:02:19 web:1514] 304 GET /Admin/Welcome (127.0.0.1) 12.50ms
+[I 130428 13:06:19 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 126.57ms
+[I 130428 13:06:19 web:1514] 304 GET /static/js/My97DatePicker/skin/datePicker.gif (127.0.0.1) 10.07ms
+[I 130428 13:06:21 web:1514] 200 GET /Admin/Task/Add?userName=Tree (127.0.0.1) 59.26ms
+[I 130428 13:06:41 web:1514] 302 POST /Admin/Task/Add?userName=Tree (127.0.0.1) 75.16ms
+[I 130428 13:06:41 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 51.75ms
+[I 130428 13:06:47 web:1514] 200 GET /Admin/Task/List?type=0&userName=Tree&status=1&startDate=&endDate= (127.0.0.1) 67.49ms
+[I 130428 13:06:58 web:1514] 304 GET /Admin/Task/List?type=0&userName=Tree&status=1&startDate=&endDate= (127.0.0.1) 67.19ms
+[I 130428 13:07:05 web:1514] 200 GET /Admin/Task/List?type=2&userName=Tree&status=1&startDate=&endDate= (127.0.0.1) 62.32ms
+[I 130428 13:07:08 web:1514] 200 GET /Admin/Task/EditStatus?id=82 (127.0.0.1) 74.48ms
+[I 130428 13:07:12 web:1514] 302 POST /Admin/Task/EditStatus?id=82 (127.0.0.1) 41.00ms
+[E 130428 13:07:12 web:1121] Uncaught exception GET /Admin/Task/ProjectList?projectID=0 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='GET', uri='/Admin/Task/ProjectList?projectID=0', version='HTTP/1.0', remote_ip='127.0.0.1', body='', headers={'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/EditStatus?id=82', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=26ffc848afad11e2850f080027f69eb2'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 62, in get
+        tasks = task_logic.TaskLogic.instance().query_by_projectID(projectID = ps['projectID'])
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 35, in query_by_projectID
+        yz = (isdelete, projectID, state.TaskProjectType)
+    AttributeError: 'module' object has no attribute 'TaskProjectType'
+[E 130428 13:07:12 web:1514] 500 GET /Admin/Task/ProjectList?projectID=0 (127.0.0.1) 38.76ms
+[I 130428 13:07:57 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130428 13:08:13 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 78.69ms
+[I 130428 13:08:15 web:1514] 200 GET /Admin/Task/EditStatus?id=82 (127.0.0.1) 19.38ms
+[I 130428 13:08:17 web:1514] 302 POST /Admin/Task/EditStatus?id=82 (127.0.0.1) 51.41ms
+[I 130428 13:08:17 web:1514] 200 GET /Admin/Task/ProjectList?projectID=0 (127.0.0.1) 28.66ms
+[I 130428 13:08:30 web:1514] 304 GET /Admin/Task/EditStatus?id=82 (127.0.0.1) 26.25ms
+[I 130428 13:09:08 web:1514] 200 GET /Admin/Task/ProjectEdit (127.0.0.1) 54.33ms
+[I 130428 13:09:09 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 57.31ms
+[I 130428 13:09:11 web:1514] 200 GET /Admin/Task/Edit?id=82 (127.0.0.1) 47.19ms
+[E 130428 13:09:18 web:1121] Uncaught exception POST /Admin/Task/Edit?id=82 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Task/Edit?id=82', version='HTTP/1.0', remote_ip='127.0.0.1', body='id=82&name=11111222&userName=Tree&userRealName=%E4%BD%99%E6%B5%B7&type=2&startDate=2013-04-28&endDate=2013-04-28&degree=13&users=&remark=', headers={'Content-Length': '137', 'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/Edit?id=82', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=26ffc848afad11e2850f080027f69eb2', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 274, in post
+        info = task_logic.TaskLogic.instance().update(id = product['id'], name = product['name'],
+    NameError: global name 'product' is not defined
+[E 130428 13:09:18 web:1514] 500 POST /Admin/Task/Edit?id=82 (127.0.0.1) 45.41ms
+[I 130428 13:09:22 web:1514] 304 GET /Admin/Task/List (127.0.0.1) 60.79ms
+[I 130428 13:09:24 web:1514] 304 GET /Admin/Task/Edit?id=82 (127.0.0.1) 75.10ms
+[E 130428 13:09:33 web:1121] Uncaught exception POST /Admin/Task/Edit?id=82 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Task/Edit?id=82', version='HTTP/1.0', remote_ip='127.0.0.1', body='id=82&name=11111&userName=Tree&userRealName=%E4%BD%99%E6%B5%B7&type=2&startDate=2013-04-28&endDate=2013-04-28&degree=103&users=&remark=', headers={'Content-Length': '135', 'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/Edit?id=82', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=26ffc848afad11e2850f080027f69eb2', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 274, in post
+        info = task_logic.TaskLogic.instance().update(id = product['id'], name = product['name'],
+    NameError: global name 'product' is not defined
+[E 130428 13:09:33 web:1514] 500 POST /Admin/Task/Edit?id=82 (127.0.0.1) 60.52ms
+[I 130428 13:14:36 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130428 13:24:43 web:1514] 304 GET /Admin/Task/Edit?id=82 (127.0.0.1) 72.28ms
+[E 130428 13:24:54 web:1121] Uncaught exception POST /Admin/Task/Edit?id=82 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Task/Edit?id=82', version='HTTP/1.0', remote_ip='127.0.0.1', body='id=82&name=11111&userName=Tree&userRealName=%E4%BD%99%E6%B5%B7&type=2&startDate=2013-04-29&endDate=2013-04-30&degree=12&users=&remark=', headers={'Content-Length': '134', 'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/Edit?id=82', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=26ffc848afad11e2850f080027f69eb2', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 277, in post
+        status = status, degree = task['degree'], remark = task['remark'], user = ps['user'])
+    TypeError: update() got an unexpected keyword argument 'date'
+[E 130428 13:24:54 web:1514] 500 POST /Admin/Task/Edit?id=82 (127.0.0.1) 42.54ms
+[I 130428 13:25:08 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130428 13:25:09 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130428 13:27:38 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130428 13:27:55 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130428 13:28:42 web:1514] 304 GET /Admin/Task/Edit?id=82 (127.0.0.1) 87.06ms
+[E 130428 13:28:45 web:1121] Uncaught exception POST /Admin/Task/Edit?id=82 (127.0.0.1)
+    HTTPRequest(protocol='http', host='pm.kanchene.com', method='POST', uri='/Admin/Task/Edit?id=82', version='HTTP/1.0', remote_ip='127.0.0.1', body='id=82&name=11111&userName=Tree&userRealName=%E4%BD%99%E6%B5%B7&type=2&startDate=2013-04-28&endDate=2013-04-28&degree=12&users=&remark=', headers={'Content-Length': '134', 'Accept-Language': 'zh-CN', 'Accept-Encoding': 'gzip, deflate', 'X-Scheme': 'http', 'Host': 'pm.kanchene.com', 'Accept': 'text/html, application/xhtml+xml, */*', 'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)', 'Dnt': '1', 'Connection': 'close', 'Referer': 'http://pm.kanchene.com/Admin/Task/Edit?id=82', 'Cache-Control': 'no-cache', 'X-Real-Ip': '192.168.18.61', 'Cookie': 'soc_project_manager_user=26ffc848afad11e2850f080027f69eb2', 'Content-Type': 'application/x-www-form-urlencoded'})
+    Traceback (most recent call last):
+      File "/opt/soft/python/lib/python2.7/site-packages/tornado-3.0.1-py2.7.egg/tornado/web.py", line 1077, in _execute
+        *self.path_args, **self.path_kwargs)
+      File "/opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py", line 276, in post
+        degree = task['degree'], remark = task['remark'], user = ps['user'])
+      File "/opt/www/02_SOC/SOCProject/app/logic/task_logic.py", line 156, in update
+        s = self.get_task_status(degree = task['degree'])
+    NameError: global name 'task' is not defined
+[E 130428 13:28:45 web:1514] 500 POST /Admin/Task/Edit?id=82 (127.0.0.1) 64.54ms
+[I 130428 13:29:01 autoreload:186] /opt/www/02_SOC/SOCProject/app/logic/task_logic.py modified; restarting server
+[I 130428 13:29:06 web:1514] 302 POST /Admin/Task/Edit?id=82 (127.0.0.1) 64.49ms
+[I 130428 13:29:06 web:1514] 200 GET /Admin/Task/List (127.0.0.1) 79.23ms
+[I 130428 13:29:06 web:1514] 304 GET /static/css/style.css?1 (127.0.0.1) 14.32ms
+[I 130428 13:29:06 web:1514] 304 GET /static/js/common.js?1 (127.0.0.1) 2.68ms
+[I 130428 13:29:06 web:1514] 304 GET /static/js/jquery.min.1.7.2.js?1 (127.0.0.1) 2.13ms
+[I 130428 13:29:06 web:1514] 304 GET /static/js/My97DatePicker/WdatePicker.js?1 (127.0.0.1) 1.19ms
+[I 130428 13:29:06 web:1514] 304 GET /static/js/My97DatePicker/skin/WdatePicker.css (127.0.0.1) 2.67ms
+[I 130428 13:29:06 web:1514] 304 GET /static/js/My97DatePicker/My97DatePicker.htm (127.0.0.1) 1.24ms
+[I 130428 13:29:06 web:1514] 304 GET /static/js/My97DatePicker/config.js (127.0.0.1) 1.41ms
+[I 130428 13:29:06 web:1514] 304 GET /static/js/My97DatePicker/calendar.js (127.0.0.1) 2.06ms
+[I 130428 13:29:06 web:1514] 304 GET /static/js/My97DatePicker/lang/zh-cn.js (127.0.0.1) 2.03ms
+[I 130428 13:29:06 web:1514] 304 GET /static/js/My97DatePicker/skin/default/datepicker.css (127.0.0.1) 1.17ms
+[I 130428 13:29:06 web:1514] 304 GET /static/js/My97DatePicker/skin/whyGreen/datepicker.css (127.0.0.1) 0.71ms
+[I 130428 13:29:07 web:1514] 304 GET /static/js/My97DatePicker/skin/default/img.gif (127.0.0.1) 0.75ms
+[I 130428 13:29:48 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130428 13:29:49 autoreload:186] /opt/www/02_SOC/SOCProject/app/handler/admin/task_handler.py modified; restarting server
+[I 130428 13:30:17 web:1514] 304 GET /Admin/Product/List (127.0.0.1) 50.10ms
+[I 130428 13:30:20 web:1514] 304 GET /Admin/Product/Add (127.0.0.1) 47.41ms
+[I 130428 13:30:30 web:1514] 302 POST /Admin/Product/Add (127.0.0.1) 37.05ms
+[I 130428 13:30:30 web:1514] 200 GET /Admin/Product/List (127.0.0.1) 23.43ms
